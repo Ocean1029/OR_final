@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-# youbike_logger.py
 import requests, json, csv, pathlib, datetime
 
 API = "https://tcgbusfs.blob.core.windows.net/dotapp/youbike/v2/youbike_immediate.json"

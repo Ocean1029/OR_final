@@ -29,12 +29,12 @@ jobs:
 
       - name: Commit & push if data changed
         run: |
-          if git diff --quiet; then
+          git add data/
+          if git diff --cached --quiet; then
             echo "No changes – skip commit"
             exit 0
           fi
           git config --global user.name  "youbike-bot"
           git config --global user.email "bot@example.com"
-          git add data/
           git commit -m "Snapshot $(date -u '+%Y-%m-%d %H:%M')"
           git push
