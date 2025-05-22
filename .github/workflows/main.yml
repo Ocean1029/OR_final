@@ -14,7 +14,7 @@ permissions:
 
 jobs:
   fetch:
-    if: github.ref == 'refs/heads/main'  # 僅在 main 執行
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
 
     steps:
@@ -36,24 +36,24 @@ jobs:
 
       - name: Commit & push if data changed
         run: |
+          git config --global user.name  "youbike-bot"
+          git config --global user.email "bot@example.com"
+
           git add data/
           if git diff --cached --quiet; then
             echo "No changes – skip commit"
             exit 0
           fi
-          git config --global user.name  "youbike-bot"
-          git config --global user.email "bot@example.com"
 
-          # Rebase 最新 upstream
-          git fetch origin data-log
-          git rebase origin/data-log || {
+          # 使用台灣時間
+          COMMIT_TIME=$(TZ='Asia/Taipei' date '+%Y-%m-%d %H:%M')
+          git commit -m "Snapshot $COMMIT_TIME"
+
+          # 嘗試 rebase 最新遠端變更以避免 push 衝突
+          git pull --rebase origin data-log || {
             echo "❌ Rebase failed. Aborting push."
             git rebase --abort
             exit 1
           }
 
-          # 使用台灣時間
-          COMMIT_TIME=$(TZ='Asia/Taipei' date '+%Y-%m-%d %H:%M')
-
-          git commit -m "Snapshot $COMMIT_TIME"
           git push origin HEAD:data-log
