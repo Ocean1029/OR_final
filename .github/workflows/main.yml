@@ -1,24 +1,28 @@
 name: Fetch YouBike Snapshot
 
-# 1. 只在主分支，2. 從 5/23 起，3. 每 5 分鐘
 on:
   schedule:
-    - cron: '*/5 * * * *'            # GitHub 以 UTC 解讀
-  workflow_dispatch:                 # 手動觸發方便測試
-concurrency: snapshot                # 防止重疊執行
+    - cron: '*/5 * * * *'            # 每 5 分鐘（UTC）
+  workflow_dispatch:                 # 手動測試用
+
+concurrency:
+  group: snapshot-${{ github.ref }}  # 防止重疊，分支區分
+  cancel-in-progress: true
 
 permissions:
-  contents: write                    # 允許 push
+  contents: write
 
 jobs:
   fetch:
+    if: github.ref == 'refs/heads/main'  # 僅在 main 執行
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout data-log branch
         uses: actions/checkout@v4
         with:
           ref: data-log
-          
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
@@ -39,5 +43,17 @@ jobs:
           fi
           git config --global user.name  "youbike-bot"
           git config --global user.email "bot@example.com"
-          git commit -m "Snapshot $(date -u '+%Y-%m-%d %H:%M')"
-          git push
+
+          # Rebase 最新 upstream
+          git fetch origin data-log
+          git rebase origin/data-log || {
+            echo "❌ Rebase failed. Aborting push."
+            git rebase --abort
+            exit 1
+          }
+
+          # 使用台灣時間
+          COMMIT_TIME=$(TZ='Asia/Taipei' date '+%Y-%m-%d %H:%M')
+
+          git commit -m "Snapshot $COMMIT_TIME"
+          git push origin HEAD:data-log
