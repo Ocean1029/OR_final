@@ -6,10 +6,9 @@ raw = requests.get(URL, timeout=10).json()          # 10 秒逾時避免 hang
 df  = pd.DataFrame(raw)
 
 # 轉型別、保留必要欄位
-cols = ["sarea", "sna", "latitude", "longitude", "total", "available_rent_bikes", "available_return_bikes", "act", "srcUpdateTime"]
+cols = ["sno", "sarea", "sna", "latitude", "longitude", "total", "available_rent_bikes", "available_return_bikes", "act", "srcUpdateTime"]
 df   = df[cols].astype({"latitude":"float", "longitude":"float", "total":"int",
                         "available_rent_bikes":"int", "available_return_bikes":"int"})
-
 # 依你給的數字（可再調整）
 MIN_LNG = 121.58498      # 西邊界
 MAX_LNG = 123            # 東邊界（臨時設個 123°E，比台北再東一些）
@@ -51,7 +50,6 @@ for _, r in df.iterrows():
                f"可還 {r.available_return_bikes}<br>"
                f"更新 {r.srcUpdateTime}")
     ).add_to(m)
-
 
 m.save("youbike_map.html")
 
