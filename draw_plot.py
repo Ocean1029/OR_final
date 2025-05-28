@@ -21,14 +21,13 @@ def draw_all_intervals(folder="interval_outputs", output_folder="map_outputs"):
         out_file = output_folder / f"map_{time_str}.html"
         print(f"處理 {file.name} ...")
         df = pd.read_csv(file)
-        draw_map(df)
-        df.to_html(out_file, index=False, encoding="utf-8")
+        draw_map(df, str(out_file))
         print(f"✔ 已輸出 {out_file.name}")
 
     print("✔ 所有時段地圖已輸出至", output_folder)
 
 
-def draw_map(df):
+def draw_map(df, output_file="youbike_map.html"):
     # 轉型別、保留必要欄位
     cols = ["sno", "sarea", "sna", "latitude", "longitude", "total", "available_rent_bikes", "available_return_bikes", "srcUpdateTime"]
     df = df[cols].astype({"latitude":"float", "longitude":"float", "total":"int",
@@ -76,18 +75,20 @@ def draw_map(df):
                    f"更新 {r.srcUpdateTime}")
         ).add_to(m)
 
-    m.save("youbike_map.html")
+    m.save(output_file)
 
 def main():
     parser = argparse.ArgumentParser(description='繪製 YouBike 地圖')
     parser.add_argument('--mode', choices=['realtime', 'csv'], default='csv',
                       help='選擇資料模式：realtime 為即時資料，csv 為從 CSV 檔案讀取')
+    parser.add_argument('--output', default='youbike_map.html',
+                      help='輸出檔案路徑（預設：youbike_map.html）')
     
     args = parser.parse_args()
     
     if args.mode == 'realtime':
         df = fetch_realtime_data()
-        draw_map(df)
+        draw_map(df, args.output)
     else:
         draw_all_intervals()
     

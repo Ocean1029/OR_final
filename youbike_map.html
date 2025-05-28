@@ -1,0 +1,3712 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_d9c216705006b7507bf08b753deadf5a {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_d9c216705006b7507bf08b753deadf5a" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_d9c216705006b7507bf08b753deadf5a = L.map(
+                "map_d9c216705006b7507bf08b753deadf5a",
+                {
+                    center: [25.06376878980892, 121.60212261146498],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 14,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_398ca1dead88543fb04698fa65aba1e4 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_398ca1dead88543fb04698fa65aba1e4.addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+            var circle_marker_af1575c7b8c561e333432f05fd6951a2 = L.circleMarker(
+                [25.07177, 121.61491],
+                {"bubblingMouseEvents": true, "color": "#FF9999", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF9999", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_9b120159d49f47e46e68a5c97ce85088 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f87bdb30ae032f6b0d39a0dfe1d54d3b = $(`<div id="html_f87bdb30ae032f6b0d39a0dfe1d54d3b" style="width: 100.0%; height: 100.0%;">YouBike2.0_東湖路113巷95弄（內湖區）<br>可借 12.538461538461538 / 總柱 17<br>可還 4.3076923076923075<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_9b120159d49f47e46e68a5c97ce85088.setContent(html_f87bdb30ae032f6b0d39a0dfe1d54d3b);
+            
+        
+
+        circle_marker_af1575c7b8c561e333432f05fd6951a2.bindPopup(popup_9b120159d49f47e46e68a5c97ce85088)
+        ;
+
+        
+    
+    
+            var circle_marker_fc710fd1dfa6317391e806e1b94b8744 = L.circleMarker(
+                [25.08395, 121.60185],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_aa3c4a927bda62f3b3a9d27d9be84cbb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_27ebf7087309a9d7522d460ef185bfb6 = $(`<div id="html_27ebf7087309a9d7522d460ef185bfb6" style="width: 100.0%; height: 100.0%;">YouBike2.0_捷運大湖公園站(2號出口)（內湖區）<br>可借 8.615384615384615 / 總柱 46<br>可還 37.38461538461539<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_aa3c4a927bda62f3b3a9d27d9be84cbb.setContent(html_27ebf7087309a9d7522d460ef185bfb6);
+            
+        
+
+        circle_marker_fc710fd1dfa6317391e806e1b94b8744.bindPopup(popup_aa3c4a927bda62f3b3a9d27d9be84cbb)
+        ;
+
+        
+    
+    
+            var circle_marker_d79fafe74ba8e8785aec43596f620e2f = L.circleMarker(
+                [25.07958, 121.59336],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_27f36786fd8bbbedec78d73d21122139 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_790f1375afa324528c87bf5746acdd81 = $(`<div id="html_790f1375afa324528c87bf5746acdd81" style="width: 100.0%; height: 100.0%;">YouBike2.0_康寧星雲街口（內湖區）<br>可借 10.615384615384617 / 總柱 19<br>可還 7.538461538461538<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_27f36786fd8bbbedec78d73d21122139.setContent(html_790f1375afa324528c87bf5746acdd81);
+            
+        
+
+        circle_marker_d79fafe74ba8e8785aec43596f620e2f.bindPopup(popup_27f36786fd8bbbedec78d73d21122139)
+        ;
+
+        
+    
+    
+            var circle_marker_b8b72f37aa44576829241356f4a8bfed = L.circleMarker(
+                [25.07864, 121.59177],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_b9f916c5bf9f882515ec70edbe4a7ca7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5f2dad214439435eefe9813de22c9a6c = $(`<div id="html_5f2dad214439435eefe9813de22c9a6c" style="width: 100.0%; height: 100.0%;">YouBike2.0_星雲街47號（內湖區）<br>可借 13.153846153846152 / 總柱 22<br>可還 7.153846153846154<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_b9f916c5bf9f882515ec70edbe4a7ca7.setContent(html_5f2dad214439435eefe9813de22c9a6c);
+            
+        
+
+        circle_marker_b8b72f37aa44576829241356f4a8bfed.bindPopup(popup_b9f916c5bf9f882515ec70edbe4a7ca7)
+        ;
+
+        
+    
+    
+            var circle_marker_41c0bf915c8f4168c42083b4c212fed0 = L.circleMarker(
+                [25.08436, 121.59478],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_f4c6244e5775f953d8dc78ca30136904 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7d88e5844e33c7323a1f7e7b4aa71963 = $(`<div id="html_7d88e5844e33c7323a1f7e7b4aa71963" style="width: 100.0%; height: 100.0%;">YouBike2.0_成功金龍路口（內湖區）<br>可借 2.4615384615384617 / 總柱 29<br>可還 26.23076923076923<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_f4c6244e5775f953d8dc78ca30136904.setContent(html_7d88e5844e33c7323a1f7e7b4aa71963);
+            
+        
+
+        circle_marker_41c0bf915c8f4168c42083b4c212fed0.bindPopup(popup_f4c6244e5775f953d8dc78ca30136904)
+        ;
+
+        
+    
+    
+            var circle_marker_470738aa483fc1a339fe6bc15b8bc3dc = L.circleMarker(
+                [25.07695, 121.58764],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_15b0b819cbfa1eef2ee72d21d7cda539 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7ea4ccf2b844b44e79dcb1a38c36fab0 = $(`<div id="html_7ea4ccf2b844b44e79dcb1a38c36fab0" style="width: 100.0%; height: 100.0%;">YouBike2.0_陽光公園（內湖區）<br>可借 6.0 / 總柱 16<br>可還 10.0<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_15b0b819cbfa1eef2ee72d21d7cda539.setContent(html_7ea4ccf2b844b44e79dcb1a38c36fab0);
+            
+        
+
+        circle_marker_470738aa483fc1a339fe6bc15b8bc3dc.bindPopup(popup_15b0b819cbfa1eef2ee72d21d7cda539)
+        ;
+
+        
+    
+    
+            var circle_marker_f2a1eaf4ef6540e2692b948687005457 = L.circleMarker(
+                [25.06915, 121.58898],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_65ea24b5ac1106b768f36330841676eb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8f44592dea06931448a59c084eeb3f8e = $(`<div id="html_8f44592dea06931448a59c084eeb3f8e" style="width: 100.0%; height: 100.0%;">YouBike2.0_內湖行政中心（內湖區）<br>可借 5.384615384615385 / 總柱 25<br>可還 19.615384615384617<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_65ea24b5ac1106b768f36330841676eb.setContent(html_8f44592dea06931448a59c084eeb3f8e);
+            
+        
+
+        circle_marker_f2a1eaf4ef6540e2692b948687005457.bindPopup(popup_65ea24b5ac1106b768f36330841676eb)
+        ;
+
+        
+    
+    
+            var circle_marker_e050c73af5c57cf0c9370b480b1b5cea = L.circleMarker(
+                [25.07007, 121.62055],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_4f6ebbbbadd176d196357be4bf7f2e80 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a68ebab5c9a29eb0b371da543d8e3f71 = $(`<div id="html_a68ebab5c9a29eb0b371da543d8e3f71" style="width: 100.0%; height: 100.0%;">YouBike2.0_樂康公園（內湖區）<br>可借 13.76923076923077 / 總柱 20<br>可還 6.076923076923077<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_4f6ebbbbadd176d196357be4bf7f2e80.setContent(html_a68ebab5c9a29eb0b371da543d8e3f71);
+            
+        
+
+        circle_marker_e050c73af5c57cf0c9370b480b1b5cea.bindPopup(popup_4f6ebbbbadd176d196357be4bf7f2e80)
+        ;
+
+        
+    
+    
+            var circle_marker_b32b15c5c79f001114610f1db4bf88b2 = L.circleMarker(
+                [25.06181, 121.59447],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_4d4a0bdfa9fc250aed39267c28388036 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_18cac6b90e57e88f088ce4286c5730bf = $(`<div id="html_18cac6b90e57e88f088ce4286c5730bf" style="width: 100.0%; height: 100.0%;">YouBike2.0_安康路32巷24弄（內湖區）<br>可借 3.3076923076923075 / 總柱 21<br>可還 17.692307692307693<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_4d4a0bdfa9fc250aed39267c28388036.setContent(html_18cac6b90e57e88f088ce4286c5730bf);
+            
+        
+
+        circle_marker_b32b15c5c79f001114610f1db4bf88b2.bindPopup(popup_4d4a0bdfa9fc250aed39267c28388036)
+        ;
+
+        
+    
+    
+            var circle_marker_d37f069154a6345193874203239c746d = L.circleMarker(
+                [25.06256, 121.58607],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_62934c7d94838bbe7ab125dfbe3928ad = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4239134c791c31c7f2a3097ecec9996f = $(`<div id="html_4239134c791c31c7f2a3097ecec9996f" style="width: 100.0%; height: 100.0%;">YouBike2.0_明美公園（內湖區）<br>可借 11.846153846153848 / 總柱 30<br>可還 18.0<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_62934c7d94838bbe7ab125dfbe3928ad.setContent(html_4239134c791c31c7f2a3097ecec9996f);
+            
+        
+
+        circle_marker_d37f069154a6345193874203239c746d.bindPopup(popup_62934c7d94838bbe7ab125dfbe3928ad)
+        ;
+
+        
+    
+    
+            var circle_marker_17f267f4775e0d009da5ffac769f98c2 = L.circleMarker(
+                [25.05827, 121.58707],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_4faf66dfca0694160864237005739adb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4e179d553b302175056ad232838ff0d8 = $(`<div id="html_4e179d553b302175056ad232838ff0d8" style="width: 100.0%; height: 100.0%;">YouBike2.0_南京東路六段368巷（內湖區）<br>可借 8.692307692307692 / 總柱 73<br>可還 64.0<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_4faf66dfca0694160864237005739adb.setContent(html_4e179d553b302175056ad232838ff0d8);
+            
+        
+
+        circle_marker_17f267f4775e0d009da5ffac769f98c2.bindPopup(popup_4faf66dfca0694160864237005739adb)
+        ;
+
+        
+    
+    
+            var circle_marker_eb759d4140bb0dd8eb232acbc5ab7834 = L.circleMarker(
+                [25.06058, 121.5911],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_82ef348f4209d429f42675160ad35323 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ec673ecd18abc46ff8437adf17931bd4 = $(`<div id="html_ec673ecd18abc46ff8437adf17931bd4" style="width: 100.0%; height: 100.0%;">YouBike2.0_新明成功路口（內湖區）<br>可借 14.384615384615383 / 總柱 30<br>可還 15.615384615384617<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_82ef348f4209d429f42675160ad35323.setContent(html_ec673ecd18abc46ff8437adf17931bd4);
+            
+        
+
+        circle_marker_eb759d4140bb0dd8eb232acbc5ab7834.bindPopup(popup_82ef348f4209d429f42675160ad35323)
+        ;
+
+        
+    
+    
+            var circle_marker_0366f4911d4b562416d6f975fdfaa742 = L.circleMarker(
+                [25.07151, 121.58991],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_037f63c08033de4c562123578d978430 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e26b5c868ca006e8067a057c32649a36 = $(`<div id="html_e26b5c868ca006e8067a057c32649a36" style="width: 100.0%; height: 100.0%;">YouBike2.0_三軍總醫院（內湖區）<br>可借 12.923076923076923 / 總柱 50<br>可還 37.07692307692308<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_037f63c08033de4c562123578d978430.setContent(html_e26b5c868ca006e8067a057c32649a36);
+            
+        
+
+        circle_marker_0366f4911d4b562416d6f975fdfaa742.bindPopup(popup_037f63c08033de4c562123578d978430)
+        ;
+
+        
+    
+    
+            var circle_marker_f6398c8a2f48d0bc86927fe35f37c743 = L.circleMarker(
+                [25.06877, 121.59265],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_feedd1f35ad830faebd8ca29f6e95c69 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_03cf6b4d68cc59f8ed3685ecc3588942 = $(`<div id="html_03cf6b4d68cc59f8ed3685ecc3588942" style="width: 100.0%; height: 100.0%;">YouBike2.0_福華商場（內湖區）<br>可借 11.23076923076923 / 總柱 25<br>可還 13.615384615384617<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_feedd1f35ad830faebd8ca29f6e95c69.setContent(html_03cf6b4d68cc59f8ed3685ecc3588942);
+            
+        
+
+        circle_marker_f6398c8a2f48d0bc86927fe35f37c743.bindPopup(popup_feedd1f35ad830faebd8ca29f6e95c69)
+        ;
+
+        
+    
+    
+            var circle_marker_d92878dffb146d2b31d9073651f94cee = L.circleMarker(
+                [25.0674, 121.59749],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_e6747a6464ba61c01c51b353b279479f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bfde11af13514aed5bb1761d3aab188d = $(`<div id="html_bfde11af13514aed5bb1761d3aab188d" style="width: 100.0%; height: 100.0%;">YouBike2.0_臺北市網球中心（內湖區）<br>可借 15.538461538461538 / 總柱 34<br>可還 18.46153846153846<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_e6747a6464ba61c01c51b353b279479f.setContent(html_bfde11af13514aed5bb1761d3aab188d);
+            
+        
+
+        circle_marker_d92878dffb146d2b31d9073651f94cee.bindPopup(popup_e6747a6464ba61c01c51b353b279479f)
+        ;
+
+        
+    
+    
+            var circle_marker_b700e47e7ea91ab13f50340535874952 = L.circleMarker(
+                [25.07249, 121.60796],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_3975bf15daa5a7c08ba9296a3746dd58 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b47ab08316f2b030b6cc40ee9afee8a0 = $(`<div id="html_b47ab08316f2b030b6cc40ee9afee8a0" style="width: 100.0%; height: 100.0%;">YouBike2.0_捷運葫洲站(1號出口)（內湖區）<br>可借 6.846153846153846 / 總柱 37<br>可還 30.153846153846153<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_3975bf15daa5a7c08ba9296a3746dd58.setContent(html_b47ab08316f2b030b6cc40ee9afee8a0);
+            
+        
+
+        circle_marker_b700e47e7ea91ab13f50340535874952.bindPopup(popup_3975bf15daa5a7c08ba9296a3746dd58)
+        ;
+
+        
+    
+    
+            var circle_marker_e1fba6f5de935a3d4aa1bceaa6d1025e = L.circleMarker(
+                [25.07332, 121.60223],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_95dd91e626dd26a20378c4cf7f78cc0c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_536985ef523f0bedce0f8fb8cf2b498c = $(`<div id="html_536985ef523f0bedce0f8fb8cf2b498c" style="width: 100.0%; height: 100.0%;">YouBike2.0_麗湖國小（內湖區）<br>可借 17.23076923076923 / 總柱 27<br>可還 9.461538461538462<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_95dd91e626dd26a20378c4cf7f78cc0c.setContent(html_536985ef523f0bedce0f8fb8cf2b498c);
+            
+        
+
+        circle_marker_e1fba6f5de935a3d4aa1bceaa6d1025e.bindPopup(popup_95dd91e626dd26a20378c4cf7f78cc0c)
+        ;
+
+        
+    
+    
+            var circle_marker_61e07e99aa988972da789ba491fa2baa = L.circleMarker(
+                [25.0733, 121.59834],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_6ab0f268a656321905e48781cbe42a88 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b61b4f9ef070b05c71bc1f5c50233e92 = $(`<div id="html_b61b4f9ef070b05c71bc1f5c50233e92" style="width: 100.0%; height: 100.0%;">YouBike2.0_金湖路347巷125弄口（內湖區）<br>可借 7.538461538461538 / 總柱 15<br>可還 7.461538461538462<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_6ab0f268a656321905e48781cbe42a88.setContent(html_b61b4f9ef070b05c71bc1f5c50233e92);
+            
+        
+
+        circle_marker_61e07e99aa988972da789ba491fa2baa.bindPopup(popup_6ab0f268a656321905e48781cbe42a88)
+        ;
+
+        
+    
+    
+            var circle_marker_eaf7b689c5135045e426fde1fa6368f4 = L.circleMarker(
+                [25.08357, 121.58534],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_a01e500dfe018f3089dcac007e59b28e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e20ca54d824347a09eb80266f315b83a = $(`<div id="html_e20ca54d824347a09eb80266f315b83a" style="width: 100.0%; height: 100.0%;">YouBike2.0_貿七社區（內湖區）<br>可借 7.769230769230769 / 總柱 17<br>可還 8.923076923076923<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_a01e500dfe018f3089dcac007e59b28e.setContent(html_e20ca54d824347a09eb80266f315b83a);
+            
+        
+
+        circle_marker_eaf7b689c5135045e426fde1fa6368f4.bindPopup(popup_a01e500dfe018f3089dcac007e59b28e)
+        ;
+
+        
+    
+    
+            var circle_marker_2de2477d169e0f5f7ef1765b429c8ef3 = L.circleMarker(
+                [25.08165, 121.58891],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_d62907550f9ab5c22e28ee31736eda6d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_85241a80eaef0a9c162c1e53f943d34f = $(`<div id="html_85241a80eaef0a9c162c1e53f943d34f" style="width: 100.0%; height: 100.0%;">YouBike2.0_內湖區農會（內湖區）<br>可借 4.0 / 總柱 12<br>可還 8.0<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_d62907550f9ab5c22e28ee31736eda6d.setContent(html_85241a80eaef0a9c162c1e53f943d34f);
+            
+        
+
+        circle_marker_2de2477d169e0f5f7ef1765b429c8ef3.bindPopup(popup_d62907550f9ab5c22e28ee31736eda6d)
+        ;
+
+        
+    
+    
+            var circle_marker_be38c35c1d118f4b5afc04c26697f80a = L.circleMarker(
+                [25.0835, 121.59454],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_7eefc6a348c2ded1ab375efc9300f4c6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_61c33f6c423af3fc9647997306ec7243 = $(`<div id="html_61c33f6c423af3fc9647997306ec7243" style="width: 100.0%; height: 100.0%;">YouBike2.0_捷運內湖站(2號出口)（內湖區）<br>可借 3.076923076923077 / 總柱 10<br>可還 6.923076923076923<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_7eefc6a348c2ded1ab375efc9300f4c6.setContent(html_61c33f6c423af3fc9647997306ec7243);
+            
+        
+
+        circle_marker_be38c35c1d118f4b5afc04c26697f80a.bindPopup(popup_7eefc6a348c2ded1ab375efc9300f4c6)
+        ;
+
+        
+    
+    
+            var circle_marker_81c5e44b0e65489d3aa78d267170f13f = L.circleMarker(
+                [25.07896, 121.59921],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_68f26048e3f61be40af83b9013b3090c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6b68cdcd3df0a71a7f046ab1f09e476b = $(`<div id="html_6b68cdcd3df0a71a7f046ab1f09e476b" style="width: 100.0%; height: 100.0%;">YouBike2.0_康寧金湖路口（內湖區）<br>可借 9.0 / 總柱 21<br>可還 11.846153846153848<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_68f26048e3f61be40af83b9013b3090c.setContent(html_6b68cdcd3df0a71a7f046ab1f09e476b);
+            
+        
+
+        circle_marker_81c5e44b0e65489d3aa78d267170f13f.bindPopup(popup_68f26048e3f61be40af83b9013b3090c)
+        ;
+
+        
+    
+    
+            var circle_marker_e70a42bc9b6701a25b22c39b3c3d90f2 = L.circleMarker(
+                [25.07792, 121.59354],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_7dea231e32e8167f175f784837e5c94d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_dd008c4e1534fdb0f72842f054eee898 = $(`<div id="html_dd008c4e1534fdb0f72842f054eee898" style="width: 100.0%; height: 100.0%;">YouBike2.0_康寧路一段156巷20弄口（內湖區）<br>可借 12.76923076923077 / 總柱 20<br>可還 6.769230769230769<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_7dea231e32e8167f175f784837e5c94d.setContent(html_dd008c4e1534fdb0f72842f054eee898);
+            
+        
+
+        circle_marker_e70a42bc9b6701a25b22c39b3c3d90f2.bindPopup(popup_7dea231e32e8167f175f784837e5c94d)
+        ;
+
+        
+    
+    
+            var circle_marker_6b1c8e4c40e8c5980d6d16131ba8dda8 = L.circleMarker(
+                [25.06657, 121.6136],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_a7d04021211b0e92ce87bc84b9f83a51 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_854fb7466771aa9de6a7a65de4c9ac25 = $(`<div id="html_854fb7466771aa9de6a7a65de4c9ac25" style="width: 100.0%; height: 100.0%;">YouBike2.0_安康公園（內湖區）<br>可借 4.538461538461538 / 總柱 25<br>可還 20.307692307692307<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_a7d04021211b0e92ce87bc84b9f83a51.setContent(html_854fb7466771aa9de6a7a65de4c9ac25);
+            
+        
+
+        circle_marker_6b1c8e4c40e8c5980d6d16131ba8dda8.bindPopup(popup_a7d04021211b0e92ce87bc84b9f83a51)
+        ;
+
+        
+    
+    
+            var circle_marker_e2fd4b9930f84971917047f60d273d68 = L.circleMarker(
+                [25.07669, 121.61709],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_5a627d06556366401e0ad1eed5832c50 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_90ee3f5cd2575c41f5f649a8550da86d = $(`<div id="html_90ee3f5cd2575c41f5f649a8550da86d" style="width: 100.0%; height: 100.0%;">YouBike2.0_安泰街83巷（內湖區）<br>可借 23.384615384615383 / 總柱 34<br>可還 10.461538461538462<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_5a627d06556366401e0ad1eed5832c50.setContent(html_90ee3f5cd2575c41f5f649a8550da86d);
+            
+        
+
+        circle_marker_e2fd4b9930f84971917047f60d273d68.bindPopup(popup_5a627d06556366401e0ad1eed5832c50)
+        ;
+
+        
+    
+    
+            var circle_marker_7ff6805774c55ad7090b3ec9b1770935 = L.circleMarker(
+                [25.07334, 121.61962],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_60bb534cf49e889fb0080de03d36d53d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4f7c4291bcf3be047a95627442806655 = $(`<div id="html_4f7c4291bcf3be047a95627442806655" style="width: 100.0%; height: 100.0%;">YouBike2.0_東湖國中（內湖區）<br>可借 25.153846153846153 / 總柱 42<br>可還 16.692307692307693<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_60bb534cf49e889fb0080de03d36d53d.setContent(html_4f7c4291bcf3be047a95627442806655);
+            
+        
+
+        circle_marker_7ff6805774c55ad7090b3ec9b1770935.bindPopup(popup_60bb534cf49e889fb0080de03d36d53d)
+        ;
+
+        
+    
+    
+            var circle_marker_c0b69c1b1125fc03ec9ef68dc3e10a60 = L.circleMarker(
+                [25.06261, 121.59334],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_65c1cfaadf87b5ec30b7a834a80877ca = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8013216561a28719330128d2ec5c5ae6 = $(`<div id="html_8013216561a28719330128d2ec5c5ae6" style="width: 100.0%; height: 100.0%;">YouBike2.0_石潭公園(安康路)（內湖區）<br>可借 3.4615384615384617 / 總柱 20<br>可還 16.53846153846154<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_65c1cfaadf87b5ec30b7a834a80877ca.setContent(html_8013216561a28719330128d2ec5c5ae6);
+            
+        
+
+        circle_marker_c0b69c1b1125fc03ec9ef68dc3e10a60.bindPopup(popup_65c1cfaadf87b5ec30b7a834a80877ca)
+        ;
+
+        
+    
+    
+            var circle_marker_f280728d28be11410e9eb6761052822b = L.circleMarker(
+                [25.06209, 121.60347],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_0005d8a5991d1a9138e56299ea4a8d65 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d40841c0c96517dc103180328051d5e8 = $(`<div id="html_d40841c0c96517dc103180328051d5e8" style="width: 100.0%; height: 100.0%;">YouBike2.0_內湖垃圾焚化廠（內湖區）<br>可借 3.692307692307693 / 總柱 20<br>可還 16.153846153846153<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_0005d8a5991d1a9138e56299ea4a8d65.setContent(html_d40841c0c96517dc103180328051d5e8);
+            
+        
+
+        circle_marker_f280728d28be11410e9eb6761052822b.bindPopup(popup_0005d8a5991d1a9138e56299ea4a8d65)
+        ;
+
+        
+    
+    
+            var circle_marker_d905d25e570aeca2aa1a659fd899af54 = L.circleMarker(
+                [25.06927, 121.61019],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_afd5b6669270d81180932a4dc01edea2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c3376cb7f716827ff9aa22bbf427ee8c = $(`<div id="html_c3376cb7f716827ff9aa22bbf427ee8c" style="width: 100.0%; height: 100.0%;">YouBike2.0_康寧公園(北側)（內湖區）<br>可借 7.384615384615385 / 總柱 22<br>可還 14.615384615384617<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_afd5b6669270d81180932a4dc01edea2.setContent(html_c3376cb7f716827ff9aa22bbf427ee8c);
+            
+        
+
+        circle_marker_d905d25e570aeca2aa1a659fd899af54.bindPopup(popup_afd5b6669270d81180932a4dc01edea2)
+        ;
+
+        
+    
+    
+            var circle_marker_b0a9b4c5eaf4ccd52959ad4d0a032c84 = L.circleMarker(
+                [25.0716, 121.60936],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_3b68dad332e32611f7739baaa4026965 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1f2875a2892023b6ad1af79b1b9cb879 = $(`<div id="html_1f2875a2892023b6ad1af79b1b9cb879" style="width: 100.0%; height: 100.0%;">YouBike2.0_康寧路三段54巷口（內湖區）<br>可借 6.076923076923077 / 總柱 15<br>可還 8.923076923076923<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_3b68dad332e32611f7739baaa4026965.setContent(html_1f2875a2892023b6ad1af79b1b9cb879);
+            
+        
+
+        circle_marker_b0a9b4c5eaf4ccd52959ad4d0a032c84.bindPopup(popup_3b68dad332e32611f7739baaa4026965)
+        ;
+
+        
+    
+    
+            var circle_marker_370a68bab323610cfb292e2ab6f824cc = L.circleMarker(
+                [25.06516, 121.59561],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_86289d1064977f71908a1bf8343989dc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1224ecbf3ffc4fa9df95e7a06dfa656e = $(`<div id="html_1224ecbf3ffc4fa9df95e7a06dfa656e" style="width: 100.0%; height: 100.0%;">YouBike2.0_下灣公園（內湖區）<br>可借 19.46153846153846 / 總柱 30<br>可還 10.538461538461538<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_86289d1064977f71908a1bf8343989dc.setContent(html_1224ecbf3ffc4fa9df95e7a06dfa656e);
+            
+        
+
+        circle_marker_370a68bab323610cfb292e2ab6f824cc.bindPopup(popup_86289d1064977f71908a1bf8343989dc)
+        ;
+
+        
+    
+    
+            var circle_marker_50cb14a3d8f91048023defda36a52456 = L.circleMarker(
+                [25.06708, 121.60059],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_f108a37cddc8d184db05a71dd503d0d7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b54f1974b0c32ee42915782e78befea9 = $(`<div id="html_b54f1974b0c32ee42915782e78befea9" style="width: 100.0%; height: 100.0%;">YouBike2.0_民權東路六段245巷口（內湖區）<br>可借 11.23076923076923 / 總柱 17<br>可還 5.615384615384615<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_f108a37cddc8d184db05a71dd503d0d7.setContent(html_b54f1974b0c32ee42915782e78befea9);
+            
+        
+
+        circle_marker_50cb14a3d8f91048023defda36a52456.bindPopup(popup_f108a37cddc8d184db05a71dd503d0d7)
+        ;
+
+        
+    
+    
+            var circle_marker_72c6722a6d260869cfa72c2166a8c936 = L.circleMarker(
+                [25.06854, 121.61532],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_23d54b55abeb75dfb010ae47a3c3d73f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_84266300660982dcd509ed3b7c9b7155 = $(`<div id="html_84266300660982dcd509ed3b7c9b7155" style="width: 100.0%; height: 100.0%;">YouBike2.0_東湖國小（內湖區）<br>可借 12.692307692307692 / 總柱 29<br>可還 16.307692307692307<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_23d54b55abeb75dfb010ae47a3c3d73f.setContent(html_84266300660982dcd509ed3b7c9b7155);
+            
+        
+
+        circle_marker_72c6722a6d260869cfa72c2166a8c936.bindPopup(popup_23d54b55abeb75dfb010ae47a3c3d73f)
+        ;
+
+        
+    
+    
+            var circle_marker_d94b06af975923144e3318014eb2228e = L.circleMarker(
+                [25.08373, 121.59406],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_92e0e96190a60599e163d4e50c21d602 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0202d47c9e1440d61abbff5e4330b3b6 = $(`<div id="html_0202d47c9e1440d61abbff5e4330b3b6" style="width: 100.0%; height: 100.0%;">YouBike2.0_捷運內湖站(1號出口)（內湖區）<br>可借 3.076923076923077 / 總柱 28<br>可還 24.076923076923077<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_92e0e96190a60599e163d4e50c21d602.setContent(html_0202d47c9e1440d61abbff5e4330b3b6);
+            
+        
+
+        circle_marker_d94b06af975923144e3318014eb2228e.bindPopup(popup_92e0e96190a60599e163d4e50c21d602)
+        ;
+
+        
+    
+    
+            var circle_marker_d63de9aa99483cbed74db10ebf5a2239 = L.circleMarker(
+                [25.07943, 121.59544],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_12d2ea027b2e3351f9a06c2dff903ac1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5c0712a3f3281853d82d0b69a5a841f2 = $(`<div id="html_5c0712a3f3281853d82d0b69a5a841f2" style="width: 100.0%; height: 100.0%;">YouBike2.0_星雲街138巷1弄口（內湖區）<br>可借 10.846153846153848 / 總柱 21<br>可還 7.0<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_12d2ea027b2e3351f9a06c2dff903ac1.setContent(html_5c0712a3f3281853d82d0b69a5a841f2);
+            
+        
+
+        circle_marker_d63de9aa99483cbed74db10ebf5a2239.bindPopup(popup_12d2ea027b2e3351f9a06c2dff903ac1)
+        ;
+
+        
+    
+    
+            var circle_marker_416a21290a3409e15aa460b41b751637 = L.circleMarker(
+                [25.07567, 121.6118],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_7d1258ef2bfd0d4295bbe46fe4a39200 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c53d7460a73daf583915c9a0ca596173 = $(`<div id="html_c53d7460a73daf583915c9a0ca596173" style="width: 100.0%; height: 100.0%;">YouBike2.0_東湖一號公園（內湖區）<br>可借 8.692307692307692 / 總柱 19<br>可還 10.307692307692308<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_7d1258ef2bfd0d4295bbe46fe4a39200.setContent(html_c53d7460a73daf583915c9a0ca596173);
+            
+        
+
+        circle_marker_416a21290a3409e15aa460b41b751637.bindPopup(popup_7d1258ef2bfd0d4295bbe46fe4a39200)
+        ;
+
+        
+    
+    
+            var circle_marker_3d77a73ecae384af9b10ef26ade8b872 = L.circleMarker(
+                [25.07415, 121.61075],
+                {"bubblingMouseEvents": true, "color": "#FF9999", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF9999", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_41e22ebbc7ded8765d7e97959e7df3b4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ee741df751fbfeac0f6a613b286c1561 = $(`<div id="html_ee741df751fbfeac0f6a613b286c1561" style="width: 100.0%; height: 100.0%;">YouBike2.0_東湖二號公園（內湖區）<br>可借 19.615384615384617 / 總柱 25<br>可還 5.384615384615385<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_41e22ebbc7ded8765d7e97959e7df3b4.setContent(html_ee741df751fbfeac0f6a613b286c1561);
+            
+        
+
+        circle_marker_3d77a73ecae384af9b10ef26ade8b872.bindPopup(popup_41e22ebbc7ded8765d7e97959e7df3b4)
+        ;
+
+        
+    
+    
+            var circle_marker_212a600be081ff6388dea5bb4f2fc3b8 = L.circleMarker(
+                [25.07514, 121.60857],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_646e95b2c34cffce6fab5f13dd95b3b1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1fd2a221c37aa28e8d4b982547d76bb6 = $(`<div id="html_1fd2a221c37aa28e8d4b982547d76bb6" style="width: 100.0%; height: 100.0%;">YouBike2.0_康湖二號公園(康寧醫院)（內湖區）<br>可借 15.692307692307692 / 總柱 25<br>可還 9.307692307692308<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_646e95b2c34cffce6fab5f13dd95b3b1.setContent(html_1fd2a221c37aa28e8d4b982547d76bb6);
+            
+        
+
+        circle_marker_212a600be081ff6388dea5bb4f2fc3b8.bindPopup(popup_646e95b2c34cffce6fab5f13dd95b3b1)
+        ;
+
+        
+    
+    
+            var circle_marker_8168534de4d20d68ef0b0747f7194743 = L.circleMarker(
+                [25.06682, 121.5907],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_c8298f3e5ef7cfbd168a2f3d8250b6c1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6487f1919514558d33d2097e9be39c8f = $(`<div id="html_6487f1919514558d33d2097e9be39c8f" style="width: 100.0%; height: 100.0%;">YouBike2.0_下灣公園(成功路)（內湖區）<br>可借 8.461538461538462 / 總柱 16<br>可還 7.538461538461538<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_c8298f3e5ef7cfbd168a2f3d8250b6c1.setContent(html_6487f1919514558d33d2097e9be39c8f);
+            
+        
+
+        circle_marker_8168534de4d20d68ef0b0747f7194743.bindPopup(popup_c8298f3e5ef7cfbd168a2f3d8250b6c1)
+        ;
+
+        
+    
+    
+            var circle_marker_ba50c13eb68e3ec85f538feeab8a5ac9 = L.circleMarker(
+                [25.08105, 121.59205],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_9918b4a911339e1fb7cae8ac4bf711e7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5181753c4c1c26a0c881fe0a01389376 = $(`<div id="html_5181753c4c1c26a0c881fe0a01389376" style="width: 100.0%; height: 100.0%;">YouBike2.0_成功路四段41巷口（內湖區）<br>可借 4.384615384615385 / 總柱 15<br>可還 9.153846153846152<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_9918b4a911339e1fb7cae8ac4bf711e7.setContent(html_5181753c4c1c26a0c881fe0a01389376);
+            
+        
+
+        circle_marker_ba50c13eb68e3ec85f538feeab8a5ac9.bindPopup(popup_9918b4a911339e1fb7cae8ac4bf711e7)
+        ;
+
+        
+    
+    
+            var circle_marker_5d557d38fdcb03c343597d3c5194a9a9 = L.circleMarker(
+                [25.08151, 121.59764],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_cfda27405bcf97eaeba1f229cc615cc6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6315293ba4ff7eaf8ba81ea219459267 = $(`<div id="html_6315293ba4ff7eaf8ba81ea219459267" style="width: 100.0%; height: 100.0%;">YouBike2.0_金湖星雲街口（內湖區）<br>可借 16.846153846153847 / 總柱 30<br>可還 12.846153846153848<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_cfda27405bcf97eaeba1f229cc615cc6.setContent(html_6315293ba4ff7eaf8ba81ea219459267);
+            
+        
+
+        circle_marker_5d557d38fdcb03c343597d3c5194a9a9.bindPopup(popup_cfda27405bcf97eaeba1f229cc615cc6)
+        ;
+
+        
+    
+    
+            var circle_marker_0203b54b1a6420a32d853aea880c7ce4 = L.circleMarker(
+                [25.06851, 121.59559],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_ce9d096bbf057c414acc2cab87923f16 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c475f388c74e49a91b1da5769d765a59 = $(`<div id="html_c475f388c74e49a91b1da5769d765a59" style="width: 100.0%; height: 100.0%;">YouBike2.0_國防醫學院（內湖區）<br>可借 7.153846153846154 / 總柱 25<br>可還 17.692307692307693<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_ce9d096bbf057c414acc2cab87923f16.setContent(html_c475f388c74e49a91b1da5769d765a59);
+            
+        
+
+        circle_marker_0203b54b1a6420a32d853aea880c7ce4.bindPopup(popup_ce9d096bbf057c414acc2cab87923f16)
+        ;
+
+        
+    
+    
+            var circle_marker_8fbd57b404d176f2a860c7ada7d39569 = L.circleMarker(
+                [25.06434, 121.59399],
+                {"bubblingMouseEvents": true, "color": "#FF9999", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF9999", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_6623514ec244a5fa35750377684c76f2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_493255125287998b8734950040543d84 = $(`<div id="html_493255125287998b8734950040543d84" style="width: 100.0%; height: 100.0%;">YouBike2.0_民權東路六段190巷117弄口（內湖區）<br>可借 18.307692307692307 / 總柱 25<br>可還 6.6923076923076925<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_6623514ec244a5fa35750377684c76f2.setContent(html_493255125287998b8734950040543d84);
+            
+        
+
+        circle_marker_8fbd57b404d176f2a860c7ada7d39569.bindPopup(popup_6623514ec244a5fa35750377684c76f2)
+        ;
+
+        
+    
+    
+            var circle_marker_944e951f1511b3d14399403d3cf92a4e = L.circleMarker(
+                [25.06007, 121.60138],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_d8f52af354b6fc8b174e855fe9e819a7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e375519d7fd390409cdcf2d94f5234a6 = $(`<div id="html_e375519d7fd390409cdcf2d94f5234a6" style="width: 100.0%; height: 100.0%;">YouBike2.0_統振大樓（內湖區）<br>可借 4.230769230769231 / 總柱 25<br>可還 20.76923076923077<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_d8f52af354b6fc8b174e855fe9e819a7.setContent(html_e375519d7fd390409cdcf2d94f5234a6);
+            
+        
+
+        circle_marker_944e951f1511b3d14399403d3cf92a4e.bindPopup(popup_d8f52af354b6fc8b174e855fe9e819a7)
+        ;
+
+        
+    
+    
+            var circle_marker_a86418de900df47caeec88aa22d00a48 = L.circleMarker(
+                [25.07433, 121.58584],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_ec31d42da26481f080d45ad7ce562627 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2a91a5356f713f22c93c96a6c056b5b6 = $(`<div id="html_2a91a5356f713f22c93c96a6c056b5b6" style="width: 100.0%; height: 100.0%;">YouBike2.0_陽光街161巷口（內湖區）<br>可借 5.615384615384615 / 總柱 16<br>可還 8.615384615384615<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_ec31d42da26481f080d45ad7ce562627.setContent(html_2a91a5356f713f22c93c96a6c056b5b6);
+            
+        
+
+        circle_marker_a86418de900df47caeec88aa22d00a48.bindPopup(popup_ec31d42da26481f080d45ad7ce562627)
+        ;
+
+        
+    
+    
+            var circle_marker_39a672e94143aaf424d4290264e1a397 = L.circleMarker(
+                [25.05928, 121.58617],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_c0fc34ddc85ae6e2db8fd313dec9ed5d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7d3e16298e3b4b50975f56fc0a959698 = $(`<div id="html_7d3e16298e3b4b50975f56fc0a959698" style="width: 100.0%; height: 100.0%;">YouBike2.0_潭美公園(南京東路六段368巷)（內湖區）<br>可借 10.076923076923077 / 總柱 25<br>可還 14.923076923076923<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_c0fc34ddc85ae6e2db8fd313dec9ed5d.setContent(html_7d3e16298e3b4b50975f56fc0a959698);
+            
+        
+
+        circle_marker_39a672e94143aaf424d4290264e1a397.bindPopup(popup_c0fc34ddc85ae6e2db8fd313dec9ed5d)
+        ;
+
+        
+    
+    
+            var circle_marker_16dfc3a44d6b721adbfee12228fff457 = L.circleMarker(
+                [25.06935, 121.58692],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_e29922153e65007a64349e6e7aad5f9b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7a4324037b639b0346a3bb765e874b51 = $(`<div id="html_7a4324037b639b0346a3bb765e874b51" style="width: 100.0%; height: 100.0%;">YouBike2.0_三民國中(民權東路六段47巷)（內湖區）<br>可借 8.307692307692308 / 總柱 13<br>可還 4.230769230769231<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_e29922153e65007a64349e6e7aad5f9b.setContent(html_7a4324037b639b0346a3bb765e874b51);
+            
+        
+
+        circle_marker_16dfc3a44d6b721adbfee12228fff457.bindPopup(popup_e29922153e65007a64349e6e7aad5f9b)
+        ;
+
+        
+    
+    
+            var circle_marker_03005310b2ea500cce0696e231033aa6 = L.circleMarker(
+                [25.06664, 121.61351],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_189c65e61911dc3eb81191043967b281 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_04f31f66fe0cd68de0035a18d1d0e716 = $(`<div id="html_04f31f66fe0cd68de0035a18d1d0e716" style="width: 100.0%; height: 100.0%;">YouBike2.0_捷運東湖站（內湖區）<br>可借 6.538461538461538 / 總柱 35<br>可還 28.46153846153846<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_189c65e61911dc3eb81191043967b281.setContent(html_04f31f66fe0cd68de0035a18d1d0e716);
+            
+        
+
+        circle_marker_03005310b2ea500cce0696e231033aa6.bindPopup(popup_189c65e61911dc3eb81191043967b281)
+        ;
+
+        
+    
+    
+            var circle_marker_4e7f790f1c6dab15df3693fcf3c412af = L.circleMarker(
+                [25.06874, 121.58923],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_c8b84d0529871d508781fc595061924a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_233a58bb428463144ea50dafa0c61bc7 = $(`<div id="html_233a58bb428463144ea50dafa0c61bc7" style="width: 100.0%; height: 100.0%;">YouBike2.0_新湖國小（內湖區）<br>可借 8.461538461538462 / 總柱 23<br>可還 14.538461538461538<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_c8b84d0529871d508781fc595061924a.setContent(html_233a58bb428463144ea50dafa0c61bc7);
+            
+        
+
+        circle_marker_4e7f790f1c6dab15df3693fcf3c412af.bindPopup(popup_c8b84d0529871d508781fc595061924a)
+        ;
+
+        
+    
+    
+            var circle_marker_53b1973a16ec352b09c2f28e6bf2529b = L.circleMarker(
+                [25.07038, 121.60352],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_d01886efe8e1e1e5078a732650a3800c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1d4a154fbd1faaa4e521a4edeac109d9 = $(`<div id="html_1d4a154fbd1faaa4e521a4edeac109d9" style="width: 100.0%; height: 100.0%;">YouBike2.0_民權東路六段413巷（內湖區）<br>可借 16.846153846153847 / 總柱 25<br>可還 8.0<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_d01886efe8e1e1e5078a732650a3800c.setContent(html_1d4a154fbd1faaa4e521a4edeac109d9);
+            
+        
+
+        circle_marker_53b1973a16ec352b09c2f28e6bf2529b.bindPopup(popup_d01886efe8e1e1e5078a732650a3800c)
+        ;
+
+        
+    
+    
+            var circle_marker_5c83383170b852f9072c82a87f63a90d = L.circleMarker(
+                [25.07192, 121.61955],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_4c72bba29810c7c3a81ce70bba1af5ad = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_92948141bcada1ca1b8c262d85610241 = $(`<div id="html_92948141bcada1ca1b8c262d85610241" style="width: 100.0%; height: 100.0%;">YouBike2.0_康樂街151巷（內湖區）<br>可借 12.153846153846152 / 總柱 24<br>可還 11.692307692307692<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_4c72bba29810c7c3a81ce70bba1af5ad.setContent(html_92948141bcada1ca1b8c262d85610241);
+            
+        
+
+        circle_marker_5c83383170b852f9072c82a87f63a90d.bindPopup(popup_4c72bba29810c7c3a81ce70bba1af5ad)
+        ;
+
+        
+    
+    
+            var circle_marker_d5b2fb0198925ee8f7a788ca26cd9f4a = L.circleMarker(
+                [25.07823, 121.5898],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_d0f24332a835e99329d040fcc072941c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_eb3f813e4850d53b86d13dec43cb5ae0 = $(`<div id="html_eb3f813e4850d53b86d13dec43cb5ae0" style="width: 100.0%; height: 100.0%;">YouBike2.0_成功路三段83號前（內湖區）<br>可借 8.307692307692308 / 總柱 17<br>可還 8.384615384615385<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_d0f24332a835e99329d040fcc072941c.setContent(html_eb3f813e4850d53b86d13dec43cb5ae0);
+            
+        
+
+        circle_marker_d5b2fb0198925ee8f7a788ca26cd9f4a.bindPopup(popup_d0f24332a835e99329d040fcc072941c)
+        ;
+
+        
+    
+    
+            var circle_marker_8b8f01428e9e0b5e76894519c68d8066 = L.circleMarker(
+                [25.07392, 121.61545],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_ca752cb5f7a20cd12dd9ee675b8f8a15 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3ac9963dc5674cbcbaa0587a9d15519d = $(`<div id="html_3ac9963dc5674cbcbaa0587a9d15519d" style="width: 100.0%; height: 100.0%;">YouBike2.0_安湖公園（內湖區）<br>可借 7.615384615384615 / 總柱 15<br>可還 7.384615384615385<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_ca752cb5f7a20cd12dd9ee675b8f8a15.setContent(html_3ac9963dc5674cbcbaa0587a9d15519d);
+            
+        
+
+        circle_marker_8b8f01428e9e0b5e76894519c68d8066.bindPopup(popup_ca752cb5f7a20cd12dd9ee675b8f8a15)
+        ;
+
+        
+    
+    
+            var circle_marker_b71618d8d7b363c5c022ab1fdab348e9 = L.circleMarker(
+                [25.06671, 121.58913],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_ade0fdd651e53a810ce552ad1ba0519a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b5e3ec55aa980f78f7ac4aa3def29704 = $(`<div id="html_b5e3ec55aa980f78f7ac4aa3def29704" style="width: 100.0%; height: 100.0%;">YouBike2.0_湖興公園（內湖區）<br>可借 8.384615384615385 / 總柱 16<br>可還 7.461538461538462<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_ade0fdd651e53a810ce552ad1ba0519a.setContent(html_b5e3ec55aa980f78f7ac4aa3def29704);
+            
+        
+
+        circle_marker_b71618d8d7b363c5c022ab1fdab348e9.bindPopup(popup_ade0fdd651e53a810ce552ad1ba0519a)
+        ;
+
+        
+    
+    
+            var circle_marker_35aba184c34dd190d89243e08f31f0d3 = L.circleMarker(
+                [25.07849, 121.61666],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_ba5b6634b3613220e6e68de77c232ec4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f636c076a8d945f178e2ef614e9c3bbf = $(`<div id="html_f636c076a8d945f178e2ef614e9c3bbf" style="width: 100.0%; height: 100.0%;">YouBike2.0_安泰街(康樂橋下)（內湖區）<br>可借 7.153846153846154 / 總柱 21<br>可還 13.846153846153848<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_ba5b6634b3613220e6e68de77c232ec4.setContent(html_f636c076a8d945f178e2ef614e9c3bbf);
+            
+        
+
+        circle_marker_35aba184c34dd190d89243e08f31f0d3.bindPopup(popup_ba5b6634b3613220e6e68de77c232ec4)
+        ;
+
+        
+    
+    
+            var circle_marker_ee1c493a488849fdedeaf28a97f25229 = L.circleMarker(
+                [25.07539, 121.6203],
+                {"bubblingMouseEvents": true, "color": "#FF9999", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF9999", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_c5c88c4419247b7c3461d3463bc272b9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2c0df4fceba99dacf3675ae429dd787c = $(`<div id="html_2c0df4fceba99dacf3675ae429dd787c" style="width: 100.0%; height: 100.0%;">YouBike2.0_康樂綠地（內湖區）<br>可借 15.0 / 總柱 20<br>可還 4.6923076923076925<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_c5c88c4419247b7c3461d3463bc272b9.setContent(html_2c0df4fceba99dacf3675ae429dd787c);
+            
+        
+
+        circle_marker_ee1c493a488849fdedeaf28a97f25229.bindPopup(popup_c5c88c4419247b7c3461d3463bc272b9)
+        ;
+
+        
+    
+    
+            var circle_marker_f2b0fa9128fafb31b0b43d74fbf05c56 = L.circleMarker(
+                [25.06058, 121.5866],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_e1f730585659067040077c7f628027b8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_89b1082bc643ed16ad43a9d85b21fa2d = $(`<div id="html_89b1082bc643ed16ad43a9d85b21fa2d" style="width: 100.0%; height: 100.0%;">YouBike2.0_明美公園(行善路333巷)（內湖區）<br>可借 9.076923076923077 / 總柱 16<br>可還 5.6923076923076925<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_e1f730585659067040077c7f628027b8.setContent(html_89b1082bc643ed16ad43a9d85b21fa2d);
+            
+        
+
+        circle_marker_f2b0fa9128fafb31b0b43d74fbf05c56.bindPopup(popup_e1f730585659067040077c7f628027b8)
+        ;
+
+        
+    
+    
+            var circle_marker_21e489ca39f426d2cbe7405a7c5802e5 = L.circleMarker(
+                [25.08416, 121.59665],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_8b1f579cf45264a2f7e3c84ee1f14431 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_89b40dab12db9622287f682b0ea38cd1 = $(`<div id="html_89b40dab12db9622287f682b0ea38cd1" style="width: 100.0%; height: 100.0%;">YouBike2.0_成功公園（內湖區）<br>可借 5.846153846153846 / 總柱 11<br>可還 5.153846153846154<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_8b1f579cf45264a2f7e3c84ee1f14431.setContent(html_89b40dab12db9622287f682b0ea38cd1);
+            
+        
+
+        circle_marker_21e489ca39f426d2cbe7405a7c5802e5.bindPopup(popup_8b1f579cf45264a2f7e3c84ee1f14431)
+        ;
+
+        
+    
+    
+            var circle_marker_2c9fba2e8501a66ad860964557bf005f = L.circleMarker(
+                [25.0735, 121.61258],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_ce76b149507a1803466beac79b548161 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e5398c681f1b3beb6c361d49a43d371b = $(`<div id="html_e5398c681f1b3beb6c361d49a43d371b" style="width: 100.0%; height: 100.0%;">YouBike2.0_康寧路三段189巷93弄口（內湖區）<br>可借 9.0 / 總柱 14<br>可還 5.0<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_ce76b149507a1803466beac79b548161.setContent(html_e5398c681f1b3beb6c361d49a43d371b);
+            
+        
+
+        circle_marker_2c9fba2e8501a66ad860964557bf005f.bindPopup(popup_ce76b149507a1803466beac79b548161)
+        ;
+
+        
+    
+    
+            var circle_marker_b4c4dcf2f7ce6191f09c01c0c08c7b77 = L.circleMarker(
+                [25.08227, 121.5909],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_e48bee69a8ca68a6f522c73c03fd2828 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3aec05339afa9a3a1485f9d2738de8dd = $(`<div id="html_3aec05339afa9a3a1485f9d2738de8dd" style="width: 100.0%; height: 100.0%;">YouBike2.0_中國醫藥大學附設醫院臺北分院（內湖區）<br>可借 7.923076923076923 / 總柱 16<br>可還 7.769230769230769<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_e48bee69a8ca68a6f522c73c03fd2828.setContent(html_3aec05339afa9a3a1485f9d2738de8dd);
+            
+        
+
+        circle_marker_b4c4dcf2f7ce6191f09c01c0c08c7b77.bindPopup(popup_e48bee69a8ca68a6f522c73c03fd2828)
+        ;
+
+        
+    
+    
+            var circle_marker_31d626c984400db720958eade5169796 = L.circleMarker(
+                [25.06643, 121.61732],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_4ea4c8cd71546109b93226c71493ae2a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_32b33a005c9da5b5d190ab2a159ccb4e = $(`<div id="html_32b33a005c9da5b5d190ab2a159ccb4e" style="width: 100.0%; height: 100.0%;">YouBike2.0_康樂抽水站（內湖區）<br>可借 14.153846153846152 / 總柱 25<br>可還 10.615384615384617<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_4ea4c8cd71546109b93226c71493ae2a.setContent(html_32b33a005c9da5b5d190ab2a159ccb4e);
+            
+        
+
+        circle_marker_31d626c984400db720958eade5169796.bindPopup(popup_4ea4c8cd71546109b93226c71493ae2a)
+        ;
+
+        
+    
+    
+            var circle_marker_505db476da0aea10da701cb622eb688e = L.circleMarker(
+                [25.0721, 121.60991],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_0f72d6e0d1f430d95499e554acb02e72 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_21d5157138d7c089ae65498e42937ded = $(`<div id="html_21d5157138d7c089ae65498e42937ded" style="width: 100.0%; height: 100.0%;">YouBike2.0_康寧路三段99巷17弄口（內湖區）<br>可借 7.153846153846154 / 總柱 15<br>可還 7.846153846153846<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_0f72d6e0d1f430d95499e554acb02e72.setContent(html_21d5157138d7c089ae65498e42937ded);
+            
+        
+
+        circle_marker_505db476da0aea10da701cb622eb688e.bindPopup(popup_0f72d6e0d1f430d95499e554acb02e72)
+        ;
+
+        
+    
+    
+            var circle_marker_e984e109bd60a3e049c6000f4732f750 = L.circleMarker(
+                [25.07074, 121.61803],
+                {"bubblingMouseEvents": true, "color": "#FF9999", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF9999", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_1c71772a0b01131651386d71bc08442c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_132e6628641dbf878b76a60b5d37ca53 = $(`<div id="html_132e6628641dbf878b76a60b5d37ca53" style="width: 100.0%; height: 100.0%;">YouBike2.0_東湖四號公園（內湖區）<br>可借 21.692307692307693 / 總柱 28<br>可還 6.0<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_1c71772a0b01131651386d71bc08442c.setContent(html_132e6628641dbf878b76a60b5d37ca53);
+            
+        
+
+        circle_marker_e984e109bd60a3e049c6000f4732f750.bindPopup(popup_1c71772a0b01131651386d71bc08442c)
+        ;
+
+        
+    
+    
+            var circle_marker_34e48e721e98efd343c861134fcbec35 = L.circleMarker(
+                [25.07983, 121.59625],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_b7e0b42e32d21f11f8e01471fbf4a1d9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c4034f9a35c941a17620731dd7a22a2d = $(`<div id="html_c4034f9a35c941a17620731dd7a22a2d" style="width: 100.0%; height: 100.0%;">YouBike2.0_福壽公園（內湖區）<br>可借 6.384615384615385 / 總柱 14<br>可還 5.846153846153846<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_b7e0b42e32d21f11f8e01471fbf4a1d9.setContent(html_c4034f9a35c941a17620731dd7a22a2d);
+            
+        
+
+        circle_marker_34e48e721e98efd343c861134fcbec35.bindPopup(popup_b7e0b42e32d21f11f8e01471fbf4a1d9)
+        ;
+
+        
+    
+    
+            var circle_marker_0578980a4c3b30cfb6bbb5a497021460 = L.circleMarker(
+                [25.06153, 121.60033],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_6a9f133b6e0ac05f21511124143746ad = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9532e918d6b065585eb84591b5ad1cff = $(`<div id="html_9532e918d6b065585eb84591b5ad1cff" style="width: 100.0%; height: 100.0%;">YouBike2.0_威剛科技總部（內湖區）<br>可借 4.538461538461538 / 總柱 25<br>可還 20.46153846153846<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_6a9f133b6e0ac05f21511124143746ad.setContent(html_9532e918d6b065585eb84591b5ad1cff);
+            
+        
+
+        circle_marker_0578980a4c3b30cfb6bbb5a497021460.bindPopup(popup_6a9f133b6e0ac05f21511124143746ad)
+        ;
+
+        
+    
+    
+            var circle_marker_bdecf8ec937712dcb89682f26b4a0874 = L.circleMarker(
+                [25.07862, 121.58796],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_192926fca873d0b723f13686cfb2095f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2d951464ed292db89ec79961c0bef974 = $(`<div id="html_2d951464ed292db89ec79961c0bef974" style="width: 100.0%; height: 100.0%;">YouBike2.0_文德路220巷口（內湖區）<br>可借 5.615384615384615 / 總柱 15<br>可還 9.384615384615383<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_192926fca873d0b723f13686cfb2095f.setContent(html_2d951464ed292db89ec79961c0bef974);
+            
+        
+
+        circle_marker_bdecf8ec937712dcb89682f26b4a0874.bindPopup(popup_192926fca873d0b723f13686cfb2095f)
+        ;
+
+        
+    
+    
+            var circle_marker_7b854459a17a519fff0df2be21698128 = L.circleMarker(
+                [25.06099, 121.59662],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_638411df820d913458a2d69c0334120f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_50da213ec07a1f7d5710f6eaa246b07d = $(`<div id="html_50da213ec07a1f7d5710f6eaa246b07d" style="width: 100.0%; height: 100.0%;">YouBike2.0_長壽抽水站（內湖區）<br>可借 5.230769230769231 / 總柱 15<br>可還 9.76923076923077<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_638411df820d913458a2d69c0334120f.setContent(html_50da213ec07a1f7d5710f6eaa246b07d);
+            
+        
+
+        circle_marker_7b854459a17a519fff0df2be21698128.bindPopup(popup_638411df820d913458a2d69c0334120f)
+        ;
+
+        
+    
+    
+            var circle_marker_d1c59fbc223b971068217aeb15898366 = L.circleMarker(
+                [25.07264, 121.60692],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_66da2ff61ff17d6b4f257bd82f9610a7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1067aa6b347b91f558acf72d33ca7a88 = $(`<div id="html_1067aa6b347b91f558acf72d33ca7a88" style="width: 100.0%; height: 100.0%;">YouBike2.0_捷運葫洲站(2號出口)（內湖區）<br>可借 5.923076923076923 / 總柱 20<br>可還 14.076923076923077<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_66da2ff61ff17d6b4f257bd82f9610a7.setContent(html_1067aa6b347b91f558acf72d33ca7a88);
+            
+        
+
+        circle_marker_d1c59fbc223b971068217aeb15898366.bindPopup(popup_66da2ff61ff17d6b4f257bd82f9610a7)
+        ;
+
+        
+    
+    
+            var circle_marker_83053c72a38761955bae6ba13523ff65 = L.circleMarker(
+                [25.07595, 121.62257],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_5ab61933df8fcb2ef2427adbc17def1b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d9f62ec208416ccc4b32eb46501a0874 = $(`<div id="html_d9f62ec208416ccc4b32eb46501a0874" style="width: 100.0%; height: 100.0%;">YouBike2.0_五分埤（內湖區）<br>可借 10.153846153846152 / 總柱 16<br>可還 5.846153846153846<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_5ab61933df8fcb2ef2427adbc17def1b.setContent(html_d9f62ec208416ccc4b32eb46501a0874);
+            
+        
+
+        circle_marker_83053c72a38761955bae6ba13523ff65.bindPopup(popup_5ab61933df8fcb2ef2427adbc17def1b)
+        ;
+
+        
+    
+    
+            var circle_marker_bc6a169cf03541f0e50b54619b3fda1f = L.circleMarker(
+                [25.06092, 121.58898],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_0016d7bd56601681d96a9b851db2fc15 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_573f0d6187c5efdfb99728bbcbc1efcc = $(`<div id="html_573f0d6187c5efdfb99728bbcbc1efcc" style="width: 100.0%; height: 100.0%;">YouBike2.0_潭美公園(南京東路六段482號)（內湖區）<br>可借 3.1538461538461537 / 總柱 29<br>可還 25.846153846153847<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_0016d7bd56601681d96a9b851db2fc15.setContent(html_573f0d6187c5efdfb99728bbcbc1efcc);
+            
+        
+
+        circle_marker_bc6a169cf03541f0e50b54619b3fda1f.bindPopup(popup_0016d7bd56601681d96a9b851db2fc15)
+        ;
+
+        
+    
+    
+            var circle_marker_e70445602b1e4c437adc8c98252786fa = L.circleMarker(
+                [25.06468, 121.58654],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_63ad223c10ee5bcb4fbf576942f9b437 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_595235814cd676c92be5c4099af0d96c = $(`<div id="html_595235814cd676c92be5c4099af0d96c" style="width: 100.0%; height: 100.0%;">YouBike2.0_行善路417巷（內湖區）<br>可借 8.076923076923077 / 總柱 26<br>可還 17.846153846153847<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_63ad223c10ee5bcb4fbf576942f9b437.setContent(html_595235814cd676c92be5c4099af0d96c);
+            
+        
+
+        circle_marker_e70445602b1e4c437adc8c98252786fa.bindPopup(popup_63ad223c10ee5bcb4fbf576942f9b437)
+        ;
+
+        
+    
+    
+            var circle_marker_3539bfbd7d6c85062524e6d863aa6aad = L.circleMarker(
+                [25.07165, 121.61177],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_557d71279223cecda84b1c8a3a7618a1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ab89805851bd97f4aa52195bfb796bdd = $(`<div id="html_ab89805851bd97f4aa52195bfb796bdd" style="width: 100.0%; height: 100.0%;">YouBike2.0_明湖國小(康寧路三段165巷23弄)（內湖區）<br>可借 14.076923076923077 / 總柱 26<br>可還 11.923076923076923<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_557d71279223cecda84b1c8a3a7618a1.setContent(html_ab89805851bd97f4aa52195bfb796bdd);
+            
+        
+
+        circle_marker_3539bfbd7d6c85062524e6d863aa6aad.bindPopup(popup_557d71279223cecda84b1c8a3a7618a1)
+        ;
+
+        
+    
+    
+            var circle_marker_0fc756c378da75e0b446795509fe9cf7 = L.circleMarker(
+                [25.06658, 121.60803],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_728cc88181ef1ddecba0791504f17117 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6946e27da46e84f25ed0a28a204de0c3 = $(`<div id="html_6946e27da46e84f25ed0a28a204de0c3" style="width: 100.0%; height: 100.0%;">YouBike2.0_康寧路三段70巷153號（內湖區）<br>可借 7.615384615384615 / 總柱 20<br>可還 12.384615384615383<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_728cc88181ef1ddecba0791504f17117.setContent(html_6946e27da46e84f25ed0a28a204de0c3);
+            
+        
+
+        circle_marker_0fc756c378da75e0b446795509fe9cf7.bindPopup(popup_728cc88181ef1ddecba0791504f17117)
+        ;
+
+        
+    
+    
+            var circle_marker_9afe9acf56d2df2af40a3d2a38dff07a = L.circleMarker(
+                [25.0692, 121.6122],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_ebe5aa261e1d0387c77b45a7c0965897 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ded703c106d0cc59a42f73eb193fd01d = $(`<div id="html_ded703c106d0cc59a42f73eb193fd01d" style="width: 100.0%; height: 100.0%;">YouBike2.0_東湖立體停車場（內湖區）<br>可借 5.153846153846154 / 總柱 15<br>可還 9.846153846153848<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_ebe5aa261e1d0387c77b45a7c0965897.setContent(html_ded703c106d0cc59a42f73eb193fd01d);
+            
+        
+
+        circle_marker_9afe9acf56d2df2af40a3d2a38dff07a.bindPopup(popup_ebe5aa261e1d0387c77b45a7c0965897)
+        ;
+
+        
+    
+    
+            var circle_marker_20704fa6333a8b4218557b5879de13eb = L.circleMarker(
+                [25.06082, 121.58757],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_a2c929bbef28dd034b6a480bf25e4161 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e04152c5417fd79db937eb04720c87e8 = $(`<div id="html_e04152c5417fd79db937eb04720c87e8" style="width: 100.0%; height: 100.0%;">YouBike2.0_明美公園(南京東路六段451巷口)（內湖區）<br>可借 15.538461538461538 / 總柱 30<br>可還 14.461538461538462<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_a2c929bbef28dd034b6a480bf25e4161.setContent(html_e04152c5417fd79db937eb04720c87e8);
+            
+        
+
+        circle_marker_20704fa6333a8b4218557b5879de13eb.bindPopup(popup_a2c929bbef28dd034b6a480bf25e4161)
+        ;
+
+        
+    
+    
+            var circle_marker_d00788dd1c7a52032b0b531a2b014d8a = L.circleMarker(
+                [25.06701, 121.61194],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_852f86566ad2b61e62a12c68104bd106 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4cdd0bdb2627439772d7edccb3b23cc7 = $(`<div id="html_4cdd0bdb2627439772d7edccb3b23cc7" style="width: 100.0%; height: 100.0%;">YouBike2.0_捷運東湖站(3號出口)（內湖區）<br>可借 6.923076923076923 / 總柱 30<br>可還 22.923076923076923<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_852f86566ad2b61e62a12c68104bd106.setContent(html_4cdd0bdb2627439772d7edccb3b23cc7);
+            
+        
+
+        circle_marker_d00788dd1c7a52032b0b531a2b014d8a.bindPopup(popup_852f86566ad2b61e62a12c68104bd106)
+        ;
+
+        
+    
+    
+            var circle_marker_9e7692101582ec883055bbc3b60bd063 = L.circleMarker(
+                [25.08383, 121.60253],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_1585c378930c60502c328dfc96fa0f24 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c9d94d3512b65660dd3e4928a964215c = $(`<div id="html_c9d94d3512b65660dd3e4928a964215c" style="width: 100.0%; height: 100.0%;">YouBike2.0_捷運大湖公園站(1號出口)（內湖區）<br>可借 4.923076923076923 / 總柱 24<br>可還 19.076923076923077<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_1585c378930c60502c328dfc96fa0f24.setContent(html_c9d94d3512b65660dd3e4928a964215c);
+            
+        
+
+        circle_marker_9e7692101582ec883055bbc3b60bd063.bindPopup(popup_1585c378930c60502c328dfc96fa0f24)
+        ;
+
+        
+    
+    
+            var circle_marker_9b2954b7ece816b81ebe3dac3098e1f1 = L.circleMarker(
+                [25.06572, 121.59778],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_9f15277cfd0ee6a5f6254440915ded95 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f286906d428128a4877aab05ce9df070 = $(`<div id="html_f286906d428128a4877aab05ce9df070" style="width: 100.0%; height: 100.0%;">YouBike2.0_上灣公園（內湖區）<br>可借 10.923076923076923 / 總柱 25<br>可還 14.076923076923077<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_9f15277cfd0ee6a5f6254440915ded95.setContent(html_f286906d428128a4877aab05ce9df070);
+            
+        
+
+        circle_marker_9b2954b7ece816b81ebe3dac3098e1f1.bindPopup(popup_9f15277cfd0ee6a5f6254440915ded95)
+        ;
+
+        
+    
+    
+            var circle_marker_8310b1428c14b6f87b122d01a7298014 = L.circleMarker(
+                [25.06703, 121.59048],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_473871b3575d726526daaa46a42711b3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_beaf073b431ddbb4b7cdc46450734479 = $(`<div id="html_beaf073b431ddbb4b7cdc46450734479" style="width: 100.0%; height: 100.0%;">YouBike2.0_湖興公園(成功路)（內湖區）<br>可借 9.307692307692308 / 總柱 21<br>可還 11.384615384615383<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_473871b3575d726526daaa46a42711b3.setContent(html_beaf073b431ddbb4b7cdc46450734479);
+            
+        
+
+        circle_marker_8310b1428c14b6f87b122d01a7298014.bindPopup(popup_473871b3575d726526daaa46a42711b3)
+        ;
+
+        
+    
+    
+            var circle_marker_5af9df8471b1e83c32bd01dd499d4cc8 = L.circleMarker(
+                [25.07837, 121.59652],
+                {"bubblingMouseEvents": true, "color": "#FF9999", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF9999", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_42e973f4deb517f0eb8f8bd1234e053a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d1640ef817a66b80af5aa86ebe6a6c9e = $(`<div id="html_d1640ef817a66b80af5aa86ebe6a6c9e" style="width: 100.0%; height: 100.0%;">YouBike2.0_康寧路一段218巷2弄口（內湖區）<br>可借 12.923076923076923 / 總柱 18<br>可還 4.769230769230769<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_42e973f4deb517f0eb8f8bd1234e053a.setContent(html_d1640ef817a66b80af5aa86ebe6a6c9e);
+            
+        
+
+        circle_marker_5af9df8471b1e83c32bd01dd499d4cc8.bindPopup(popup_42e973f4deb517f0eb8f8bd1234e053a)
+        ;
+
+        
+    
+    
+            var circle_marker_9fef4426306328025b410893cf0e9166 = L.circleMarker(
+                [25.07966, 121.59793],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_5266636eac6656139f2d7ee4d5e2df27 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bd4928c144aedd4572dcbdc45113b3be = $(`<div id="html_bd4928c144aedd4572dcbdc45113b3be" style="width: 100.0%; height: 100.0%;">YouBike2.0_星雲街210巷口（內湖區）<br>可借 9.076923076923077 / 總柱 16<br>可還 6.615384615384615<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_5266636eac6656139f2d7ee4d5e2df27.setContent(html_bd4928c144aedd4572dcbdc45113b3be);
+            
+        
+
+        circle_marker_9fef4426306328025b410893cf0e9166.bindPopup(popup_5266636eac6656139f2d7ee4d5e2df27)
+        ;
+
+        
+    
+    
+            var circle_marker_ec7d75bb0a0b778af3aae9c890115a18 = L.circleMarker(
+                [25.07077, 121.59],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_be7b0b66f5c07202a5ef553addcbef67 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6b34d1d4a669336727ee8151b627b725 = $(`<div id="html_6b34d1d4a669336727ee8151b627b725" style="width: 100.0%; height: 100.0%;">YouBike2.0_成功路二段406巷口（內湖區）<br>可借 10.076923076923077 / 總柱 20<br>可還 9.76923076923077<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_be7b0b66f5c07202a5ef553addcbef67.setContent(html_6b34d1d4a669336727ee8151b627b725);
+            
+        
+
+        circle_marker_ec7d75bb0a0b778af3aae9c890115a18.bindPopup(popup_be7b0b66f5c07202a5ef553addcbef67)
+        ;
+
+        
+    
+    
+            var circle_marker_315db7ee77aebbf69dde8ddf5911e39b = L.circleMarker(
+                [25.06769, 121.61163],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_21c00c7afc7cd086e282afa234b8bcc4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b482ed68f2dd2f24abf579f2b6261f8a = $(`<div id="html_b482ed68f2dd2f24abf579f2b6261f8a" style="width: 100.0%; height: 100.0%;">YouBike2.0_捷運東湖站(2號出口)（內湖區）<br>可借 4.384615384615385 / 總柱 20<br>可還 15.461538461538462<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_21c00c7afc7cd086e282afa234b8bcc4.setContent(html_b482ed68f2dd2f24abf579f2b6261f8a);
+            
+        
+
+        circle_marker_315db7ee77aebbf69dde8ddf5911e39b.bindPopup(popup_21c00c7afc7cd086e282afa234b8bcc4)
+        ;
+
+        
+    
+    
+            var circle_marker_44a31d8a75a7ec90b14aa67416aa5cb8 = L.circleMarker(
+                [25.06865, 121.60884],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_a9ce15002cbd3839b84bb8997b6e1cbb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_137108c0febeaeac08f3ffd6dc155b2c = $(`<div id="html_137108c0febeaeac08f3ffd6dc155b2c" style="width: 100.0%; height: 100.0%;">YouBike2.0_民權東路六段280巷155弄口（內湖區）<br>可借 10.846153846153848 / 總柱 21<br>可還 10.153846153846152<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_a9ce15002cbd3839b84bb8997b6e1cbb.setContent(html_137108c0febeaeac08f3ffd6dc155b2c);
+            
+        
+
+        circle_marker_44a31d8a75a7ec90b14aa67416aa5cb8.bindPopup(popup_a9ce15002cbd3839b84bb8997b6e1cbb)
+        ;
+
+        
+    
+    
+            var circle_marker_255da4b6bd71886177732a68cb3a4a62 = L.circleMarker(
+                [25.07457, 121.5901],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_74067ef7053d6ccd0f10a79540f886d3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_33ac77cb02c0b49201d19356b3d4a39f = $(`<div id="html_33ac77cb02c0b49201d19356b3d4a39f" style="width: 100.0%; height: 100.0%;">YouBike2.0_將軍嶺（內湖區）<br>可借 12.692307692307692 / 總柱 23<br>可還 10.307692307692308<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_74067ef7053d6ccd0f10a79540f886d3.setContent(html_33ac77cb02c0b49201d19356b3d4a39f);
+            
+        
+
+        circle_marker_255da4b6bd71886177732a68cb3a4a62.bindPopup(popup_74067ef7053d6ccd0f10a79540f886d3)
+        ;
+
+        
+    
+    
+            var circle_marker_0eb0005aecd84c674ccff61c000f15e8 = L.circleMarker(
+                [25.08107, 121.58609],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_2b20363d623e71a6e285da1d1dafd108 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_afaf5f9a181edc2bde469a53b24cd848 = $(`<div id="html_afaf5f9a181edc2bde469a53b24cd848" style="width: 100.0%; height: 100.0%;">YouBike2.0_國立臺灣戲曲學院(內湖校區)（內湖區）<br>可借 13.538461538461538 / 總柱 28<br>可還 14.461538461538462<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_2b20363d623e71a6e285da1d1dafd108.setContent(html_afaf5f9a181edc2bde469a53b24cd848);
+            
+        
+
+        circle_marker_0eb0005aecd84c674ccff61c000f15e8.bindPopup(popup_2b20363d623e71a6e285da1d1dafd108)
+        ;
+
+        
+    
+    
+            var circle_marker_a176bdb2b8c6929764f8b242bee76191 = L.circleMarker(
+                [25.05014, 121.59238],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_2f79d0a11d1bf2f77353c219cb4bcaf3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_420ab72b52940a7b98350ac47b024806 = $(`<div id="html_420ab72b52940a7b98350ac47b024806" style="width: 100.0%; height: 100.0%;">YouBike2.0_捷運昆陽站(1號出口)（南港區）<br>可借 7.461538461538462 / 總柱 65<br>可還 57.53846153846154<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_2f79d0a11d1bf2f77353c219cb4bcaf3.setContent(html_420ab72b52940a7b98350ac47b024806);
+            
+        
+
+        circle_marker_a176bdb2b8c6929764f8b242bee76191.bindPopup(popup_2f79d0a11d1bf2f77353c219cb4bcaf3)
+        ;
+
+        
+    
+    
+            var circle_marker_bcc9ad545d97777896b3135c6517ab32 = L.circleMarker(
+                [25.04919, 121.58832],
+                {"bubblingMouseEvents": true, "color": "#FF9999", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF9999", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_7c6b77bd25c8c0ec4e134b1982af796d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0b2835f0236fb989a260f5b8502c339a = $(`<div id="html_0b2835f0236fb989a260f5b8502c339a" style="width: 100.0%; height: 100.0%;">YouBike2.0_忠孝東路六段225巷口（南港區）<br>可借 25.53846153846154 / 總柱 35<br>可還 9.307692307692308<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_7c6b77bd25c8c0ec4e134b1982af796d.setContent(html_0b2835f0236fb989a260f5b8502c339a);
+            
+        
+
+        circle_marker_bcc9ad545d97777896b3135c6517ab32.bindPopup(popup_7c6b77bd25c8c0ec4e134b1982af796d)
+        ;
+
+        
+    
+    
+            var circle_marker_740fff985ea69ad29918ae0e008517f3 = L.circleMarker(
+                [25.04763, 121.61145],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_6a612136fb30ed62174b51e6169bed2a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6780bcc0de2c2be870d91eb6e0cb4755 = $(`<div id="html_6780bcc0de2c2be870d91eb6e0cb4755" style="width: 100.0%; height: 100.0%;">YouBike2.0_國家生技園區（南港區）<br>可借 1.6923076923076923 / 總柱 38<br>可還 36.30769230769231<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_6a612136fb30ed62174b51e6169bed2a.setContent(html_6780bcc0de2c2be870d91eb6e0cb4755);
+            
+        
+
+        circle_marker_740fff985ea69ad29918ae0e008517f3.bindPopup(popup_6a612136fb30ed62174b51e6169bed2a)
+        ;
+
+        
+    
+    
+            var circle_marker_403248a22235eb6e76cd87597a281850 = L.circleMarker(
+                [25.05469, 121.61669],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_e0ad02a18825cdef8e36586fde41a9fc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1b0689bde292745c07e02273698c7de0 = $(`<div id="html_1b0689bde292745c07e02273698c7de0" style="width: 100.0%; height: 100.0%;">YouBike2.0_捷運南港展覽館站(5號出口)（南港區）<br>可借 5.384615384615385 / 總柱 73<br>可還 67.46153846153847<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_e0ad02a18825cdef8e36586fde41a9fc.setContent(html_1b0689bde292745c07e02273698c7de0);
+            
+        
+
+        circle_marker_403248a22235eb6e76cd87597a281850.bindPopup(popup_e0ad02a18825cdef8e36586fde41a9fc)
+        ;
+
+        
+    
+    
+            var circle_marker_f3d8cfc93a4cb8c964063adca9108aff = L.circleMarker(
+                [25.04697, 121.61375],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_7b2bddb7cab4e6db6fb79b8c485a841f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9083999100b621e6971c350e429e8ff2 = $(`<div id="html_9083999100b621e6971c350e429e8ff2" style="width: 100.0%; height: 100.0%;">YouBike2.0_中研公園（南港區）<br>可借 27.153846153846153 / 總柱 40<br>可還 12.384615384615383<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_7b2bddb7cab4e6db6fb79b8c485a841f.setContent(html_9083999100b621e6971c350e429e8ff2);
+            
+        
+
+        circle_marker_f3d8cfc93a4cb8c964063adca9108aff.bindPopup(popup_7b2bddb7cab4e6db6fb79b8c485a841f)
+        ;
+
+        
+    
+    
+            var circle_marker_e0f7dc9b5ec73d0a1b495afaa890496c = L.circleMarker(
+                [25.054, 121.61334],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_456c847711c9d13dcc8e4a340874261c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bf019f3121061e7834f4e41ff730d526 = $(`<div id="html_bf019f3121061e7834f4e41ff730d526" style="width: 100.0%; height: 100.0%;">YouBike2.0_市民大道八段532號（南港區）<br>可借 6.6923076923076925 / 總柱 15<br>可還 8.153846153846153<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_456c847711c9d13dcc8e4a340874261c.setContent(html_bf019f3121061e7834f4e41ff730d526);
+            
+        
+
+        circle_marker_e0f7dc9b5ec73d0a1b495afaa890496c.bindPopup(popup_456c847711c9d13dcc8e4a340874261c)
+        ;
+
+        
+    
+    
+            var circle_marker_5e8b74b2312fb2a89a512b7a51bb7a3f = L.circleMarker(
+                [25.05933, 121.61677],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_ca928733266dda71c7c4f01f817197cb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_aa3658970ebcb410a453364b303fc2e3 = $(`<div id="html_aa3658970ebcb410a453364b303fc2e3" style="width: 100.0%; height: 100.0%;">YouBike2.0_捷運南港軟體園區(2號出口)（南港區）<br>可借 1.7692307692307692 / 總柱 70<br>可還 68.23076923076923<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_ca928733266dda71c7c4f01f817197cb.setContent(html_aa3658970ebcb410a453364b303fc2e3);
+            
+        
+
+        circle_marker_5e8b74b2312fb2a89a512b7a51bb7a3f.bindPopup(popup_ca928733266dda71c7c4f01f817197cb)
+        ;
+
+        
+    
+    
+            var circle_marker_fd260d63f7dd4cef84ffd835a15bd773 = L.circleMarker(
+                [25.05668, 121.61137],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_532416ff4fa54aaedf1c6bfa38aaab3a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_dce4f98e717383f50d6a5e02b2333a00 = $(`<div id="html_dce4f98e717383f50d6a5e02b2333a00" style="width: 100.0%; height: 100.0%;">YouBike2.0_南港國小（南港區）<br>可借 5.230769230769231 / 總柱 41<br>可還 35.53846153846154<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_532416ff4fa54aaedf1c6bfa38aaab3a.setContent(html_dce4f98e717383f50d6a5e02b2333a00);
+            
+        
+
+        circle_marker_fd260d63f7dd4cef84ffd835a15bd773.bindPopup(popup_532416ff4fa54aaedf1c6bfa38aaab3a)
+        ;
+
+        
+    
+    
+            var circle_marker_a9b1bcf4493bb1f0e55f42dd1dbeda2f = L.circleMarker(
+                [25.05629, 121.607],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_461e9864ac11bf1ab40a2a8dfcb577a8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ac50ef92f2683f41a36dd066d7b5dbc3 = $(`<div id="html_ac50ef92f2683f41a36dd066d7b5dbc3" style="width: 100.0%; height: 100.0%;">YouBike2.0_興中立體停車場(興中路)（南港區）<br>可借 8.76923076923077 / 總柱 26<br>可還 17.23076923076923<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_461e9864ac11bf1ab40a2a8dfcb577a8.setContent(html_ac50ef92f2683f41a36dd066d7b5dbc3);
+            
+        
+
+        circle_marker_a9b1bcf4493bb1f0e55f42dd1dbeda2f.bindPopup(popup_461e9864ac11bf1ab40a2a8dfcb577a8)
+        ;
+
+        
+    
+    
+            var circle_marker_5f07606fd6b350ebc3a6d8f6dd6b5010 = L.circleMarker(
+                [25.05485, 121.60866],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_230fe09f559528429a15ec990dee6d0d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c7acbab0525d2ca0801983bfa44bcb36 = $(`<div id="html_c7acbab0525d2ca0801983bfa44bcb36" style="width: 100.0%; height: 100.0%;">YouBike2.0_臺北市立圖書館南港分館（南港區）<br>可借 12.384615384615383 / 總柱 40<br>可還 27.615384615384617<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_230fe09f559528429a15ec990dee6d0d.setContent(html_c7acbab0525d2ca0801983bfa44bcb36);
+            
+        
+
+        circle_marker_5f07606fd6b350ebc3a6d8f6dd6b5010.bindPopup(popup_230fe09f559528429a15ec990dee6d0d)
+        ;
+
+        
+    
+    
+            var circle_marker_cb3c677893cd3dbbb2e54205fba557a7 = L.circleMarker(
+                [25.05716, 121.59792],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_683a1fe4d5644a9ff7ef6053a47b73ac = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_eb88aea3438c67d5341e404e24ad8d73 = $(`<div id="html_eb88aea3438c67d5341e404e24ad8d73" style="width: 100.0%; height: 100.0%;">YouBike2.0_東陽公園（南港區）<br>可借 33.23076923076923 / 總柱 48<br>可還 13.461538461538462<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_683a1fe4d5644a9ff7ef6053a47b73ac.setContent(html_eb88aea3438c67d5341e404e24ad8d73);
+            
+        
+
+        circle_marker_cb3c677893cd3dbbb2e54205fba557a7.bindPopup(popup_683a1fe4d5644a9ff7ef6053a47b73ac)
+        ;
+
+        
+    
+    
+            var circle_marker_7029fd719a38e21d2a2408e21de47419 = L.circleMarker(
+                [25.05437, 121.59423],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_35f7b2a5806192419b0037a02ed8e237 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f440e809b95d83226de88a92844f446d = $(`<div id="html_f440e809b95d83226de88a92844f446d" style="width: 100.0%; height: 100.0%;">YouBike2.0_向陽南港路口（南港區）<br>可借 7.461538461538462 / 總柱 44<br>可還 36.53846153846154<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_35f7b2a5806192419b0037a02ed8e237.setContent(html_f440e809b95d83226de88a92844f446d);
+            
+        
+
+        circle_marker_7029fd719a38e21d2a2408e21de47419.bindPopup(popup_35f7b2a5806192419b0037a02ed8e237)
+        ;
+
+        
+    
+    
+            var circle_marker_bd7d55ee2e18ac756b13a304cecfa063 = L.circleMarker(
+                [25.05252, 121.60922],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_2cacbd9cf13b4591b255af9d3f6e802e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d5dceb07e9755d3a83181d658f041d76 = $(`<div id="html_d5dceb07e9755d3a83181d658f041d76" style="width: 100.0%; height: 100.0%;">YouBike2.0_南港車站(忠孝東路七段415巷)（南港區）<br>可借 1.7692307692307692 / 總柱 11<br>可還 9.23076923076923<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_2cacbd9cf13b4591b255af9d3f6e802e.setContent(html_d5dceb07e9755d3a83181d658f041d76);
+            
+        
+
+        circle_marker_bd7d55ee2e18ac756b13a304cecfa063.bindPopup(popup_2cacbd9cf13b4591b255af9d3f6e802e)
+        ;
+
+        
+    
+    
+            var circle_marker_e55b526a4cd7dc05d97098904d382615 = L.circleMarker(
+                [25.05201, 121.60741],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_b8992bf5502ec513f3f715aad7b16aa7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7291e3a48cfaacae8918caa0eae1423a = $(`<div id="html_7291e3a48cfaacae8918caa0eae1423a" style="width: 100.0%; height: 100.0%;">YouBike2.0_捷運南港站(2號出口)（南港區）<br>可借 10.307692307692308 / 總柱 23<br>可還 12.692307692307692<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_b8992bf5502ec513f3f715aad7b16aa7.setContent(html_7291e3a48cfaacae8918caa0eae1423a);
+            
+        
+
+        circle_marker_e55b526a4cd7dc05d97098904d382615.bindPopup(popup_b8992bf5502ec513f3f715aad7b16aa7)
+        ;
+
+        
+    
+    
+            var circle_marker_3caa48a9300eecd7a37d443890f8ea0f = L.circleMarker(
+                [25.05192, 121.60642],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_9de8cb67aefc50676f766ded3c3de308 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7e539b39f0622d1c5088bb490539ee92 = $(`<div id="html_7e539b39f0622d1c5088bb490539ee92" style="width: 100.0%; height: 100.0%;">YouBike2.0_捷運南港站(1號出口)（南港區）<br>可借 8.384615384615385 / 總柱 20<br>可還 11.615384615384617<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_9de8cb67aefc50676f766ded3c3de308.setContent(html_7e539b39f0622d1c5088bb490539ee92);
+            
+        
+
+        circle_marker_3caa48a9300eecd7a37d443890f8ea0f.bindPopup(popup_9de8cb67aefc50676f766ded3c3de308)
+        ;
+
+        
+    
+    
+            var circle_marker_2697f628bb709746c3d104e859da6872 = L.circleMarker(
+                [25.05507, 121.6028],
+                {"bubblingMouseEvents": true, "color": "#FF9999", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF9999", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_456bfc92642aad0e1fbdef08777d7df9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1fac44793116230dc791ae85f7581ae3 = $(`<div id="html_1fac44793116230dc791ae85f7581ae3" style="width: 100.0%; height: 100.0%;">YouBike2.0_東新國小（南港區）<br>可借 16.307692307692307 / 總柱 22<br>可還 5.6923076923076925<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_456bfc92642aad0e1fbdef08777d7df9.setContent(html_1fac44793116230dc791ae85f7581ae3);
+            
+        
+
+        circle_marker_2697f628bb709746c3d104e859da6872.bindPopup(popup_456bfc92642aad0e1fbdef08777d7df9)
+        ;
+
+        
+    
+    
+            var circle_marker_e0154fb4bfe48edb212b75efd7bfc063 = L.circleMarker(
+                [25.04681, 121.61703],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_b6e1791f9ba7684cbb5426f84ccc0b0d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_dc97799b34e061078ad05f40cebbc6c5 = $(`<div id="html_dc97799b34e061078ad05f40cebbc6c5" style="width: 100.0%; height: 100.0%;">YouBike2.0_六福公園（南港區）<br>可借 11.923076923076923 / 總柱 19<br>可還 6.923076923076923<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_b6e1791f9ba7684cbb5426f84ccc0b0d.setContent(html_dc97799b34e061078ad05f40cebbc6c5);
+            
+        
+
+        circle_marker_e0154fb4bfe48edb212b75efd7bfc063.bindPopup(popup_b6e1791f9ba7684cbb5426f84ccc0b0d)
+        ;
+
+        
+    
+    
+            var circle_marker_532b5ce69645abc7dd34d23a7e1296c4 = L.circleMarker(
+                [25.04805, 121.61594],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_b0a6fac897a4ea98abe30a7ff9d826a7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cd5150fbc25c40c569a2ba7265a2119b = $(`<div id="html_cd5150fbc25c40c569a2ba7265a2119b" style="width: 100.0%; height: 100.0%;">YouBike2.0_南港加壓站（南港區）<br>可借 14.461538461538462 / 總柱 24<br>可還 9.076923076923077<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_b0a6fac897a4ea98abe30a7ff9d826a7.setContent(html_cd5150fbc25c40c569a2ba7265a2119b);
+            
+        
+
+        circle_marker_532b5ce69645abc7dd34d23a7e1296c4.bindPopup(popup_b0a6fac897a4ea98abe30a7ff9d826a7)
+        ;
+
+        
+    
+    
+            var circle_marker_b3be578b8ec549e259bbbb3181c091c3 = L.circleMarker(
+                [25.05343, 121.59945],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_2ff9c427ad4ebc0c5c58613e3702ec94 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7e06108d10719271ad96af7b4a1a124f = $(`<div id="html_7e06108d10719271ad96af7b4a1a124f" style="width: 100.0%; height: 100.0%;">YouBike2.0_臺北流行音樂中心(南港路)（南港區）<br>可借 6.615384615384615 / 總柱 21<br>可還 14.384615384615383<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_2ff9c427ad4ebc0c5c58613e3702ec94.setContent(html_7e06108d10719271ad96af7b4a1a124f);
+            
+        
+
+        circle_marker_b3be578b8ec549e259bbbb3181c091c3.bindPopup(popup_2ff9c427ad4ebc0c5c58613e3702ec94)
+        ;
+
+        
+    
+    
+            var circle_marker_f80e60459533aec2a4f06428f81b6af9 = L.circleMarker(
+                [25.05766, 121.60396],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_ead62720eb8960d2d04591493b5f7e44 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_61a192583fcfb0c0e44358a78fbae2b9 = $(`<div id="html_61a192583fcfb0c0e44358a78fbae2b9" style="width: 100.0%; height: 100.0%;">YouBike2.0_興南公園（南港區）<br>可借 8.692307692307692 / 總柱 26<br>可還 17.307692307692307<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_ead62720eb8960d2d04591493b5f7e44.setContent(html_61a192583fcfb0c0e44358a78fbae2b9);
+            
+        
+
+        circle_marker_f80e60459533aec2a4f06428f81b6af9.bindPopup(popup_ead62720eb8960d2d04591493b5f7e44)
+        ;
+
+        
+    
+    
+            var circle_marker_482dd8d9e85ea5d03b238c20ce1be030 = L.circleMarker(
+                [25.05211, 121.59839],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_842e51067e6a60558ae50e1818946941 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_50d6ec129bf5cb21174276aefb8e04b1 = $(`<div id="html_50d6ec129bf5cb21174276aefb8e04b1" style="width: 100.0%; height: 100.0%;">YouBike2.0_臺北流行音樂中心(市民大道)（南港區）<br>可借 2.923076923076923 / 總柱 32<br>可還 29.076923076923077<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_842e51067e6a60558ae50e1818946941.setContent(html_50d6ec129bf5cb21174276aefb8e04b1);
+            
+        
+
+        circle_marker_482dd8d9e85ea5d03b238c20ce1be030.bindPopup(popup_842e51067e6a60558ae50e1818946941)
+        ;
+
+        
+    
+    
+            var circle_marker_92feebd28f9ac4022f4a564c7e14edd8 = L.circleMarker(
+                [25.05326, 121.60656],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_cfed12fb30181338bb3a133d68b45e01 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d022cca21b0806aa643669cd1f0a4a6c = $(`<div id="html_d022cca21b0806aa643669cd1f0a4a6c" style="width: 100.0%; height: 100.0%;">YouBike2.0_南港車站(市民大道)（南港區）<br>可借 0.4615384615384615 / 總柱 30<br>可還 29.53846153846154<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_cfed12fb30181338bb3a133d68b45e01.setContent(html_d022cca21b0806aa643669cd1f0a4a6c);
+            
+        
+
+        circle_marker_92feebd28f9ac4022f4a564c7e14edd8.bindPopup(popup_cfed12fb30181338bb3a133d68b45e01)
+        ;
+
+        
+    
+    
+            var circle_marker_407620bc0f9beb40acf318455e6b3e2d = L.circleMarker(
+                [25.05266, 121.61275],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_b29c5b585e0bf31865f2b2a243e9baf3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ec6707361ff601f594a7ed7e951cc648 = $(`<div id="html_ec6707361ff601f594a7ed7e951cc648" style="width: 100.0%; height: 100.0%;">YouBike2.0_忠孝東路七段527巷口（南港區）<br>可借 13.23076923076923 / 總柱 26<br>可還 12.461538461538462<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_b29c5b585e0bf31865f2b2a243e9baf3.setContent(html_ec6707361ff601f594a7ed7e951cc648);
+            
+        
+
+        circle_marker_407620bc0f9beb40acf318455e6b3e2d.bindPopup(popup_b29c5b585e0bf31865f2b2a243e9baf3)
+        ;
+
+        
+    
+    
+            var circle_marker_4c4c7059c5321feca64da982dc50901e = L.circleMarker(
+                [25.05627, 121.61369],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_62151224e934daedfd6b2f2c636932a2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_37767445f7b9ca27a0152789a4a2be25 = $(`<div id="html_37767445f7b9ca27a0152789a4a2be25" style="width: 100.0%; height: 100.0%;">YouBike2.0_南港軟體園區(新民街)（南港區）<br>可借 1.4615384615384617 / 總柱 25<br>可還 23.384615384615383<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_62151224e934daedfd6b2f2c636932a2.setContent(html_37767445f7b9ca27a0152789a4a2be25);
+            
+        
+
+        circle_marker_4c4c7059c5321feca64da982dc50901e.bindPopup(popup_62151224e934daedfd6b2f2c636932a2)
+        ;
+
+        
+    
+    
+            var circle_marker_4065fcb98f5d85f7849f11f80426f4de = L.circleMarker(
+                [25.05831, 121.61422],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_41a0bd7a0fe9b86ddbbe3364982c0f07 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5970bb1f15295941c8bd179fafe43f51 = $(`<div id="html_5970bb1f15295941c8bd179fafe43f51" style="width: 100.0%; height: 100.0%;">YouBike2.0_世貿公園（南港區）<br>可借 0.4615384615384615 / 總柱 35<br>可還 34.53846153846154<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_41a0bd7a0fe9b86ddbbe3364982c0f07.setContent(html_5970bb1f15295941c8bd179fafe43f51);
+            
+        
+
+        circle_marker_4065fcb98f5d85f7849f11f80426f4de.bindPopup(popup_41a0bd7a0fe9b86ddbbe3364982c0f07)
+        ;
+
+        
+    
+    
+            var circle_marker_79f9d5e78887be44de91991cd31d4763 = L.circleMarker(
+                [25.0521, 121.59053],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_cb7e1b67200c38cd8892e8b6eb9295d9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_02ef4f78e57db27bdd5eb5157c21a376 = $(`<div id="html_02ef4f78e57db27bdd5eb5157c21a376" style="width: 100.0%; height: 100.0%;">YouBike2.0_新新公園(昆陽街60巷)（南港區）<br>可借 4.153846153846154 / 總柱 20<br>可還 15.846153846153848<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_cb7e1b67200c38cd8892e8b6eb9295d9.setContent(html_02ef4f78e57db27bdd5eb5157c21a376);
+            
+        
+
+        circle_marker_79f9d5e78887be44de91991cd31d4763.bindPopup(popup_cb7e1b67200c38cd8892e8b6eb9295d9)
+        ;
+
+        
+    
+    
+            var circle_marker_4f8e5fbb9bb0ef6ce621d04dfa724dcc = L.circleMarker(
+                [25.05285, 121.59279],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_631414d0963cebb3c5b3103b91245f3c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3318392be25be0da349fceec008a0afe = $(`<div id="html_3318392be25be0da349fceec008a0afe" style="width: 100.0%; height: 100.0%;">YouBike2.0_南港高中(昆陽街)（南港區）<br>可借 2.769230769230769 / 總柱 26<br>可還 23.23076923076923<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_631414d0963cebb3c5b3103b91245f3c.setContent(html_3318392be25be0da349fceec008a0afe);
+            
+        
+
+        circle_marker_4f8e5fbb9bb0ef6ce621d04dfa724dcc.bindPopup(popup_631414d0963cebb3c5b3103b91245f3c)
+        ;
+
+        
+    
+    
+            var circle_marker_185f2463619e243aa4adb54e7f07ec67 = L.circleMarker(
+                [25.05289, 121.58599],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_6e071ff882812a153d7d22a8ad9fe54a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a41e4791f8ec6cebbf31860241b7cb70 = $(`<div id="html_a41e4791f8ec6cebbf31860241b7cb70" style="width: 100.0%; height: 100.0%;">YouBike2.0_南港路三段220巷口（南港區）<br>可借 15.384615384615383 / 總柱 25<br>可還 9.615384615384617<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_6e071ff882812a153d7d22a8ad9fe54a.setContent(html_a41e4791f8ec6cebbf31860241b7cb70);
+            
+        
+
+        circle_marker_185f2463619e243aa4adb54e7f07ec67.bindPopup(popup_6e071ff882812a153d7d22a8ad9fe54a)
+        ;
+
+        
+    
+    
+            var circle_marker_e92be6d8fef0124eefbf9b3302208a4f = L.circleMarker(
+                [25.06148, 121.61384],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_0a28e74707277ed70b7d54d7110c0242 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_82a37f0819a822ba1a16807ddafd2dff = $(`<div id="html_82a37f0819a822ba1a16807ddafd2dff" style="width: 100.0%; height: 100.0%;">YouBike2.0_南湖大橋(經貿二路255巷)（南港區）<br>可借 3.0 / 總柱 20<br>可還 17.0<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_0a28e74707277ed70b7d54d7110c0242.setContent(html_82a37f0819a822ba1a16807ddafd2dff);
+            
+        
+
+        circle_marker_e92be6d8fef0124eefbf9b3302208a4f.bindPopup(popup_0a28e74707277ed70b7d54d7110c0242)
+        ;
+
+        
+    
+    
+            var circle_marker_2dc2efb7a99c6732572ea06850628dd9 = L.circleMarker(
+                [25.05937, 121.61072],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_2d978f34fcab1cd40be7ae6fa8d053b3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_31b0efeab82506afbd38c8d4b41d7275 = $(`<div id="html_31b0efeab82506afbd38c8d4b41d7275" style="width: 100.0%; height: 100.0%;">YouBike2.0_園區重陽路口（南港區）<br>可借 8.307692307692308 / 總柱 21<br>可還 12.153846153846152<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_2d978f34fcab1cd40be7ae6fa8d053b3.setContent(html_31b0efeab82506afbd38c8d4b41d7275);
+            
+        
+
+        circle_marker_2dc2efb7a99c6732572ea06850628dd9.bindPopup(popup_2d978f34fcab1cd40be7ae6fa8d053b3)
+        ;
+
+        
+    
+    
+            var circle_marker_036b8c3712f9e85b0f1399238ab6fcbd = L.circleMarker(
+                [25.05293, 121.60549],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_52f1fb1e0b30c4de42dc988680b7ed93 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5038ff46c60997de50a18508ef4c546a = $(`<div id="html_5038ff46c60997de50a18508ef4c546a" style="width: 100.0%; height: 100.0%;">YouBike2.0_南港車站B棟(市民大道)（南港區）<br>可借 5.384615384615385 / 總柱 24<br>可還 18.46153846153846<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_52f1fb1e0b30c4de42dc988680b7ed93.setContent(html_5038ff46c60997de50a18508ef4c546a);
+            
+        
+
+        circle_marker_036b8c3712f9e85b0f1399238ab6fcbd.bindPopup(popup_52f1fb1e0b30c4de42dc988680b7ed93)
+        ;
+
+        
+    
+    
+            var circle_marker_59681c8b55305d870d1d7bb051723c67 = L.circleMarker(
+                [25.06164, 121.61267],
+                {"bubblingMouseEvents": true, "color": "#FF9999", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF9999", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_70e7ae3f2df82587033dc7e21b600659 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_af3fb21336c9a71d52aed0782d47ccb3 = $(`<div id="html_af3fb21336c9a71d52aed0782d47ccb3" style="width: 100.0%; height: 100.0%;">YouBike2.0_南港抽水站（南港區）<br>可借 13.538461538461538 / 總柱 19<br>可還 5.461538461538462<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_70e7ae3f2df82587033dc7e21b600659.setContent(html_af3fb21336c9a71d52aed0782d47ccb3);
+            
+        
+
+        circle_marker_59681c8b55305d870d1d7bb051723c67.bindPopup(popup_70e7ae3f2df82587033dc7e21b600659)
+        ;
+
+        
+    
+    
+            var circle_marker_285a2d94ee6f1b82961e710f6396403c = L.circleMarker(
+                [25.06271, 121.61597],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_7690372829379b3894ab70ba31ce127d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cca530d7621ac34d085521ddff84fd21 = $(`<div id="html_cca530d7621ac34d085521ddff84fd21" style="width: 100.0%; height: 100.0%;">YouBike2.0_經貿公園（南港區）<br>可借 8.692307692307692 / 總柱 20<br>可還 11.307692307692308<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_7690372829379b3894ab70ba31ce127d.setContent(html_cca530d7621ac34d085521ddff84fd21);
+            
+        
+
+        circle_marker_285a2d94ee6f1b82961e710f6396403c.bindPopup(popup_7690372829379b3894ab70ba31ce127d)
+        ;
+
+        
+    
+    
+            var circle_marker_3172671298945f2d03c598c16d571de0 = L.circleMarker(
+                [25.05853, 121.60983],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_63e87e25a95a433207bb7047b1f66140 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_df85e3ed97e19bd398615d85fddd6003 = $(`<div id="html_df85e3ed97e19bd398615d85fddd6003" style="width: 100.0%; height: 100.0%;">YouBike2.0_育成高中（南港區）<br>可借 5.230769230769231 / 總柱 33<br>可還 27.76923076923077<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_63e87e25a95a433207bb7047b1f66140.setContent(html_df85e3ed97e19bd398615d85fddd6003);
+            
+        
+
+        circle_marker_3172671298945f2d03c598c16d571de0.bindPopup(popup_63e87e25a95a433207bb7047b1f66140)
+        ;
+
+        
+    
+    
+            var circle_marker_5e74a7ca01730044cc3e5ea54f89f6ea = L.circleMarker(
+                [25.05436, 121.6181],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_8784bbdf758ff5c4928994345065748f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cb396e648e7014dcca276f1f6cbfc786 = $(`<div id="html_cb396e648e7014dcca276f1f6cbfc786" style="width: 100.0%; height: 100.0%;">YouBike2.0_捷運南港展覽館站(7號出口)（南港區）<br>可借 4.384615384615385 / 總柱 42<br>可還 12.461538461538462<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_8784bbdf758ff5c4928994345065748f.setContent(html_cb396e648e7014dcca276f1f6cbfc786);
+            
+        
+
+        circle_marker_5e74a7ca01730044cc3e5ea54f89f6ea.bindPopup(popup_8784bbdf758ff5c4928994345065748f)
+        ;
+
+        
+    
+    
+            var circle_marker_204a21ca6f445f39a156574a0fae7478 = L.circleMarker(
+                [25.05172, 121.61686],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_0c4285f28420c63b252f8183e657eb1a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_93f3acd022432c5fd3aaa459576c91cd = $(`<div id="html_93f3acd022432c5fd3aaa459576c91cd" style="width: 100.0%; height: 100.0%;">YouBike2.0_力行橋(南港)（南港區）<br>可借 8.23076923076923 / 總柱 18<br>可還 6.230769230769231<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_0c4285f28420c63b252f8183e657eb1a.setContent(html_93f3acd022432c5fd3aaa459576c91cd);
+            
+        
+
+        circle_marker_204a21ca6f445f39a156574a0fae7478.bindPopup(popup_0c4285f28420c63b252f8183e657eb1a)
+        ;
+
+        
+    
+    
+            var circle_marker_f70dadda2dc956a643d59a26125babac = L.circleMarker(
+                [25.05705, 121.59265],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_ca5584f5922d90179631ff9edd6586ee = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3d2bbe9a2517b6aa654ef59953eb0f33 = $(`<div id="html_3d2bbe9a2517b6aa654ef59953eb0f33" style="width: 100.0%; height: 100.0%;">YouBike2.0_向陽公園（南港區）<br>可借 10.846153846153848 / 總柱 24<br>可還 12.461538461538462<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_ca5584f5922d90179631ff9edd6586ee.setContent(html_3d2bbe9a2517b6aa654ef59953eb0f33);
+            
+        
+
+        circle_marker_f70dadda2dc956a643d59a26125babac.bindPopup(popup_ca5584f5922d90179631ff9edd6586ee)
+        ;
+
+        
+    
+    
+            var circle_marker_d3cd942a412045fbf80771abdb836e3b = L.circleMarker(
+                [25.0582, 121.59368],
+                {"bubblingMouseEvents": true, "color": "#FF9999", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF9999", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_3c68210b4f04bf4182c0639c6585fed6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_de299f58de26a6e6b460ec8dc60d614a = $(`<div id="html_de299f58de26a6e6b460ec8dc60d614a" style="width: 100.0%; height: 100.0%;">YouBike2.0_小彎社會住宅（南港區）<br>可借 37.76923076923077 / 總柱 51<br>可還 13.076923076923077<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_3c68210b4f04bf4182c0639c6585fed6.setContent(html_de299f58de26a6e6b460ec8dc60d614a);
+            
+        
+
+        circle_marker_d3cd942a412045fbf80771abdb836e3b.bindPopup(popup_3c68210b4f04bf4182c0639c6585fed6)
+        ;
+
+        
+    
+    
+            var circle_marker_70b253885e0c769e3cb250411b972074 = L.circleMarker(
+                [25.05465, 121.6185],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_5154592040118c1aa453fa3736ffc936 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_66bf66e20da894695c964122c0f73f45 = $(`<div id="html_66bf66e20da894695c964122c0f73f45" style="width: 100.0%; height: 100.0%;">YouBike2.0_捷運南港展覽館站(6號出口)（南港區）<br>可借 4.923076923076923 / 總柱 25<br>可還 20.076923076923077<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_5154592040118c1aa453fa3736ffc936.setContent(html_66bf66e20da894695c964122c0f73f45);
+            
+        
+
+        circle_marker_70b253885e0c769e3cb250411b972074.bindPopup(popup_5154592040118c1aa453fa3736ffc936)
+        ;
+
+        
+    
+    
+            var circle_marker_3ece0b09ff5ef97fb3e1dcf67ac1dcb3 = L.circleMarker(
+                [25.05535, 121.61838],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_7a2bf434aee0e45bc79b2f40d9ea4ff7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7a613d5e799d00ea2113115fb563d003 = $(`<div id="html_7a613d5e799d00ea2113115fb563d003" style="width: 100.0%; height: 100.0%;">YouBike2.0_捷運南港展覽館站(4號出口)（南港區）<br>可借 3.3846153846153846 / 總柱 39<br>可還 35.15384615384615<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_7a2bf434aee0e45bc79b2f40d9ea4ff7.setContent(html_7a613d5e799d00ea2113115fb563d003);
+            
+        
+
+        circle_marker_3ece0b09ff5ef97fb3e1dcf67ac1dcb3.bindPopup(popup_7a2bf434aee0e45bc79b2f40d9ea4ff7)
+        ;
+
+        
+    
+    
+            var circle_marker_2e8076898cc7b6ef82ebcd834c11e4dd = L.circleMarker(
+                [25.04675, 121.58731],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_939681dd63df50a1d3b8651e51f5b161 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1916a3088f50216fd8636c7a7b767122 = $(`<div id="html_1916a3088f50216fd8636c7a7b767122" style="width: 100.0%; height: 100.0%;">YouBike2.0_成德綠地（南港區）<br>可借 3.5384615384615383 / 總柱 17<br>可還 12.923076923076923<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_939681dd63df50a1d3b8651e51f5b161.setContent(html_1916a3088f50216fd8636c7a7b767122);
+            
+        
+
+        circle_marker_2e8076898cc7b6ef82ebcd834c11e4dd.bindPopup(popup_939681dd63df50a1d3b8651e51f5b161)
+        ;
+
+        
+    
+    
+            var circle_marker_368b59e03108c901b4571b768fbcf86c = L.circleMarker(
+                [25.0483, 121.59425],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_15f2318a93f6bd0de82acfec21f4069e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e219416356b815e3d9641e6bfd466b2c = $(`<div id="html_e219416356b815e3d9641e6bfd466b2c" style="width: 100.0%; height: 100.0%;">YouBike2.0_昆陽公園（南港區）<br>可借 8.692307692307692 / 總柱 14<br>可還 4.6923076923076925<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_15f2318a93f6bd0de82acfec21f4069e.setContent(html_e219416356b815e3d9641e6bfd466b2c);
+            
+        
+
+        circle_marker_368b59e03108c901b4571b768fbcf86c.bindPopup(popup_15f2318a93f6bd0de82acfec21f4069e)
+        ;
+
+        
+    
+    
+            var circle_marker_4eca350b5b34849b7e3698dd45aa67a0 = L.circleMarker(
+                [25.05368, 121.59969],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_a2bb2598e6375b779ed37b0e1681a48b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ec3e0f8617b294f4666499b5b46dfb97 = $(`<div id="html_ec3e0f8617b294f4666499b5b46dfb97" style="width: 100.0%; height: 100.0%;">YouBike2.0_南港路二段178巷口（南港區）<br>可借 11.23076923076923 / 總柱 18<br>可還 6.615384615384615<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_a2bb2598e6375b779ed37b0e1681a48b.setContent(html_ec3e0f8617b294f4666499b5b46dfb97);
+            
+        
+
+        circle_marker_4eca350b5b34849b7e3698dd45aa67a0.bindPopup(popup_a2bb2598e6375b779ed37b0e1681a48b)
+        ;
+
+        
+    
+    
+            var circle_marker_f44e40e74a583543ca1479cfdd152715 = L.circleMarker(
+                [25.05225, 121.60766],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_3429af6354bd5cd8ab0511f847c6b4cc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bd037d3dda698ee74a5225a8eac0cdd5 = $(`<div id="html_bd037d3dda698ee74a5225a8eac0cdd5" style="width: 100.0%; height: 100.0%;">YouBike2.0_南港車站(忠孝東路)（南港區）<br>可借 7.461538461538462 / 總柱 24<br>可還 16.307692307692307<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_3429af6354bd5cd8ab0511f847c6b4cc.setContent(html_bd037d3dda698ee74a5225a8eac0cdd5);
+            
+        
+
+        circle_marker_f44e40e74a583543ca1479cfdd152715.bindPopup(popup_3429af6354bd5cd8ab0511f847c6b4cc)
+        ;
+
+        
+    
+    
+            var circle_marker_73d52347df978eded7bf1e11f97f666b = L.circleMarker(
+                [25.05343, 121.60633],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_f6f17c3167b222f0b6a6b102d1e8030e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3a395c27afdd7ea3992071c0e71d101f = $(`<div id="html_3a395c27afdd7ea3992071c0e71d101f" style="width: 100.0%; height: 100.0%;">YouBike2.0_南港車站(興華路)（南港區）<br>可借 4.153846153846154 / 總柱 48<br>可還 43.23076923076923<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_f6f17c3167b222f0b6a6b102d1e8030e.setContent(html_3a395c27afdd7ea3992071c0e71d101f);
+            
+        
+
+        circle_marker_73d52347df978eded7bf1e11f97f666b.bindPopup(popup_f6f17c3167b222f0b6a6b102d1e8030e)
+        ;
+
+        
+    
+    
+            var circle_marker_b2f9df1c67f9ab2c5d98531a15356be3 = L.circleMarker(
+                [25.05543, 121.5892],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_c5b8ca948846c2a654b42349e0c3bcdd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2dc71a086b84a2c2774f8f931ee752b4 = $(`<div id="html_2dc71a086b84a2c2774f8f931ee752b4" style="width: 100.0%; height: 100.0%;">YouBike2.0_南港疏散門(基三號疏散門)（南港區）<br>可借 7.923076923076923 / 總柱 24<br>可還 16.076923076923077<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_c5b8ca948846c2a654b42349e0c3bcdd.setContent(html_2dc71a086b84a2c2774f8f931ee752b4);
+            
+        
+
+        circle_marker_b2f9df1c67f9ab2c5d98531a15356be3.bindPopup(popup_c5b8ca948846c2a654b42349e0c3bcdd)
+        ;
+
+        
+    
+    
+            var circle_marker_d7b2377f8dae26e243673bd62935b57c = L.circleMarker(
+                [25.05545, 121.61646],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_3e9f6e9481d4874f0f6b8d463f38817f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_454f290387f7e7379d50ca92b44edcfa = $(`<div id="html_454f290387f7e7379d50ca92b44edcfa" style="width: 100.0%; height: 100.0%;">YouBike2.0_南港展覽館2館（南港區）<br>可借 4.538461538461538 / 總柱 18<br>可還 13.307692307692308<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_3e9f6e9481d4874f0f6b8d463f38817f.setContent(html_454f290387f7e7379d50ca92b44edcfa);
+            
+        
+
+        circle_marker_d7b2377f8dae26e243673bd62935b57c.bindPopup(popup_3e9f6e9481d4874f0f6b8d463f38817f)
+        ;
+
+        
+    
+    
+            var circle_marker_d0726d0335cab96b8f83d3da62d3a6c0 = L.circleMarker(
+                [25.05394, 121.59124],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_90aca606468b1615ba4b0eda891a35e3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f9c27300fbbbdd98663f35a251f866b6 = $(`<div id="html_f9c27300fbbbdd98663f35a251f866b6" style="width: 100.0%; height: 100.0%;">YouBike2.0_南港路三段80巷（南港區）<br>可借 8.615384615384615 / 總柱 15<br>可還 6.384615384615385<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_90aca606468b1615ba4b0eda891a35e3.setContent(html_f9c27300fbbbdd98663f35a251f866b6);
+            
+        
+
+        circle_marker_d0726d0335cab96b8f83d3da62d3a6c0.bindPopup(popup_90aca606468b1615ba4b0eda891a35e3)
+        ;
+
+        
+    
+    
+            var circle_marker_ee39acfea2812f14e5ecad75821451bb = L.circleMarker(
+                [25.05066, 121.59431],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_7c712c892f714e670cbae31ec95de15d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9afb366f8a42003d52ae80226cc7c8ce = $(`<div id="html_9afb366f8a42003d52ae80226cc7c8ce" style="width: 100.0%; height: 100.0%;">YouBike2.0_捷運昆陽站(4號出口)（南港區）<br>可借 3.5384615384615383 / 總柱 28<br>可還 24.307692307692307<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_7c712c892f714e670cbae31ec95de15d.setContent(html_9afb366f8a42003d52ae80226cc7c8ce);
+            
+        
+
+        circle_marker_ee39acfea2812f14e5ecad75821451bb.bindPopup(popup_7c712c892f714e670cbae31ec95de15d)
+        ;
+
+        
+    
+    
+            var circle_marker_cf873fd80329febf99acebaee1734745 = L.circleMarker(
+                [25.04916, 121.58906],
+                {"bubblingMouseEvents": true, "color": "#FF9999", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF9999", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_6375bb007a0e1fddbc7d7383bfe2cb7b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_58fed794d64d10a9035b6972c804f84a = $(`<div id="html_58fed794d64d10a9035b6972c804f84a" style="width: 100.0%; height: 100.0%;">YouBike2.0_忠孝東路六段278巷口（南港區）<br>可借 10.23076923076923 / 總柱 12<br>可還 1.7692307692307692<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_6375bb007a0e1fddbc7d7383bfe2cb7b.setContent(html_58fed794d64d10a9035b6972c804f84a);
+            
+        
+
+        circle_marker_cf873fd80329febf99acebaee1734745.bindPopup(popup_6375bb007a0e1fddbc7d7383bfe2cb7b)
+        ;
+
+        
+    
+    
+            var circle_marker_c46aae3b1c2854b5704e87cf4d06e0c5 = L.circleMarker(
+                [25.05457, 121.58781],
+                {"bubblingMouseEvents": true, "color": "#FF9999", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF9999", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_56f295959d4407be4d2ace86b2d598f9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bc4d85bb443177220f994abd1c992899 = $(`<div id="html_bc4d85bb443177220f994abd1c992899" style="width: 100.0%; height: 100.0%;">YouBike2.0_南港路三段130巷口（南港區）<br>可借 9.076923076923077 / 總柱 12<br>可還 2.923076923076923<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_56f295959d4407be4d2ace86b2d598f9.setContent(html_bc4d85bb443177220f994abd1c992899);
+            
+        
+
+        circle_marker_c46aae3b1c2854b5704e87cf4d06e0c5.bindPopup(popup_56f295959d4407be4d2ace86b2d598f9)
+        ;
+
+        
+    
+    
+            var circle_marker_f97d861059d29c327c6cec6a3fafbb5f = L.circleMarker(
+                [25.05381, 121.58638],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_b497ac21c6fcf97e1ce815ffeaadf58a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_832c7cfcc7164ffaa41bb5b3c853ab90 = $(`<div id="html_832c7cfcc7164ffaa41bb5b3c853ab90" style="width: 100.0%; height: 100.0%;">YouBike2.0_南港路三段190巷口（南港區）<br>可借 8.076923076923077 / 總柱 16<br>可還 7.923076923076923<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_b497ac21c6fcf97e1ce815ffeaadf58a.setContent(html_832c7cfcc7164ffaa41bb5b3c853ab90);
+            
+        
+
+        circle_marker_f97d861059d29c327c6cec6a3fafbb5f.bindPopup(popup_b497ac21c6fcf97e1ce815ffeaadf58a)
+        ;
+
+        
+    
+    
+            var circle_marker_ab57d6ee7140bb9d7e59998503367dd2 = L.circleMarker(
+                [25.0488, 121.58742],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_618b03a21779ce6198b2025c3e5755f4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6922f65ed53948f1481b4e20c447a2d2 = $(`<div id="html_6922f65ed53948f1481b4e20c447a2d2" style="width: 100.0%; height: 100.0%;">YouBike2.0_忠孝東路六段212巷口（南港區）<br>可借 9.384615384615383 / 總柱 15<br>可還 5.615384615384615<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_618b03a21779ce6198b2025c3e5755f4.setContent(html_6922f65ed53948f1481b4e20c447a2d2);
+            
+        
+
+        circle_marker_ab57d6ee7140bb9d7e59998503367dd2.bindPopup(popup_618b03a21779ce6198b2025c3e5755f4)
+        ;
+
+        
+    
+    
+            var circle_marker_0772af60c0eb2efb9b69a10f28ecc73b = L.circleMarker(
+                [25.05296, 121.61713],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_86321c19cf83dc2aedd7b9725909798b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8828f382cca14bc88621bd22e4afa06f = $(`<div id="html_8828f382cca14bc88621bd22e4afa06f" style="width: 100.0%; height: 100.0%;">YouBike2.0_新富公園（南港區）<br>可借 4.6923076923076925 / 總柱 12<br>可還 7.3076923076923075<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_86321c19cf83dc2aedd7b9725909798b.setContent(html_8828f382cca14bc88621bd22e4afa06f);
+            
+        
+
+        circle_marker_0772af60c0eb2efb9b69a10f28ecc73b.bindPopup(popup_86321c19cf83dc2aedd7b9725909798b)
+        ;
+
+        
+    
+    
+            var circle_marker_041842bacef74018a84adae1a2b01a10 = L.circleMarker(
+                [25.04728, 121.58605],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_a0d23cd1ad289a80e9f8c1fe6b4a190d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9f7ea3db79b714272f5f78cf654397a8 = $(`<div id="html_9f7ea3db79b714272f5f78cf654397a8" style="width: 100.0%; height: 100.0%;">YouBike2.0_東新街63巷口（南港區）<br>可借 8.76923076923077 / 總柱 15<br>可還 6.230769230769231<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_a0d23cd1ad289a80e9f8c1fe6b4a190d.setContent(html_9f7ea3db79b714272f5f78cf654397a8);
+            
+        
+
+        circle_marker_041842bacef74018a84adae1a2b01a10.bindPopup(popup_a0d23cd1ad289a80e9f8c1fe6b4a190d)
+        ;
+
+        
+    
+    
+            var circle_marker_48a75f138741360b636c2fb55ad661c4 = L.circleMarker(
+                [25.05163, 121.59535],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_6731025b7ca65a41881d0a970c3dc1e5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_66be24bf547f36e28b14662bc3044052 = $(`<div id="html_66be24bf547f36e28b14662bc3044052" style="width: 100.0%; height: 100.0%;">YouBike2.0_向陽市民大道路口(西北側)（南港區）<br>可借 3.6153846153846154 / 總柱 29<br>可還 25.384615384615383<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_6731025b7ca65a41881d0a970c3dc1e5.setContent(html_66be24bf547f36e28b14662bc3044052);
+            
+        
+
+        circle_marker_48a75f138741360b636c2fb55ad661c4.bindPopup(popup_6731025b7ca65a41881d0a970c3dc1e5)
+        ;
+
+        
+    
+    
+            var circle_marker_c2088f078ba3c6b5c3dfa48c1ea79340 = L.circleMarker(
+                [25.05486, 121.5944],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_6df221421030531c2417c1388541b356 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_71e60d61679c8d6df4750d23e2253d77 = $(`<div id="html_71e60d61679c8d6df4750d23e2253d77" style="width: 100.0%; height: 100.0%;">YouBike2.0_向陽南港路口(西北側)（南港區）<br>可借 6.0 / 總柱 26<br>可還 20.0<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_6df221421030531c2417c1388541b356.setContent(html_71e60d61679c8d6df4750d23e2253d77);
+            
+        
+
+        circle_marker_c2088f078ba3c6b5c3dfa48c1ea79340.bindPopup(popup_6df221421030531c2417c1388541b356)
+        ;
+
+        
+    
+    
+            var circle_marker_66c2e43024fbf1be0731f1bd1d984c60 = L.circleMarker(
+                [25.04997, 121.6162],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_412ce894a8e71a946e7d01c3ad3ba667 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bbf84b2e78a07b878fc2116263e322ee = $(`<div id="html_bbf84b2e78a07b878fc2116263e322ee" style="width: 100.0%; height: 100.0%;">YouBike2.0_研究院路一段151巷口（南港區）<br>可借 9.538461538461538 / 總柱 14<br>可還 4.3076923076923075<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_412ce894a8e71a946e7d01c3ad3ba667.setContent(html_bbf84b2e78a07b878fc2116263e322ee);
+            
+        
+
+        circle_marker_66c2e43024fbf1be0731f1bd1d984c60.bindPopup(popup_412ce894a8e71a946e7d01c3ad3ba667)
+        ;
+
+        
+    
+    
+            var circle_marker_176f119575cf5a951e8e25ad4f1e4262 = L.circleMarker(
+                [25.05801, 121.60674],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_73ffa127d769a1428c949061c0489673 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1857a997b667d4df5dbcfc1355a01de2 = $(`<div id="html_1857a997b667d4df5dbcfc1355a01de2" style="width: 100.0%; height: 100.0%;">YouBike2.0_興中重陽路口（南港區）<br>可借 6.0 / 總柱 24<br>可還 17.846153846153847<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_73ffa127d769a1428c949061c0489673.setContent(html_1857a997b667d4df5dbcfc1355a01de2);
+            
+        
+
+        circle_marker_176f119575cf5a951e8e25ad4f1e4262.bindPopup(popup_73ffa127d769a1428c949061c0489673)
+        ;
+
+        
+    
+    
+            var circle_marker_427c7d6eeebd1093e286867bad10951a = L.circleMarker(
+                [25.05469, 121.60381],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_4bde79fded932a470552d9139af96ea6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_92043a47786a538e70c022a768b360fd = $(`<div id="html_92043a47786a538e70c022a768b360fd" style="width: 100.0%; height: 100.0%;">YouBike2.0_東明公園（南港區）<br>可借 9.846153846153848 / 總柱 20<br>可還 10.0<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_4bde79fded932a470552d9139af96ea6.setContent(html_92043a47786a538e70c022a768b360fd);
+            
+        
+
+        circle_marker_427c7d6eeebd1093e286867bad10951a.bindPopup(popup_4bde79fded932a470552d9139af96ea6)
+        ;
+
+        
+    
+    
+            var circle_marker_664669da6d1f435fdc26377a43a323f2 = L.circleMarker(
+                [25.06043, 121.61498],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_0d5200943ae6123637a8705c17858e61 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cf6584ffa6f1e8fb8035b9f11ece2ca9 = $(`<div id="html_cf6584ffa6f1e8fb8035b9f11ece2ca9" style="width: 100.0%; height: 100.0%;">YouBike2.0_捷運南港軟體園區站(1號出口)（南港區）<br>可借 2.4615384615384617 / 總柱 36<br>可還 33.53846153846154<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_0d5200943ae6123637a8705c17858e61.setContent(html_cf6584ffa6f1e8fb8035b9f11ece2ca9);
+            
+        
+
+        circle_marker_664669da6d1f435fdc26377a43a323f2.bindPopup(popup_0d5200943ae6123637a8705c17858e61)
+        ;
+
+        
+    
+    
+            var circle_marker_9435a76be7047655c8ab90a956fe4caf = L.circleMarker(
+                [25.058, 121.62189],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_49168bf137f3e31ac9907ebc7e829482 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7eff0dd6071a6837dc65876e2d6b15f0 = $(`<div id="html_7eff0dd6071a6837dc65876e2d6b15f0" style="width: 100.0%; height: 100.0%;">YouBike2.0_內湖機廠(港東街)（南港區）<br>可借 8.615384615384615 / 總柱 20<br>可還 11.076923076923077<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_49168bf137f3e31ac9907ebc7e829482.setContent(html_7eff0dd6071a6837dc65876e2d6b15f0);
+            
+        
+
+        circle_marker_9435a76be7047655c8ab90a956fe4caf.bindPopup(popup_49168bf137f3e31ac9907ebc7e829482)
+        ;
+
+        
+    
+    
+            var circle_marker_4aaed1c5de2a455bd1740aac8e266598 = L.circleMarker(
+                [25.05124, 121.59361],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_721dc26a0604ea12aa5761a4077635a7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ec7305dbff9ec9f9c60ef958a871900e = $(`<div id="html_ec7305dbff9ec9f9c60ef958a871900e" style="width: 100.0%; height: 100.0%;">YouBike2.0_市民昆陽街口（南港區）<br>可借 4.076923076923077 / 總柱 30<br>可還 25.76923076923077<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_721dc26a0604ea12aa5761a4077635a7.setContent(html_ec7305dbff9ec9f9c60ef958a871900e);
+            
+        
+
+        circle_marker_4aaed1c5de2a455bd1740aac8e266598.bindPopup(popup_721dc26a0604ea12aa5761a4077635a7)
+        ;
+
+        
+    
+    
+            var circle_marker_da320d3abfdcd297ac326f5d60a4bd61 = L.circleMarker(
+                [25.05156, 121.6014],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_8aad14f63f9d55e5915baf757682a4ce = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1842614eddf9f17d96bfb80f5d69151b = $(`<div id="html_1842614eddf9f17d96bfb80f5d69151b" style="width: 100.0%; height: 100.0%;">YouBike2.0_南港機廠(北流)（南港區）<br>可借 2.8461538461538463 / 總柱 20<br>可還 17.0<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_8aad14f63f9d55e5915baf757682a4ce.setContent(html_1842614eddf9f17d96bfb80f5d69151b);
+            
+        
+
+        circle_marker_da320d3abfdcd297ac326f5d60a4bd61.bindPopup(popup_8aad14f63f9d55e5915baf757682a4ce)
+        ;
+
+        
+    
+    
+            var circle_marker_bc0fafc72759b291ab5742622fdc9a8e = L.circleMarker(
+                [25.05216, 121.60338],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_65cea2b862a134e0f1deae1776121f11 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4e476dac81022bcd41ed9c2d107f102f = $(`<div id="html_4e476dac81022bcd41ed9c2d107f102f" style="width: 100.0%; height: 100.0%;">YouBike2.0_忠孝東路七段265巷（南港區）<br>可借 6.153846153846154 / 總柱 40<br>可還 33.84615384615385<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_65cea2b862a134e0f1deae1776121f11.setContent(html_4e476dac81022bcd41ed9c2d107f102f);
+            
+        
+
+        circle_marker_bc0fafc72759b291ab5742622fdc9a8e.bindPopup(popup_65cea2b862a134e0f1deae1776121f11)
+        ;
+
+        
+    
+    
+            var circle_marker_0744064df7955d3c7132c1f8a46d7ed6 = L.circleMarker(
+                [25.04857, 121.59401],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_dfcba422312f008648fe640065d2d051 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cb5a2500e65d3aed55b1acf295773508 = $(`<div id="html_cb5a2500e65d3aed55b1acf295773508" style="width: 100.0%; height: 100.0%;">YouBike2.0_昆陽東新街口（南港區）<br>可借 9.153846153846152 / 總柱 24<br>可還 14.846153846153848<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_dfcba422312f008648fe640065d2d051.setContent(html_cb5a2500e65d3aed55b1acf295773508);
+            
+        
+
+        circle_marker_0744064df7955d3c7132c1f8a46d7ed6.bindPopup(popup_dfcba422312f008648fe640065d2d051)
+        ;
+
+        
+    
+    
+            var circle_marker_c18a0c3c9326ed0a42ed8bb9ad131081 = L.circleMarker(
+                [25.0614, 121.61795],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_04e9fd39f2ee4f5ddd55730526ae034e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5c9ac8107bb97541d034299ae004b33d = $(`<div id="html_5c9ac8107bb97541d034299ae004b33d" style="width: 100.0%; height: 100.0%;">YouBike2.0_臺北市捷運局機電工程處（南港區）<br>可借 2.6923076923076925 / 總柱 20<br>可還 17.307692307692307<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_04e9fd39f2ee4f5ddd55730526ae034e.setContent(html_5c9ac8107bb97541d034299ae004b33d);
+            
+        
+
+        circle_marker_c18a0c3c9326ed0a42ed8bb9ad131081.bindPopup(popup_04e9fd39f2ee4f5ddd55730526ae034e)
+        ;
+
+        
+    
+    
+            var circle_marker_a033551087f9e87256155a21f1a084cb = L.circleMarker(
+                [25.05791, 121.61704],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_a289ef78509c5ad277fb3333a3715b3d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_82c622bb7c7a07e66e409bf5a449f81e = $(`<div id="html_82c622bb7c7a07e66e409bf5a449f81e" style="width: 100.0%; height: 100.0%;">YouBike2.0_經貿二路105巷口(經貿二路)（南港區）<br>可借 3.692307692307693 / 總柱 37<br>可還 33.30769230769231<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_a289ef78509c5ad277fb3333a3715b3d.setContent(html_82c622bb7c7a07e66e409bf5a449f81e);
+            
+        
+
+        circle_marker_a033551087f9e87256155a21f1a084cb.bindPopup(popup_a289ef78509c5ad277fb3333a3715b3d)
+        ;
+
+        
+    
+    
+            var circle_marker_b40444ba4992ce971159b71415a59775 = L.circleMarker(
+                [25.0586, 121.61973],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_3bc4a66dc19f12874e96535e163e9eeb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ca6e5bf47a74a55b29d97830a3f240da = $(`<div id="html_ca6e5bf47a74a55b29d97830a3f240da" style="width: 100.0%; height: 100.0%;">YouBike2.0_經貿二路105巷口(經貿一路)（南港區）<br>可借 0.6153846153846154 / 總柱 20<br>可還 19.384615384615383<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_3bc4a66dc19f12874e96535e163e9eeb.setContent(html_ca6e5bf47a74a55b29d97830a3f240da);
+            
+        
+
+        circle_marker_b40444ba4992ce971159b71415a59775.bindPopup(popup_3bc4a66dc19f12874e96535e163e9eeb)
+        ;
+
+        
+    
+    
+            var circle_marker_b1f24ca0c87424965a8cb946f6540333 = L.circleMarker(
+                [25.06148, 121.61698],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_23da27bdc3a589efd33c012a1ee9c652 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_39102fb2a862ba33fd25a8cc9e9becc6 = $(`<div id="html_39102fb2a862ba33fd25a8cc9e9becc6" style="width: 100.0%; height: 100.0%;">YouBike2.0_經貿二路185巷（南港區）<br>可借 3.8461538461538463 / 總柱 21<br>可還 17.153846153846153<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_23da27bdc3a589efd33c012a1ee9c652.setContent(html_39102fb2a862ba33fd25a8cc9e9becc6);
+            
+        
+
+        circle_marker_b1f24ca0c87424965a8cb946f6540333.bindPopup(popup_23da27bdc3a589efd33c012a1ee9c652)
+        ;
+
+        
+    
+    
+            var circle_marker_d076ffcfb26d8d1ab42ff87d1bbec2e6 = L.circleMarker(
+                [25.05312, 121.58928],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_d9c216705006b7507bf08b753deadf5a);
+        
+    
+        var popup_a9d4b9183c345c96cc59309d1aa52d66 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_03222d53a90ae3163d9fe0eb6e9b8d80 = $(`<div id="html_03222d53a90ae3163d9fe0eb6e9b8d80" style="width: 100.0%; height: 100.0%;">YouBike2.0_南港路三段106巷口(中華賓士)（南港區）<br>可借 8.615384615384615 / 總柱 23<br>可還 14.384615384615383<br>更新 2025-05-22 23:44:29</div>`)[0];
+                popup_a9d4b9183c345c96cc59309d1aa52d66.setContent(html_03222d53a90ae3163d9fe0eb6e9b8d80);
+            
+        
+
+        circle_marker_d076ffcfb26d8d1ab42ff87d1bbec2e6.bindPopup(popup_a9d4b9183c345c96cc59309d1aa52d66)
+        ;
+
+        
+    
+</script>
+</html>
