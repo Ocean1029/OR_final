@@ -39,16 +39,20 @@ def load_snapshots(data_dir: Path) -> pd.DataFrame:
     return df
 
 def preprocess(df: pd.DataFrame) -> pd.DataFrame:
-    """時戳轉時區、對齊 30 分鐘區段、型別轉換"""
-    
     df["timestamp"] = pd.to_datetime(df["timestamp"], errors="coerce", utc=True)
     df["timestamp"] = df["timestamp"].dt.tz_convert(TZ)
     df["interval_start"] = df["timestamp"].dt.floor("30min")
+
+    # 確保欄位存在且型別正確
+    df["act"] = pd.to_numeric(df["act"], errors="coerce")
+    df = df[df["act"] == 1] 
+
     df["total"] = pd.to_numeric(df["total"], errors="coerce")
-    df["available_return_bikes"] = pd.to_numeric(
-        df["available_return_bikes"], errors="coerce"
-    )
+    df["available_return_bikes"] = pd.to_numeric(df["available_return_bikes"], errors="coerce")
+    df["available_rent_bikes"] = pd.to_numeric(df["available_rent_bikes"], errors="coerce")
+
     return df
+
 
 def aggregate(df: pd.DataFrame) -> dict:
     """依照每個 30 分鐘時段跨日平均，並分別回傳每段的 DataFrame"""
@@ -59,20 +63,26 @@ def aggregate(df: pd.DataFrame) -> dict:
           .agg(
               sarea=("sarea", "first"),
               sna=("sna", "first"),
-              lat=("latitude", "first"),
-              lon=("longitude", "first"),
-              avg_total=("total", "mean"),
-              avg_empty=("available_return_bikes", "mean"),
+              latitude=("latitude", "first"),
+              longitude=("longitude", "first"),
+              total=("total", "mean"),
+              available_rent_bikes=("available_rent_bikes", "mean"),
+              available_return_bikes=("available_return_bikes", "mean"),
+              srcUpdateTime=("srcUpdateTime", "first"),  # 任選一筆保留顯示
           )
           .reset_index()
     )
-    
-    # 按照每個時段切分 DataFrame，回傳 dict
+
+    # 每個時段的結果切出來
     by_interval = {
-        t.strftime("%H%M"): g.reset_index(drop=True)
+        t.strftime("%H%M"): g[
+            ["sno", "sarea", "sna", "latitude", "longitude", "total", "available_rent_bikes", "available_return_bikes", "srcUpdateTime"]
+        ].reset_index(drop=True)
         for t, g in grouped.groupby("time_only")
     }
+
     return by_interval
+
 
 def main():
     parser = argparse.ArgumentParser(description="Ubike 時段平均分析器")
