@@ -1,6 +1,7 @@
 import requests, pandas as pd
 import folium
 import argparse
+from pathlib import Path
 
 def fetch_realtime_data():
     URL = "https://tcgbusfs.blob.core.windows.net/dotapp/youbike/v2/youbike_immediate.json"
@@ -9,6 +10,23 @@ def fetch_realtime_data():
 
 def load_csv_data(csv_path):
     return pd.read_csv(csv_path)
+
+def draw_all_intervals(folder="interval_outputs", output_folder="map_outputs"):
+    folder = Path(folder)
+    output_folder = Path(output_folder)
+    output_folder.mkdir(exist_ok=True)
+
+    for file in sorted(folder.glob("interval_*.csv")):
+        time_str = file.stem.split("_")[1]
+        out_file = output_folder / f"map_{time_str}.html"
+        print(f"處理 {file.name} ...")
+        df = pd.read_csv(file)
+        draw_map(df)
+        df.to_html(out_file, index=False, encoding="utf-8")
+        print(f"✔ 已輸出 {out_file.name}")
+
+    print("✔ 所有時段地圖已輸出至", output_folder)
+
 
 def draw_map(df):
     # 轉型別、保留必要欄位
@@ -64,19 +82,15 @@ def main():
     parser = argparse.ArgumentParser(description='繪製 YouBike 地圖')
     parser.add_argument('--mode', choices=['realtime', 'csv'], default='csv',
                       help='選擇資料模式：realtime 為即時資料，csv 為從 CSV 檔案讀取')
-    parser.add_argument('--csv_path', default="interval_outputs/interval_0900.csv", help='CSV 檔案路徑（當 mode 為 csv 時需要）')
     
     args = parser.parse_args()
     
     if args.mode == 'realtime':
         df = fetch_realtime_data()
+        draw_map(df)
     else:
-        if not args.csv_path:
-            print("錯誤：使用 CSV 模式時必須提供 --csv_path 參數")
-            return
-        df = load_csv_data(args.csv_path)
+        draw_all_intervals()
     
-    draw_map(df)
 
 if __name__ == "__main__":
     main()
