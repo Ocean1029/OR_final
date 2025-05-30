@@ -58,9 +58,6 @@ def generate_instance(station_stats, time_period):
     station_stats: station statistics
     time_period: time period (9, 17, or 22)
     """
-    # Create base time
-    base_time = datetime(2025, 5, 24, time_period, 0, 0)
-    
     # Create data list
     data = []
     
@@ -88,8 +85,7 @@ def generate_instance(station_stats, time_period):
             'longitude': stats['longitude'],
             'total': stats['total'],
             'available_rent_bikes': round(rent_bikes, 1),
-            'available_return_bikes': round(return_bikes, 1),
-            'srcUpdateTime': base_time.strftime('%Y-%m-%d %H:%M:%S')
+            'available_return_bikes': round(return_bikes, 1)
         }
         data.append(row)
     
@@ -98,7 +94,7 @@ def generate_instance(station_stats, time_period):
     
     # Ensure columns are in the correct order
     columns = ['sno', 'sarea', 'sna', 'latitude', 'longitude', 'total', 
-              'available_rent_bikes', 'available_return_bikes', 'srcUpdateTime']
+              'available_rent_bikes', 'available_return_bikes']
     df = df[columns]
     
     return df
