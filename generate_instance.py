@@ -147,7 +147,7 @@ def main():
         # Generate 30 instances for each time period
         for period_name, hour in time_periods.items():
             print(f"Generating instances for {period_name}...")
-            for i in range(30):
+            for i in range(5):
                 # Generate data
                 df = generate_instance(
                     station_stats=station_stats,
