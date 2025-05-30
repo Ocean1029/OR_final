@@ -18,6 +18,15 @@ def calculate_distance_matrix(input_path: str, output_path: str) -> pd.DataFrame
 
     # 只留下必須欄位
     coords = stations[["sno", "latitude", "longitude"]].copy()
+
+    # 插入一筆 depot 資料在 YouBike2.0_南港車站(市民大道)
+    depot = pd.DataFrame({
+        "sno": [0],
+        "latitude": [25.05326],  
+        "longitude": [121.60656]  
+    })
+    coords = pd.concat([depot, coords], ignore_index=True)
+
     coords["latitude_rad"] = np.deg2rad(coords["latitude"])
     coords["longitude_rad"] = np.deg2rad(coords["longitude"])
 

@@ -34,14 +34,24 @@ def load_data(station_file: str, distance_file: str):
     stations = stations[(stations.longitude > MIN_LNG) & (stations.longitude < MAX_LNG) &
                        (stations.latitude > MIN_LAT) & (stations.latitude < MAX_LAT)]
 
-    
+    # 加入 depot (0) df
+    depot = pd.DataFrame({
+        'id': [0],
+        'C': [100],  # 假設 depot 容量很大
+        'B': [50],
+        'latitude': [25.05326],
+        'longitude': [121.60656]
+    })
+    stations = pd.concat([depot, stations], ignore_index=True)
+    # 確保站點 ID 為字串類型
+    stations.index = stations['id'].astype(str)
+
     # 讀取距離矩陣
     dist_df = pd.read_csv(distance_file, index_col=0)
     
     # 確保距離矩陣的索引和欄位名稱與站點 ID 一致
     dist_df.index = dist_df.index.astype(str)
     dist_df.columns = dist_df.columns.astype(str)
-    stations['id'] = stations['id'].astype(str)
     
     # 確保距離矩陣包含所有需要的站點
     all_stations = set(stations['id'])
@@ -80,8 +90,8 @@ def build_model(stations: pd.DataFrame,
                 L: float = 2   # 實際裝卸時間/車 (分鐘)
                ) -> gp.Model:
 
-    N = stations["id"].tolist()  # 站點 ID 列表 
-    N0 = [0] + N                 # 加入 depot (0)
+    N_with_depot = stations["id"].astype(int).tolist()  # 包含 depot (0)
+    N = N_with_depot[1:]  # 不包含 depot (0)
     print(f"\n建立模型：")
     print(f"- 站點數：{len(N)}")
     print(f"- 卡車數：{K}")
@@ -95,18 +105,13 @@ def build_model(stations: pd.DataFrame,
     
     d = {}
     missing_pairs = []
-    for i in N0:
-        for j in N0:
-            if i == j:
-                d[(i, j)] = 0
-            elif i == 0 or j == 0:
-                d[(i, j)] = 0.0005
-            else:
-                try:
-                    d[(i, j)] = dist[i][j]
-                except KeyError:
-                    missing_pairs.append((i, j))
-                    d[(i, j)] = avg_dist
+    for i in N_with_depot:
+        for j in N_with_depot:
+            try:
+                d[(i, j)] = dist[i][j]
+            except KeyError:
+                missing_pairs.append((i, j))
+                d[(i, j)] = avg_dist
     
     if missing_pairs:
         print(f"\n警告：找不到以下站點對的距離，使用平均距離代替：")
@@ -126,11 +131,11 @@ def build_model(stations: pd.DataFrame,
     m = gp.Model("YouBike_Rebalancing")
 
     # === Decision variables === #
-    x = m.addVars(N0, N0, range(K), vtype=GRB.BINARY, name="x")  # 路徑
+    x = m.addVars(N_with_depot, N_with_depot, range(K), vtype=GRB.BINARY, name="x")  # 路徑
     a = m.addVars(N,  range(K), vtype=GRB.INTEGER, name="a")     # 取車
     b = m.addVars(N,  range(K), vtype=GRB.INTEGER, name="b")     # 放車
     y = m.addVars(N,              vtype=GRB.BINARY,  name="y")   # 平衡指標
-    W = m.addVars(N0, range(K), vtype=GRB.INTEGER, name="W")     # 載重
+    W = m.addVars(N_with_depot, range(K), vtype=GRB.INTEGER, name="W")     # 載重
     u = m.addVars(N,  range(K), vtype=GRB.CONTINUOUS, name="u")  # MTZ 排序變數
 
     # === Objective: maximize balanced stations === #
@@ -150,8 +155,8 @@ def build_model(stations: pd.DataFrame,
 
         # (c) Visitation-operation consistency
         for k in range(K):
-            m.addConstr(a[i,k] <= Q * gp.quicksum(x[h,i,k] for h in N0 if h != i))
-            m.addConstr(b[i,k] <= Q * gp.quicksum(x[h,i,k] for h in N0 if h != i))
+            m.addConstr(a[i,k] <= Q * gp.quicksum(x[h,i,k] for h in N_with_depot if h != i))
+            m.addConstr(b[i,k] <= Q * gp.quicksum(x[h,i,k] for h in N_with_depot if h != i))
 
     # ---------- Truck route constraints --------- #
     for k in range(K):
@@ -161,14 +166,14 @@ def build_model(stations: pd.DataFrame,
 
         for i in N:
             # At most visit once
-            m.addConstr(gp.quicksum(x[h,i,k] for h in N0 if h != i) <= 1)
-            m.addConstr(gp.quicksum(x[i,j,k] for j in N0 if j != i) <= 1)
+            m.addConstr(gp.quicksum(x[h,i,k] for h in N_with_depot if h != i) <= 1)
+            m.addConstr(gp.quicksum(x[i,j,k] for j in N_with_depot if j != i) <= 1)
             # Flow conservation
-            m.addConstr(gp.quicksum(x[h,i,k] for h in N0 if h != i)
-                        == gp.quicksum(x[i,j,k] for j in N0 if j != i))
+            m.addConstr(gp.quicksum(x[h,i,k] for h in N_with_depot if h != i)
+                        == gp.quicksum(x[i,j,k] for j in N_with_depot if j != i))
 
         # Total time window (travel + load/unload)
-        travel = gp.quicksum(t[i,j] * x[i,j,k] for i in N0 for j in N0 if i!=j)
+        travel = gp.quicksum(t[i,j] * x[i,j,k] for i in N_with_depot for j in N_with_depot if i!=j)
         handling = L * gp.quicksum(a[i,k] + b[i,k] for i in N)  # 只計算站點的裝卸時間
         m.addConstr(travel + handling <= T)
 
@@ -190,8 +195,8 @@ def build_model(stations: pd.DataFrame,
         m.addConstr(0 <= W[0,k])
         m.addConstr(W[0,k] <= Q)
 
-        for i in N0:
-            for j in N0:
+        for i in N_with_depot:
+            for j in N_with_depot:
                 if i != j:
                     if j == 0:  # 到達 depot
                         m.addConstr(W[j,k] >= W[i,k] - Q*(1 - x[i,j,k]))
