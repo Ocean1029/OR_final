@@ -285,47 +285,74 @@ def process_instance(stations_path: str, distances_path: str, K: int, T: int, ou
     else:
         return False, None
 
+import concurrent.futures
+
+def solve_wrapper(args):
+    """包裝 process_instance 以便多進程呼叫"""
+    stations_path, distances_path, K, T, output_dir, scenario_dir, time_period, instance_num = args
+    try:
+        success, obj_val = process_instance(stations_path, distances_path, K, T, output_dir)
+        return (scenario_dir, time_period, instance_num, success, obj_val, output_dir)
+    except Exception as e:
+        # 若有例外，回傳失敗
+        return (scenario_dir, time_period, instance_num, False, None, output_dir, str(e))
+
+
 def main():
     base_dir = "generated_instances"
     results_dir = "optimization_results"
     os.makedirs(results_dir, exist_ok=True)
-    
-    # 遍歷所有情境
+
+    # 準備所有 instance 的任務列表
+    task_list = []
     for scenario_dir in sorted(os.listdir(base_dir)):
         if not os.path.isdir(os.path.join(base_dir, scenario_dir)):
             continue
-            
-        print(f"\n處理情境: {scenario_dir}")
         K, T = get_scenario_params(scenario_dir)
-        
-        # 遍歷該情境下的所有時間段
         scenario_path = os.path.join(base_dir, scenario_dir)
         for time_period in sorted(os.listdir(scenario_path)):
             if not os.path.isdir(os.path.join(scenario_path, time_period)):
                 continue
-                
-            print(f"\n時間段: {time_period}")
             time_path = os.path.join(scenario_path, time_period)
-            
-            # 遍歷該時間段下的所有實例
             for instance_file in sorted(os.listdir(time_path)):
                 if not instance_file.endswith('.csv'):
                     continue
-                    
                 instance_num = instance_file.split('_')[1].split('.')[0]
-                print(f"\n處理實例 {instance_num}...")
-                
-                # 設定路徑
                 stations_path = os.path.join(time_path, instance_file)
                 distances_path = "./distance_output/distance_matrix.csv"
                 output_dir = os.path.join(results_dir, scenario_dir, time_period, f"instance_{instance_num}")
                 os.makedirs(output_dir, exist_ok=True)
-                
-                # 處理實例
-                success, obj_val = process_instance(stations_path, distances_path, K, T, output_dir)
-                
-                if success:
-                    print(f"✓ 最佳化完成：總平衡站數 = {obj_val}")
+                # 包裝所有必要資訊
+                task_list.append((
+                    stations_path, distances_path, K, T, output_dir,
+                    scenario_dir, time_period, instance_num
+                ))
+
+    print(f"\n總共需要處理 {len(task_list)} 個實例，開始平行求解 ...")
+
+    # 利用 ProcessPoolExecutor 平行處理所有任務
+    futures = []
+    with concurrent.futures.ProcessPoolExecutor() as executor:
+        # 提交所有任務
+        for args in task_list:
+            futures.append(executor.submit(solve_wrapper, args))
+
+        # 收集與顯示結果
+        for future in concurrent.futures.as_completed(futures):
+            result = future.result()
+            # unpack
+            if len(result) == 7:
+                scenario_dir, time_period, instance_num, success, obj_val, output_dir, err = result
+            else:
+                scenario_dir, time_period, instance_num, success, obj_val, output_dir = result
+                err = None
+            # 印出進度與結果
+            print(f"\n[{scenario_dir} | {time_period} | instance_{instance_num}] ", end="")
+            if success:
+                print(f"✓ 最佳化完成：總平衡站數 = {obj_val} (結果於 {output_dir})")
+            else:
+                if err:
+                    print(f"✗ 發生例外: {err}")
                 else:
                     print("✗ 模型未在時限內找到最適解")
 
