@@ -133,7 +133,9 @@ def main():
         (2, 30),  # 2 trucks, 30 minutes time window
         (2, 60),  # 2 trucks, 60 minutes time window
         (4, 30),  # 4 trucks, 30 minutes time window
-        (4, 60)   # 4 trucks, 60 minutes time window
+        (4, 60),  # 4 trucks, 60 minutes time window
+        (6, 30),  # 6 trucks, 30 minutes time window
+        (6, 60)   # 6 trucks, 60 minutes time window
     ]
     
     for num_trucks, time_window in scenarios:
