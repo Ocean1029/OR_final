@@ -67,6 +67,7 @@ def aggregate(df: pd.DataFrame) -> dict:
               longitude=("longitude", "first"),
               total=("total", "mean"),
               available_rent_bikes=("available_rent_bikes", "mean"),
+              available_rent_bikes_std=("available_rent_bikes", "std"),  # 新增標準差
               available_return_bikes=("available_return_bikes", "mean"),
               srcUpdateTime=("srcUpdateTime", "first"),  # 任選一筆保留顯示
           )
@@ -76,7 +77,8 @@ def aggregate(df: pd.DataFrame) -> dict:
     # 每個時段的結果切出來
     by_interval = {
         t.strftime("%H%M"): g[
-            ["sno", "sarea", "sna", "latitude", "longitude", "total", "available_rent_bikes", "available_return_bikes", "srcUpdateTime"]
+            ["sno", "sarea", "sna", "latitude", "longitude", "total", 
+             "available_rent_bikes", "available_rent_bikes_std", "available_return_bikes", "srcUpdateTime"]
         ].reset_index(drop=True)
         for t, g in grouped.groupby("time_only")
     }
