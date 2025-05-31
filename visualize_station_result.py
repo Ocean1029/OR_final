@@ -117,7 +117,7 @@ def main():
     time_str = os.path.basename(__file__).replace(".py", "_") + pd.Timestamp.now().strftime("%H%M%S")
 
     # 設定輸入輸出路徑
-    input_path = Path("./optimization_results/163434_小南港_limit300s_時速60/6trucks_60min/night_10pm/instance_4/station_results.csv")
+    input_path = Path("./optimization_results/20250531_190114/2trucks_30min/night_10pm/instance_4/station_results.csv")
     output_path = Path(f"./visualization/{time_str}.html")  # 如果不存在，會自動建立
     output_path.parent.mkdir(parents=True, exist_ok=True)  # 確保輸出目錄存在
 
