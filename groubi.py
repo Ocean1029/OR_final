@@ -110,8 +110,9 @@ def build_model(stations: pd.DataFrame,
                 distances: pd.DataFrame,
                 K: int,
                 T: int,
-                Q: int = 14,
-                L: float = 2   # 實際裝卸時間/車 (分鐘)
+                Q: int = 28,
+                L: float = 0.5,   # 實際裝卸時間/車 (分鐘)
+                S: int = 100     # 車子的時速
                ) -> gp.Model:
 
     # 檢查 stations id 是 str
@@ -136,7 +137,7 @@ def build_model(stations: pd.DataFrame,
             d[(i, j)] = distances.at[i, j] if i != j else 0
     
     # 轉換為時間（分鐘）
-    t = {k: v / 30 * 60 for k, v in d.items()}  # 30 km/h → 轉成分鐘
+    t = {k: v / S * 60 for k, v in d.items()}  # 30 km/h → 轉成分鐘
     C = {row.id: row.C for _, row in stations.iterrows()}
     B = {row.id: row.B for _, row in stations.iterrows()}
 
@@ -256,10 +257,19 @@ def process_instance(stations_path: str, distances_path: str, K: int, T: int, ou
     # 站點 ID (含/不含 depot)
     station_ids = model_stations["id"].tolist()
     station_ids_no_depot = [sid for sid in station_ids if sid != '0']
+
+    # ---- baseline: initial balanced station count (no dispatch) ----
+    initial_balanced = sum(
+        1
+        for sid in station_ids_no_depot
+        if 0.3 * model_stations.loc[model_stations.id == sid, "C"].values[0]
+           <= model_stations.loc[model_stations.id == sid, "B"].values[0]
+           <= 0.7 * model_stations.loc[model_stations.id == sid, "C"].values[0]
+    )
     
     # 建模並求解
     model = build_model(model_stations, dist_df, K=K, T=T)
-    model.setParam("TimeLimit", 30)   # 5 分鐘上限
+    model.setParam("TimeLimit", 60)   # 5 分鐘上限
     model.optimize()
 
     # --------- Record solver status & KPI --------- #
@@ -321,8 +331,9 @@ def process_instance(stations_path: str, distances_path: str, K: int, T: int, ou
 
             total_pick = sum(int(model.getVarByName(f"a[{i},{k}]").X) for i in station_ids_no_depot)
             total_drop = sum(int(model.getVarByName(f"b[{i},{k}]").X) for i in station_ids_no_depot)
+            start_load = int(model.getVarByName(f"W[0,{k}]").X)
             routes_lines.append(
-                f"Truck {k}: " +
+                f"Truck {k} (start_load={start_load}): " +
                 " -> ".join(step_strs) +
                 f" | total_pick={total_pick}, total_drop={total_drop}"
             )
@@ -330,6 +341,7 @@ def process_instance(stations_path: str, distances_path: str, K: int, T: int, ou
         # Write enriched routes.txt
         with open(f"{output_dir}/routes.txt", "w", encoding="utf-8") as f:
             f.write(f"Status: {status_str}\n")
+            f.write(f"Balanced before (baseline): {initial_balanced}\n")
             if obj_val is not None:
                 f.write(f"Objective (balanced stations): {int(obj_val)}\n")
             if status_code == GRB.TIME_LIMIT and obj_val is not None:
