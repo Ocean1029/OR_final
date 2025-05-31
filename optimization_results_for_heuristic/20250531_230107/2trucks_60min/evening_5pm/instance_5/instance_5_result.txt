@@ -1,0 +1,9 @@
+Instance: instance_5.csv
+Time slot: 17:00
+Truck count: 2
+Total distance: 6.69 km
+Total time: 7.69 minutes
+
+Truck routes:
+Truck 1: 0 -> 500111068 -> 500108019 -> 0
+Truck 2: 0
