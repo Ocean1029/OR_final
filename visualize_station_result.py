@@ -6,21 +6,34 @@ import folium
 import argparse
 from pathlib import Path
 
+snapshot_dir = Path("data/snapshot_2025-05-22T06-55+00-00.csv")
+
+
 def load_station_results(csv_path: str) -> pd.DataFrame:
     """
     讀取 station_results.csv，並確保必要欄位存在。
-    預期欄位: station_id, balanced, final_bikes, total, latitude, longitude
+    預期欄位: station_id, balanced, final_bikes, latitude, longitude
     """
     df = pd.read_csv(csv_path)
-    required_cols = {"station_id", "balanced", "final_bikes", "total", "latitude", "longitude"}
-    if not required_cols.issubset(df.columns):
-        missing = required_cols - set(df.columns)
-        raise ValueError(f"輸入的 CSV 欄位缺少：{missing}")
-    # 確保 total 欄位存在且轉型
-    if "total" not in df.columns:
-        raise ValueError("輸入的 CSV 欄位缺少：total")
+    # 從 snapshot 資料集中讀取站點總柱數 (total)
+    snapshot_df = pd.read_csv(
+        snapshot_dir,
+        dtype={"sno": "str", "total": "int"}
+    )
+    snapshot_df = snapshot_df[["sno", "total"]].rename(columns={"total": "total"})
+
+    # 合併 total 到 df (station_id 對應 snapshot_df 的 sno)
+    df = df.astype({"station_id": "str"})
+    df = df.merge(snapshot_df, left_on="station_id", right_on="sno", how="left")
+    df.drop(columns=["sno"], inplace=True)
+
+    # 檢查是否有站點缺少 total
+    if df["total"].isnull().any():
+        missing_ids = df[df["total"].isnull()]["station_id"].unique().tolist()
+        raise ValueError(f"以下 station_id 在 snapshot 中找不到對應的 total：{missing_ids}")
+
+    # 轉型剩餘欄位型別 (latitude, longitude 已在 station_results.csv 中)
     df = df.astype({
-        "station_id": "str",
         "balanced": "int",
         "final_bikes": "int",
         "total": "int",
@@ -36,10 +49,12 @@ def draw_station_results_map(df: pd.DataFrame, output_file: str):
     - 非平衡站點（balanced == 0）標記為淡紅色 (#FF9999)
     """
     # 若欲篩選地理範圍，可如下定義
-    MIN_LNG = 121.58498      # 西邊界
+    # MIN_LNG = 121.58498      # 西大邊界
+    MIN_LNG = 121.591256
     MAX_LNG = 123            # 東邊界（稍微定鬆，避免過濾掉北市東側）
     MIN_LAT = 25.04615       # 南邊界
-    MAX_LAT = 25.08550       # 北邊界
+    # MAX_LAT = 25.08550       # 北大邊界
+    MAX_LAT = 25.062016
 
     # 根據經緯度範圍過濾（可視專案需求自行調整或拿掉）
     geo_df = df[
@@ -92,27 +107,19 @@ def draw_station_results_map(df: pd.DataFrame, output_file: str):
         ).add_to(m)
 
     # 儲存成 HTML
-    m.save(output_file)
+    m.save(output_file, "utf-8")
     print(f"✔ 已將地圖輸出至：{output_file}")
 
 def main():
-    parser = argparse.ArgumentParser(description="將 Gurobi 優化後的 station_results.csv 繪製成 Folium 地圖")
-    parser.add_argument(
-        "--input",
-        "-i",
-        required=True,
-        help="輸入的 station_results.csv 檔案路徑"
-    )
-    parser.add_argument(
-        "--output",
-        "-o",
-        default="station_results_map.html",
-        help="輸出地圖 HTML 檔案路徑（預設：station_results_map.html）"
-    )
 
-    args = parser.parse_args()
-    input_path = Path(args.input)
-    output_path = Path(args.output)
+    import os
+    # 檔名設定成現在時間
+    time_str = os.path.basename(__file__).replace(".py", "_") + pd.Timestamp.now().strftime("%H%M%S")
+
+    # 設定輸入輸出路徑
+    input_path = Path("./optimization_results/163434_小南港_limit300s_時速60/6trucks_60min/night_10pm/instance_4/station_results.csv")
+    output_path = Path(f"./visualization/{time_str}.html")  # 如果不存在，會自動建立
+    output_path.parent.mkdir(parents=True, exist_ok=True)  # 確保輸出目錄存在
 
     if not input_path.exists():
         raise FileNotFoundError(f"找不到輸入檔案：{input_path}")
