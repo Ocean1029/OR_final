@@ -49,12 +49,12 @@ def draw_station_results_map(df: pd.DataFrame, output_file: str):
     - 非平衡站點（balanced == 0）標記為淡紅色 (#FF9999)
     """
     # 若欲篩選地理範圍，可如下定義
-    # MIN_LNG = 121.58498      # 西大邊界
-    MIN_LNG = 121.591256
+    MIN_LNG = 121.58498      # 西大邊界
+    # MIN_LNG = 121.591256
     MAX_LNG = 123            # 東邊界（稍微定鬆，避免過濾掉北市東側）
     MIN_LAT = 25.04615       # 南邊界
-    # MAX_LAT = 25.08550       # 北大邊界
-    MAX_LAT = 25.062016
+    MAX_LAT = 25.08550       # 北大邊界
+    # MAX_LAT = 25.062016
 
     # 根據經緯度範圍過濾（可視專案需求自行調整或拿掉）
     geo_df = df[
@@ -117,7 +117,7 @@ def main():
     time_str = os.path.basename(__file__).replace(".py", "_") + pd.Timestamp.now().strftime("%H%M%S")
 
     # 設定輸入輸出路徑
-    input_path = Path("./optimization_results/20250531_190114/2trucks_30min/night_10pm/instance_4/station_results.csv")
+    input_path = Path("optimization_results/200448_全範圍_limit300s_時速60/6trucks_60min/morning_9am/instance_4/station_results.csv")
     output_path = Path(f"./visualization/{time_str}.html")  # 如果不存在，會自動建立
     output_path.parent.mkdir(parents=True, exist_ok=True)  # 確保輸出目錄存在
 
