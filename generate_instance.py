@@ -39,7 +39,9 @@ def read_interval_data():
                     'sna': row['sna'],
                     'latitude': row['latitude'],
                     'longitude': row['longitude'],
-                    'total': row['total']
+                    'total': row['total'],
+                    'available_rent_bikes': row['available_rent_bikes'],
+                    'available_rent_bikes_std': row['available_rent_bikes_std']
                 }
             # Only append data if it's within the time window
             if 9 <= hour < 10:  # Morning 9am
@@ -58,8 +60,8 @@ def read_interval_data():
             'latitude': station_info[station_id]['latitude'],
             'longitude': station_info[station_id]['longitude'],
             'total': station_info[station_id]['total'],
-            'rent_mean': np.mean(data['available_rent_bikes']) if data['available_rent_bikes'] else 0,
-            'rent_std': np.std(data['available_rent_bikes']) if data['available_rent_bikes'] else 0
+            'rent_mean': station_info[station_id]['available_rent_bikes'],
+            'rent_std': station_info[station_id]['available_rent_bikes_std']
         }
     
     return station_stats
