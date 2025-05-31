@@ -79,7 +79,7 @@ def simple_reset_heuristic(
     # 篩選外圍
     outskirts = outskirts[(outskirts.longitude > MIN_LNG) & (outskirts.longitude < MAX_LNG) &
                         (outskirts.latitude > MIN_LAT) & (outskirts.latitude < MAX_LAT)]
-    
+    print(f"篩選後的車站數量: {len(stations)}, 外圍數量: {len(outskirts)}")
     # 加入 depot (0) df
     depot = pd.DataFrame({
         'id': ['0'],
@@ -278,9 +278,9 @@ def main():
 
     # Define station IDs for identifying stations vs outskirts
     station_ids = [
-        '500111003', '500111013', '500111019', '500111025', '500111026',
-        '500111027', '500111056', '500111061', '500111062', '500111068',
-        '500111069', '500111079', '500111097', '500111076'
+        500111003, 500111013, 500111019, 500111025, 500111026,
+        500111027, 500111056, 500111061, 500111062, 500111068,
+        500111069, 500111079, 500111097, 500111076
     ]
 
     # Parameters for truck capacity, load/unload time, and speed
@@ -320,6 +320,9 @@ def main():
                 if not instance_file.endswith('.csv'):
                     continue
 
+                # 1. Extract instance name
+                instance_name = instance_file.replace('.csv', '')
+
                 instance_path = os.path.join(time_path, instance_file)
                 # Read instance data
                 instance_data = pd.read_csv(instance_path)
@@ -332,7 +335,7 @@ def main():
                 # Rename 'sno' to 'id' for both DataFrames
                 stations_df = stations_df.rename(columns={'sno': 'id'})
                 outskirts_df = outskirts_df.rename(columns={'sno': 'id'})
-
+                print(stations_df)
                 # Call the heuristic function
                 routes, final_station_bikes = simple_reset_heuristic(
                     stations=stations_df,
@@ -363,11 +366,11 @@ def main():
                         if i < len(route) - 2:
                             total_time += L
 
-                # Prepare output directory for this scenario/time_slot
-                out_dir = os.path.join(results_dir, scenario_dir, time_slot_dir)
+                # Prepare output directory for this scenario/time_slot/instance
+                out_dir = os.path.join(results_dir, scenario_dir, time_slot_dir, instance_name)
                 os.makedirs(out_dir, exist_ok=True)
 
-                                # ---------- Generate station_results.csv ----------
+                # ---------- Generate station_results.csv ----------
                 station_results = []
                 for sid in stations_df['id']:
                     cap = int(stations_df.loc[stations_df['id'] == sid, 'total'].values[0])
