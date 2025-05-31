@@ -11,7 +11,7 @@ def fetch_realtime_data():
 def load_csv_data(csv_path):
     return pd.read_csv(csv_path)
 
-def draw_all_intervals(folder="interval_outputs", output_folder="map_outputs"):
+def draw_all_intervals(folder="print_sth", output_folder="map_outputs"):
     folder = Path(folder)
     output_folder = Path(output_folder)
     output_folder.mkdir(exist_ok=True)
@@ -34,10 +34,10 @@ def draw_map(df, output_file="youbike_map.html"):
                         "available_rent_bikes":"float", "available_return_bikes":"float"})
     
     # 依你給的數字（可再調整）
-    MIN_LNG = 121.58498      # 西邊界
+    MIN_LNG = 121.591256      # 西邊界
     MAX_LNG = 123            # 東邊界（臨時設個 123°E，比台北再東一些）
     MIN_LAT = 25.04615       # 南邊界
-    MAX_LAT = 25.08550       # 北邊界
+    MAX_LAT = 25.062016       # 北邊界
 
     # 過濾掉不在指定範圍的資料
     df = df[(df.longitude > MIN_LNG) & (df.longitude < MAX_LNG) &
