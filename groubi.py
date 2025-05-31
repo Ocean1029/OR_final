@@ -53,18 +53,43 @@ def load_data(station_file: str, distance_file: str):
     dist_df.index = dist_df.index.astype(str)
     dist_df.columns = dist_df.columns.astype(str)
     
+    # 確保站點 ID 的格式一致
+    stations['id'] = stations['id'].astype(str)
+    
+    # 使用站點 ID 來選擇距離矩陣
+    station_ids = stations['id'].tolist()
+    dist_df = dist_df.loc[station_ids, station_ids]
+    
     # 確保距離矩陣包含所有需要的站點
-    all_stations = set(stations['id'])
+    stations_set = set(stations['id'])
     dist_stations = set(dist_df.index)
-    missing_stations = all_stations - dist_stations
+    
+    # print(f"站點 ID 的前5個元素: {sorted(list(stations_set))[:5]}")
+    # print(f"距離矩陣站點的前5個元素: {sorted(list(dist_stations))[:5]}")
+    # print(f"站點數量: {len(stations_set)}")
+    # print(f"距離矩陣站點數量: {len(dist_stations)}")
+    
+    # 檢查是否有任何匹配的站點
+    matching_stations = stations_set.intersection(dist_stations)
+    # print(f"匹配的站點數量: {len(matching_stations)}")
+    
+    if len(matching_stations) == 0:
+        raise ValueError("錯誤：距離矩陣中沒有任何與站點資料匹配的站點 ID。請檢查距離矩陣檔案是否正確。")
+    
+    missing_stations = stations_set - dist_stations
     
     if missing_stations:
-        # 使用平均距離填充缺失的站點
         avg_dist = dist_df.values.mean()
+        # 先補 column
+        for station in missing_stations:
+            dist_df[station] = avg_dist
+        # 再補 row
         for station in missing_stations:
             dist_df.loc[station] = avg_dist
-            dist_df[station] = avg_dist
-        
+        # 重新排序 row/column
+        dist_df = dist_df.loc[station_ids, station_ids]
+
+    
     return stations, dist_df
 
 def build_scenario(scenario_id: int):
@@ -90,7 +115,8 @@ def build_model(stations: pd.DataFrame,
                 L: float = 2   # 實際裝卸時間/車 (分鐘)
                ) -> gp.Model:
 
-    N_with_depot = stations["id"].astype(int).tolist()  # 包含 depot (0)
+    N_with_depot = stations["id"].astype(str).tolist()  # 包含 depot (0)
+    print(N_with_depot)
     N = N_with_depot[1:]  # 不包含 depot (0)
     print(f"\n建立模型：")
     print(f"- 站點數：{len(N)}")
@@ -101,15 +127,15 @@ def build_model(stations: pd.DataFrame,
     dist = distances.to_dict()   # {(i,j): 距離(公里)}
     
     # 計算 depot 到各站點的距離（使用平均距離）
-    avg_dist = distances.values.mean()
+    avg_dist = distances.values.mean() # TODO 這裡 dist 會超大
     
     d = {}
     missing_pairs = []
     for i in N_with_depot:
         for j in N_with_depot:
             try:
-                d[(i, j)] = dist[i][j]
-            except KeyError:
+                d[(i, j)] = float(distances.loc[i, j])
+            except (KeyError, ValueError):
                 missing_pairs.append((i, j))
                 d[(i, j)] = avg_dist
     
@@ -131,6 +157,11 @@ def build_model(stations: pd.DataFrame,
     m = gp.Model("YouBike_Rebalancing")
 
     # === Decision variables === #
+    # 確保所有站點 ID 都是字串類型
+    N_with_depot = [str(i) for i in N_with_depot]
+    N = [str(i) for i in N]
+    
+    # 路徑變數
     x = m.addVars(N_with_depot, N_with_depot, range(K), vtype=GRB.BINARY, name="x")  # 路徑
     a = m.addVars(N,  range(K), vtype=GRB.INTEGER, name="a")     # 取車
     b = m.addVars(N,  range(K), vtype=GRB.INTEGER, name="b")     # 放車
