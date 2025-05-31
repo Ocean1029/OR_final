@@ -18,6 +18,14 @@ def read_interval_data():
     # Read each file
     for file in csv_files:
         df = pd.read_csv(file)
+        # Get time from filename (format: interval_XXXX.csv)
+        time_str = os.path.basename(file).split('_')[1].split('.')[0]
+        try:
+            hour = int(time_str) // 100  # Convert XXXX to hour (e.g., 0900 -> 9)
+        except ValueError:
+            print(f"Warning: Cannot parse time format in file {file}, skipping...")
+            continue
+            
         # Process each station
         for _, row in df.iterrows():
             station_id = row['sno']
@@ -33,7 +41,13 @@ def read_interval_data():
                     'longitude': row['longitude'],
                     'total': row['total']
                 }
-            all_stations_data[station_id]['available_rent_bikes'].append(row['available_rent_bikes'])
+            # Only append data if it's within the time window
+            if 9 <= hour < 10:  # Morning 9am
+                all_stations_data[station_id]['available_rent_bikes'].append(row['available_rent_bikes'])
+            elif 17 <= hour < 18:  # Evening 5pm
+                all_stations_data[station_id]['available_rent_bikes'].append(row['available_rent_bikes'])
+            elif 22 <= hour < 23:  # Night 10pm
+                all_stations_data[station_id]['available_rent_bikes'].append(row['available_rent_bikes'])
     
     # Calculate the statistics of each station
     station_stats = {}
@@ -44,8 +58,8 @@ def read_interval_data():
             'latitude': station_info[station_id]['latitude'],
             'longitude': station_info[station_id]['longitude'],
             'total': station_info[station_id]['total'],
-            'rent_mean': np.mean(data['available_rent_bikes']),
-            'rent_std': np.std(data['available_rent_bikes'])
+            'rent_mean': np.mean(data['available_rent_bikes']) if data['available_rent_bikes'] else 0,
+            'rent_std': np.std(data['available_rent_bikes']) if data['available_rent_bikes'] else 0
         }
     
     return station_stats
