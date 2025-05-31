@@ -116,14 +116,14 @@ class HeuristicSolver:
         Returns:
             List[List[str]]: The path of each truck
         """
-        # Initialize the station status
+        # 初始化站點狀態
         current_bikes = {row['id']: row['B'] for _, row in self.stations.iterrows()}
         capacities = {row['id']: row['C'] for _, row in self.stations.iterrows()}
         
-        # Calculate the target number of vehicles for each station
+        # 計算每個站點的目標車輛數
         target_bikes = {i: 0.5 * capacities[i] for i in current_bikes.keys()}
         
-        # Initialize the surplus and deficit lists
+        # 初始化超載與不足的站點列表
         surplus_list = []
         deficit_list = []
         surplus_amount = {}
@@ -139,7 +139,7 @@ class HeuristicSolver:
                 surplus_amount[i] = current_bikes[i] - target_bikes[i]
                 surplus_list.append(i)
         
-        # Plan the path for each truck
+        # 規劃每輛卡車的路徑
         routes = []
         for _ in range(self.K):
             position = self.depot
@@ -147,32 +147,44 @@ class HeuristicSolver:
             load = 0
             route = [self.depot]
             
-            while remaining_time > 0 and (surplus_list or deficit_list):
-                if load < self.Q and surplus_list:
-                    # Find the nearest surplus station to collect vehicles
+            # Outbound：卡車直接去車站拿車給 outskirt
+            while remaining_time > 0 and surplus_list:
+                if load < self.Q:
+                    # 找最近的有多餘車輛的車站
                     next_station, move_time = self._find_nearest_station(position, surplus_list)
                     if next_station is None:
                         break
                         
+                    # 計算裝車時間
                     op_time = self.L * min(surplus_amount[next_station], self.Q - load)
                     
+                    # 檢查剩餘時間是否足夠
                     if move_time + op_time > remaining_time:
                         break
                         
+                    # 移動到該車站並裝車
                     route.append(next_station)
                     bikes_to_collect = min(surplus_amount[next_station], self.Q - load)
                     load += bikes_to_collect
                     surplus_amount[next_station] -= bikes_to_collect
                     current_bikes[next_station] -= bikes_to_collect
                     
+                    # 如果該車站已無多餘車輛，從列表中移除
                     if surplus_amount[next_station] == 0:
                         surplus_list.remove(next_station)
                         
+                    # 更新剩餘時間和位置
                     remaining_time -= (move_time + op_time)
                     position = next_station
-                    
-                elif load > 0 and deficit_list:
-                    # Find the nearest deficit station to replenish vehicles
+                else:
+                    # 卡車已滿載，去找 outskirt 卸車
+                    break
+            
+            # Inbound：卡車先去找outskirt有沒有多餘的車輛，
+            # 如果沒有，就開從depot 補車
+            while remaining_time > 0 and deficit_list:
+                if load > 0:
+                    # 找最近的站點來補車
                     next_station, move_time = self._find_nearest_station(position, deficit_list)
                     if next_station is None:
                         break
@@ -194,7 +206,42 @@ class HeuristicSolver:
                     remaining_time -= (move_time + op_time)
                     position = next_station
                 else:
-                    break
+                    # 如果卡車是空的，先檢查 outskirt 
+                    if deficit_list:
+                        # 找有多車的 outskirt 站點
+                        outskirt_with_bikes = None
+                        min_distance = float('inf')
+                        
+                        for outskirt in self.outskirts:
+                            if current_bikes[outskirt] > 0:
+                                dist = self.distances.at[position, outskirt]
+                                if dist < min_distance:
+                                    outskirt_with_bikes = outskirt
+                                    min_distance = dist
+                                    
+                        if outskirt_with_bikes is not None:
+                            # 從 outskirt 拿車
+                            move_time = min_distance
+                            if move_time > remaining_time:
+                                break
+                                
+                            route.append(outskirt_with_bikes)
+                            load = min(self.Q, current_bikes[outskirt_with_bikes])
+                            current_bikes[outskirt_with_bikes] -= load
+                            remaining_time -= move_time
+                            position = outskirt_with_bikes
+                        else:
+                            # 如果沒有 outskirt 有車，才從 depot 補車
+                            move_time = self.distances.at[position, self.depot]
+                            if move_time > remaining_time:
+                                break
+                                
+                            route.append(self.depot)
+                            load = self.Q
+                            remaining_time -= move_time
+                            position = self.depot
+                    else:
+                        break
             
             route.append(self.depot)
             routes.append(route)
