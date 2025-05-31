@@ -261,7 +261,10 @@ def simple_reset_heuristic(
                 curr_loc = '0'
                 routes[k].append(curr_loc)
 
-    return routes, station_bikes
+    # merge station and outskirt bike counts so the caller sees everything
+    final_bikes = {**station_bikes, **outskirts_bikes}
+    print(routes)
+    return routes, final_bikes
     
 
 def main():
@@ -371,15 +374,16 @@ def main():
                 os.makedirs(out_dir, exist_ok=True)
 
                 # ---------- Generate station_results.csv ----------
+                all_station_df = pd.concat([stations_df, outskirts_df], ignore_index=True)
                 station_results = []
-                for sid in stations_df['id']:
-                    cap = int(stations_df.loc[stations_df['id'] == sid, 'total'].values[0])
+                for sid in all_station_df['id']:
+                    cap = int(all_station_df.loc[all_station_df['id'] == sid, 'total'].values[0])
                     # Use original 'total' column from instance_data to get capacity
-                    initial_bikes = int(stations_df.loc[stations_df['id'] == sid, 'available_rent_bikes'].round().astype(int).values[0])
+                    initial_bikes = int(all_station_df.loc[all_station_df['id'] == sid, 'available_rent_bikes'].round().astype(int).values[0])
                     final_bikes = final_station_bikes.get(sid, initial_bikes)
                     balanced = 1 if (0.3 * cap) <= final_bikes <= (0.7 * cap) else 0
-                    lat = stations_df.loc[stations_df['id'] == sid, 'latitude'].values[0]
-                    lng = stations_df.loc[stations_df['id'] == sid, 'longitude'].values[0]
+                    lat = all_station_df.loc[all_station_df['id'] == sid, 'latitude'].values[0]
+                    lng = all_station_df.loc[all_station_df['id'] == sid, 'longitude'].values[0]
                     station_results.append({
                         "station_id": sid,
                         "balanced": balanced,
