@@ -2,6 +2,7 @@ import pandas as pd
 import math
 from typing import List, Dict, Tuple
 import numpy as np
+import os
 
 def simple_reset_heuristic(
     stations: pd.DataFrame,
@@ -13,7 +14,7 @@ def simple_reset_heuristic(
     L: float = 0.5,
     S: int = 60,
     T: int = 30
-) -> dict[int, list[str]]:
+) -> Tuple[dict[int, list[str]], Dict[str, int]]:
     """
     一個更簡單的啟發式：
       - 根據當前 time_slot（"09:00"、"17:00"、"22:00"）來決定
@@ -54,6 +55,40 @@ def simple_reset_heuristic(
         for j in all_nodes:
             if (i in distances.index) and (j in distances.columns):
                 t_time[(i, j)] = (distances.at[i, j] / S) * 60
+
+    stations['B'] = stations['available_rent_bikes'].round().astype(int)
+    stations['C'] = stations['total'].astype(int)
+    outskirts['B'] = outskirts['available_rent_bikes'].round().astype(int)
+    outskirts['C'] = outskirts['total'].astype(int)
+
+    stations = stations[['id', 'C', 'B', 'latitude', 'longitude']]
+    outskirts = outskirts[['id', 'C', 'B', 'latitude', 'longitude']]
+
+    # 篩選 stations 的經緯度
+    # MIN_LNG = 121.591256      # 西邊界   原本是：121.58498
+    MIN_LNG = 121.58498      # 西大邊界 
+    MAX_LNG = 123            # 東邊界（臨時設個 123°E，比台北再東一些）
+    MIN_LAT = 25.04615       # 南邊界
+    # MAX_LAT = 25.062016       # 北邊界 隨便改的 原本是：25.08550
+    MAX_LAT = 25.08550       # 北大邊界
+    
+    # 篩選站點
+    stations = stations[(stations.longitude > MIN_LNG) & (stations.longitude < MAX_LNG) &
+                       (stations.latitude > MIN_LAT) & (stations.latitude < MAX_LAT)]
+
+    # 篩選外圍
+    outskirts = outskirts[(outskirts.longitude > MIN_LNG) & (outskirts.longitude < MAX_LNG) &
+                        (outskirts.latitude > MIN_LAT) & (outskirts.latitude < MAX_LAT)]
+    
+    # 加入 depot (0) df
+    depot = pd.DataFrame({
+        'id': ['0'],
+        'C': [100],  # 假設 depot 容量很大
+        'B': [50],
+        'latitude': [25.05326],
+        'longitude': [121.60656]
+    })
+    stations = pd.concat([depot, stations], ignore_index=True)
 
     # 4. 動態追蹤：station_bikes, outskirts_bikes
     station_bikes = {sid: stations.at[sid, "B"] for sid in stations.index}
@@ -226,11 +261,11 @@ def simple_reset_heuristic(
                 curr_loc = '0'
                 routes[k].append(curr_loc)
 
-    return routes
+    return routes, station_bikes
     
 
 def main():
-    # 加上時間戳記的資料夾
+    # Add timestamped results directory
     import os
     import datetime
     timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -238,51 +273,70 @@ def main():
     results_dir = "optimization_results_for_heuristic/" + timestamp
     os.makedirs(results_dir, exist_ok=True)
 
-    # 讀取距離矩陣
-    distances = pd.read_csv("distance_output/distance_matrix.csv")
-    
-    # 定義 station 和 outskirt 的 ID
-    station_ids = ['500111003', '500111013', '500111019', '500111025', '500111026',
-                  '500111027', '500111056', '500111061', '500111062', '500111068', 
-                  '500111069', '500111079', '500111097']
-    
-    # 讀取所有時間段的實例
-    time_slots = ["09:00", "17:00", "22:00"]
-    truck_configs = ["2trucks_30min", "3trucks_30min", "4trucks_30min"]
-    
-    for truck_config in truck_configs:
-        for time_slot in time_slots:
-            instance_dir = f"{base_dir}/{truck_config}/{time_slot}"
-            if not os.path.exists(instance_dir):
+    # Read distance matrix (ensure index_col=0 so IDs match)
+    distances = pd.read_csv("distance_output/distance_matrix.csv", index_col=0)
+
+    # Define station IDs for identifying stations vs outskirts
+    station_ids = [
+        '500111003', '500111013', '500111019', '500111025', '500111026',
+        '500111027', '500111056', '500111061', '500111062', '500111068',
+        '500111069', '500111079', '500111097', '500111076'
+    ]
+
+    # Parameters for truck capacity, load/unload time, and speed
+    Q = 28  # truck capacity (bikes)
+    L = 0.5  # load/unload time per bike (minutes)
+    S = 60  # travel speed (km/h)
+
+    # Iterate over all scenarios in generated_instances
+    for scenario_dir in sorted(os.listdir(base_dir)):
+        scenario_path = os.path.join(base_dir, scenario_dir)
+        if not os.path.isdir(scenario_path):
+            continue
+
+        # Parse truck count K and time limit T from scenario_dir (e.g., "2trucks_30min")
+        parts = scenario_dir.split('_')
+        K = int(parts[0].replace('trucks', ''))
+        T = int(parts[1].replace('min', ''))
+
+        # Map directory names to time_slot values expected by heuristic
+        time_slot_mapping = {
+            'morning_9am': '09:00',
+            'evening_5pm': '17:00',
+            'night_10pm': '22:00'
+        }
+
+        # Iterate over each time slot directory (e.g., "morning_9am", "evening_5pm", "night_10pm")
+        for time_slot_dir in sorted(os.listdir(scenario_path)):
+            if time_slot_dir not in time_slot_mapping:
                 continue
-                
-            # 讀取該時間段的所有實例
-            for instance_file in os.listdir(instance_dir):
+            time_slot = time_slot_mapping[time_slot_dir]
+            time_path = os.path.join(scenario_path, time_slot_dir)
+            if not os.path.isdir(time_path):
+                continue
+
+            # Process each instance file
+            for instance_file in sorted(os.listdir(time_path)):
                 if not instance_file.endswith('.csv'):
                     continue
-                    
-                # 讀取實例數據
-                instance_data = pd.read_csv(f"{instance_dir}/{instance_file}")
-                
-                # 分離 station 和 outskirt 數據
-                stations = instance_data[instance_data['sno'].isin(station_ids)].copy()
-                outskirts = instance_data[~instance_data['sno'].isin(station_ids)].copy()
-                
-                # 重命名 sno 為 id
-                stations = stations.rename(columns={'sno': 'id'})
-                outskirts = outskirts.rename(columns={'sno': 'id'})
-                
-                # 設定參數
-                K = int(truck_config[0])  # 從配置名稱中提取卡車數量
-                T = 30  # 時間限制（分鐘）
-                Q = 28  # 卡車容量
-                L = 0.5  # 裝卸時間（分鐘）
-                S = 60  # 行駛速度（km/h）
-                
-                # 執行啟發式算法
-                routes = simple_reset_heuristic(
-                    stations=stations,
-                    outskirts=outskirts,
+
+                instance_path = os.path.join(time_path, instance_file)
+                # Read instance data
+                instance_data = pd.read_csv(instance_path)
+
+                # Separate station rows and outskirt rows
+                print(f"Processing {instance_file} for scenario {scenario_dir} at time slot {time_slot}...")
+                stations_df = instance_data[instance_data['sno'].isin(station_ids)].copy()
+                outskirts_df = instance_data[~instance_data['sno'].isin(station_ids)].copy()
+
+                # Rename 'sno' to 'id' for both DataFrames
+                stations_df = stations_df.rename(columns={'sno': 'id'})
+                outskirts_df = outskirts_df.rename(columns={'sno': 'id'})
+
+                # Call the heuristic function
+                routes, final_station_bikes = simple_reset_heuristic(
+                    stations=stations_df,
+                    outskirts=outskirts_df,
                     distances=distances,
                     time_slot=time_slot,
                     K=K,
@@ -291,31 +345,66 @@ def main():
                     S=S,
                     T=T
                 )
-                
-                # 計算總距離和時間
-                total_distance = 0
-                total_time = 0
+
+                # Calculate total distance and total time for this instance
+                total_distance = 0.0
+                total_time = 0.0
                 for k, route in routes.items():
-                    for i in range(len(route)-1):
-                        total_distance += distances.at[route[i], route[i+1]]
-                        total_time += (distances.at[route[i], route[i+1]] / S) * 60  # 轉換為分鐘
-                        if i < len(route)-2:  # 不計算最後一個站點的裝卸時間
+                    # Sum pairwise distances and travel times + loading times
+                    for i in range(len(route) - 1):
+                        src = route[i]
+                        dst = route[i + 1]
+                        dist_km = distances.at[src, dst]
+                        total_distance += dist_km
+                        # Travel time in minutes
+                        travel_time = (dist_km / S) * 60
+                        total_time += travel_time
+                        # Loading/unloading occurs at every intermediate stop (not final)
+                        if i < len(route) - 2:
                             total_time += L
-                
-                # 輸出結果
-                output_file = f"{results_dir}/{truck_config}_{time_slot}_{instance_file.replace('.csv', '_result.txt')}"
+
+                # Prepare output directory for this scenario/time_slot
+                out_dir = os.path.join(results_dir, scenario_dir, time_slot_dir)
+                os.makedirs(out_dir, exist_ok=True)
+
+                                # ---------- Generate station_results.csv ----------
+                station_results = []
+                for sid in stations_df['id']:
+                    cap = int(stations_df.loc[stations_df['id'] == sid, 'total'].values[0])
+                    # Use original 'total' column from instance_data to get capacity
+                    initial_bikes = int(stations_df.loc[stations_df['id'] == sid, 'available_rent_bikes'].round().astype(int).values[0])
+                    final_bikes = final_station_bikes.get(sid, initial_bikes)
+                    balanced = 1 if (0.3 * cap) <= final_bikes <= (0.7 * cap) else 0
+                    lat = stations_df.loc[stations_df['id'] == sid, 'latitude'].values[0]
+                    lng = stations_df.loc[stations_df['id'] == sid, 'longitude'].values[0]
+                    station_results.append({
+                        "station_id": sid,
+                        "balanced": balanced,
+                        "final_bikes": final_bikes,
+                        "latitude": lat,
+                        "longitude": lng
+                    })
+                pd.DataFrame(station_results).to_csv(os.path.join(out_dir, "station_results.csv"), index=False)
+
+
+                # Output file name: instance_<n>_result.txt
+                output_file = os.path.join(
+                    out_dir,
+                    instance_file.replace('.csv', '_result.txt')
+                )
                 with open(output_file, 'w', encoding='utf-8') as f:
-                    f.write(f"實例：{instance_file}\n")
-                    f.write(f"時間段：{time_slot}\n")
-                    f.write(f"卡車數量：{K}\n")
-                    f.write(f"總移動距離：{total_distance:.2f} 公里\n")
-                    f.write(f"總時間：{total_time:.2f} 分鐘\n\n")
-                    
-                    f.write("卡車路徑：\n")
+                    f.write(f"Instance: {instance_file}\n")
+                    f.write(f"Time slot: {time_slot}\n")
+                    f.write(f"Truck count: {K}\n")
+                    f.write(f"Total distance: {total_distance:.2f} km\n")
+                    f.write(f"Total time: {total_time:.2f} minutes\n\n")
+                    f.write("Truck routes:\n")
                     for k, route in routes.items():
-                        f.write(f"卡車 {k+1}: {' -> '.join(route)}\n")
-                
-                print(f"已處理 {instance_file} 並輸出結果到 {output_file}")
+                        # Convert list of IDs to arrow-separated string
+                        f.write(f"Truck {k+1}: {' -> '.join(route)}\n")
+
+                print(f"Processed {instance_file} for {scenario_dir}/{time_slot}, output to {output_file}")
+
 
 if __name__ == "__main__":
     main()
