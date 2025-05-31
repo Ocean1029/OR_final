@@ -36,7 +36,7 @@ def load_data(station_file: str, distance_file: str):
 
     # 加入 depot (0) df
     depot = pd.DataFrame({
-        'id': [0],
+        'id': ['0'],
         'C': [100],  # 假設 depot 容量很大
         'B': [50],
         'latitude': [25.05326],
@@ -44,8 +44,7 @@ def load_data(station_file: str, distance_file: str):
     })
     stations = pd.concat([depot, stations], ignore_index=True)
     # 確保站點 ID 為字串類型
-    stations.index = stations['id'].astype(str)
-
+    
     # 讀取距離矩陣
     dist_df = pd.read_csv(distance_file, index_col=0)
     
@@ -55,7 +54,7 @@ def load_data(station_file: str, distance_file: str):
     
     # 確保站點 ID 的格式一致
     stations['id'] = stations['id'].astype(str)
-    
+
     # 使用站點 ID 來選擇距離矩陣
     station_ids = stations['id'].tolist()
     dist_df = dist_df.loc[station_ids, station_ids]
@@ -79,7 +78,8 @@ def load_data(station_file: str, distance_file: str):
     missing_stations = stations_set - dist_stations
     
     if missing_stations:
-        avg_dist = dist_df.values.mean()
+        print("enter missing")
+        avg_dist = dist_df.values.mean() # TODO 這裡 dist 會超大
         # 先補 column
         for station in missing_stations:
             dist_df[station] = avg_dist
@@ -89,7 +89,6 @@ def load_data(station_file: str, distance_file: str):
         # 重新排序 row/column
         dist_df = dist_df.loc[station_ids, station_ids]
 
-    
     return stations, dist_df
 
 def build_scenario(scenario_id: int):
@@ -115,40 +114,29 @@ def build_model(stations: pd.DataFrame,
                 L: float = 2   # 實際裝卸時間/車 (分鐘)
                ) -> gp.Model:
 
-    N_with_depot = stations["id"].astype(str).tolist()  # 包含 depot (0)
-    print(N_with_depot)
+    # 檢查 stations id 是 str
+    if not all(isinstance(i, str) for i in stations["id"]):
+        raise ValueError("站點 ID 必須是字串類型，請檢查輸入資料。")
+    # 檢查 distances index 和 columns 是 str
+    if not all(isinstance(i, str) for i in distances.index) or \
+       not all(isinstance(i, str) for i in distances.columns):
+        raise ValueError("距離矩陣的索引和欄位名稱必須是字串類型，請檢查輸入資料。")
+    
+    
+    N_with_depot = stations["id"].tolist()  # 包含 depot (0)
     N = N_with_depot[1:]  # 不包含 depot (0)
     print(f"\n建立模型：")
     print(f"- 站點數：{len(N)}")
     print(f"- 卡車數：{K}")
     print(f"- 時間限制：{T} 分鐘")
     
-    # 建立包含 depot 的完整距離矩陣
-    dist = distances.to_dict()   # {(i,j): 距離(公里)}
-    
-    # 計算 depot 到各站點的距離（使用平均距離）
-    avg_dist = distances.values.mean() # TODO 這裡 dist 會超大
-    
     d = {}
-    missing_pairs = []
     for i in N_with_depot:
         for j in N_with_depot:
-            try:
-                d[(i, j)] = float(distances.loc[i, j])
-            except (KeyError, ValueError):
-                missing_pairs.append((i, j))
-                d[(i, j)] = avg_dist
-    
-    if missing_pairs:
-        print(f"\n警告：找不到以下站點對的距離，使用平均距離代替：")
-        for i, j in missing_pairs[:5]:  # 只顯示前5個
-            print(f"- {i} → {j}")
-        if len(missing_pairs) > 5:
-            print(f"... 還有 {len(missing_pairs)-5} 個站點對")
+            d[(i, j)] = distances.at[i, j] if i != j else 0
     
     # 轉換為時間（分鐘）
     t = {k: v / 30 * 60 for k, v in d.items()}  # 30 km/h → 轉成分鐘
-
     C = {row.id: row.C for _, row in stations.iterrows()}
     B = {row.id: row.B for _, row in stations.iterrows()}
 
@@ -192,8 +180,8 @@ def build_model(stations: pd.DataFrame,
     # ---------- Truck route constraints --------- #
     for k in range(K):
         # Start / end at depot
-        m.addConstr(gp.quicksum(x[0,j,k] for j in N) == 1)
-        m.addConstr(gp.quicksum(x[i,0,k] for i in N) == 1)
+        m.addConstr(gp.quicksum(x['0',j,k] for j in N) == 1)
+        m.addConstr(gp.quicksum(x[i,'0',k] for i in N) == 1)
 
         for i in N:
             # At most visit once
@@ -222,26 +210,23 @@ def build_model(stations: pd.DataFrame,
 
     # ---------- Load flow & capacity ---------- #
     for k in range(K):
-        # Depot loading decision: W[0,k] free in [0,Q]
-        m.addConstr(0 <= W[0,k])
-        m.addConstr(W[0,k] <= Q)
+        for i in N_with_depot:
+            m.addConstr(0 <= W[i,k])
+            m.addConstr(W[i,k] <= Q)
 
         for i in N_with_depot:
             for j in N_with_depot:
                 if i != j:
-                    if j == 0:  # 到達 depot
+                    if j == '0':  # 到達 depot
                         m.addConstr(W[j,k] >= W[i,k] - Q*(1 - x[i,j,k]))
                         m.addConstr(W[j,k] <= W[i,k] + Q*(1 - x[i,j,k]))
-                    elif i == 0:  # 從 depot 出發
+                    elif i == '0':  # 從 depot 出發
                         m.addConstr(W[j,k] >= W[i,k] + a[j,k] - b[j,k] - Q*(1 - x[i,j,k]))
                         m.addConstr(W[j,k] <= W[i,k] + a[j,k] - b[j,k] + Q*(1 - x[i,j,k]))
                     else:  # 站點間移動
                         m.addConstr(W[j,k] >= W[i,k] + a[j,k] - b[j,k] - Q*(1 - x[i,j,k]))
                         m.addConstr(W[j,k] <= W[i,k] + a[j,k] - b[j,k] + Q*(1 - x[i,j,k]))
 
-        for i in N:
-            m.addConstr(0 <= W[i,k])
-            m.addConstr(W[i,k] <= Q)
 
     # ---------- Flow conservation (truck-level in / out) ---------- #
     for k in range(K):
@@ -368,7 +353,7 @@ def main():
 
     # 利用 ProcessPoolExecutor 平行處理所有任務
     futures = []
-    with concurrent.futures.ProcessPoolExecutor() as executor:
+    with concurrent.futures.ProcessPoolExecutor(max_workers=1) as executor:
         # 提交所有任務
         for args in task_list:
             futures.append(executor.submit(solve_wrapper, args))

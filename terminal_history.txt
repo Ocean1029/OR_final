@@ -1,0 +1,16 @@
+ 1430  cd "/Users/huan_hsuan/Desktop/NTU Sophomore Spring/Operations Research/Final Project/" && python groubi.py
+ 1431  cd "/Users/huan_hsuan/Desktop/NTU Sophomore Spring/Operations Research/Final Project/" && python groubi.py
+ 1432  cd "/Users/huan_hsuan/Desktop/NTU Sophomore Spring/Operations Research/Final Project/" && python groubi.py
+ 1433  cd "/Users/huan_hsuan/Desktop/NTU Sophomore Spring/Operations Research/Final Project/" && python groubi.py
+ 1434  cd "/Users/huan_hsuan/Desktop/NTU Sophomore Spring/Operations Research/Final Project/" && python groubi.py
+ 1435  cd "/Users/huan_hsuan/Desktop/NTU Sophomore Spring/Operations Research/Final Project/" && python groubi.py
+ 1436  cd "/Users/huan_hsuan/Desktop/NTU Sophomore Spring/Operations Research/Final Project/" && python groubi.py
+ 1437  cd "/Users/huan_hsuan/Desktop/NTU Sophomore Spring/Operations Research/Final Project/" && python groubi.py
+ 1438  cd "/Users/huan_hsuan/Desktop/NTU Sophomore Spring/Operations Research/Final Project/" && python groubi.py
+ 1439  cd "/Users/huan_hsuan/Desktop/NTU Sophomore Spring/Operations Research/Final Project/" && python groubi.py
+ 1440  cd "/Users/huan_hsuan/Desktop/NTU Sophomore Spring/Operations Research/Final Project/" && python groubi.py
+ 1441  cd "/Users/huan_hsuan/Desktop/NTU Sophomore Spring/Operations Research/Final Project/" && python groubi.py
+ 1442  cd "/Users/huan_hsuan/Desktop/NTU Sophomore Spring/Operations Research/Final Project/" && python groubi.py
+ 1443  cd "/Users/huan_hsuan/Desktop/NTU Sophomore Spring/Operations Research/Final Project/" && python groubi.py
+ 1444  cd "/Users/huan_hsuan/Desktop/NTU Sophomore Spring/Operations Research/Final Project/" && python groubi.py
+ 1445  cd "/Users/huan_hsuan/Desktop/NTU Sophomore Spring/Operations Research/Final Project/" && python groubi.py

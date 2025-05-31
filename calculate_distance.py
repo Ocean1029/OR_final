@@ -21,7 +21,7 @@ def calculate_distance_matrix(input_path: str, output_path: str) -> pd.DataFrame
 
     # 插入一筆 depot 資料在 YouBike2.0_南港車站(市民大道)
     depot = pd.DataFrame({
-        "sno": [0],
+        "sno": ['0'],
         "latitude": [25.05326],  
         "longitude": [121.60656]  
     })
