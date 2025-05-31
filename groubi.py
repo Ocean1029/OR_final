@@ -25,10 +25,10 @@ def load_data(station_file: str, distance_file: str):
     stations = stations[['id', 'C', 'B', 'latitude', 'longitude']]
     
     # 篩選 stations 的經緯度
-    MIN_LNG = 121.58498      # 西邊界
+    MIN_LNG = 121.59859      # 西邊界   原本是：121.58498
     MAX_LNG = 123            # 東邊界（臨時設個 123°E，比台北再東一些）
     MIN_LAT = 25.04615       # 南邊界
-    MAX_LAT = 25.08550       # 北邊界
+    MAX_LAT = 25.057       # 北邊界 隨便改的 原本是：25.08550
     
     # 篩選站點
     stations = stations[(stations.longitude > MIN_LNG) & (stations.longitude < MAX_LNG) &
@@ -253,18 +253,29 @@ def process_instance(stations_path: str, distances_path: str, K: int, T: int, ou
     # 只保留模型需要的欄位
     model_stations = stations[['id', 'C', 'B']]
     
+    # 站點 ID (含/不含 depot)
+    station_ids = model_stations["id"].tolist()
+    station_ids_no_depot = [sid for sid in station_ids if sid != '0']
+    
     # 建模並求解
     model = build_model(model_stations, dist_df, K=K, T=T)
-    model.setParam("TimeLimit", 300)   # 5 分鐘上限
+    model.setParam("TimeLimit", 30)   # 5 分鐘上限
     model.optimize()
-    
-    # 準備輸出結果
-    results = []
-    if model.Status == GRB.OPTIMAL:
-        # 收集各站點狀態
-        for i in model_stations["id"]:
+
+    # --------- Record solver status & KPI --------- #
+    status_code = model.Status
+    status_str = "OPTIMAL" if status_code == GRB.OPTIMAL else (
+        "TIME_LIMIT" if status_code == GRB.TIME_LIMIT else str(status_code))
+    success = model.SolCount > 0           # 有可行解即視為成功
+    obj_val = model.ObjVal if success else None
+
+    # ---------- Output only when a feasible solution exists ---------- #
+    if success:
+        # ========== 3‑A. Station‑level CSV ========= #
+        results = []
+        for i in station_ids_no_depot:
             balanced = int(model.getVarByName(f"y[{i}]").X + 0.5)
-            final_bikes = model_stations.loc[model_stations.id==i,"B"].values[0] \
+            final_bikes = model_stations.loc[model_stations.id == i, "B"].values[0] \
                         + sum(model.getVarByName(f"b[{i},{k}]").X -
                               model.getVarByName(f"a[{i},{k}]").X
                               for k in range(K))
@@ -272,17 +283,18 @@ def process_instance(stations_path: str, distances_path: str, K: int, T: int, ou
                 "station_id": i,
                 "balanced": balanced,
                 "final_bikes": int(final_bikes),
-                "latitude": stations.loc[stations.id==i, "latitude"].values[0],
-                "longitude": stations.loc[stations.id==i, "longitude"].values[0]
+                "latitude": stations.loc[stations.id == i, "latitude"].values[0],
+                "longitude": stations.loc[stations.id == i, "longitude"].values[0]
             })
-        
-        # 收集卡車路徑
-        routes = []
+        pd.DataFrame(results).to_csv(f"{output_dir}/station_results.csv", index=False)
+
+        # ========== 3‑B. Truck routes with actions ========= #
+        routes_lines = []
         for k in range(K):
             route = [0]
             current = 0
             while True:
-                next_nodes = [j for j in [0]+model_stations["id"].tolist()
+                next_nodes = [j for j in [0] + station_ids_no_depot
                               if j != current and
                               model.getVarByName(f"x[{current},{j},{k}]").X > 0.5]
                 if not next_nodes:
@@ -291,32 +303,56 @@ def process_instance(stations_path: str, distances_path: str, K: int, T: int, ou
                 route.append(current)
                 if current == 0:
                     break
-            routes.append(route)
-        
-        # 儲存結果
-        result_df = pd.DataFrame(results)
-        result_df.to_csv(f"{output_dir}/station_results.csv", index=False)
-        
-        # 儲存路徑
-        with open(f"{output_dir}/routes.txt", "w") as f:
-            for k, route in enumerate(routes):
-                f.write(f"Truck {k}: Route {route}\n")
-        
-        return True, model.ObjVal
+
+            # Build detailed step string with pick/drop info
+            step_strs = []
+            for node in route:
+                if str(node) == '0':
+                    step_strs.append('0')
+                    continue
+                pick = int(model.getVarByName(f"a[{node},{k}]").X)
+                drop = int(model.getVarByName(f"b[{node},{k}]").X)
+                action = []
+                if pick > 0:
+                    action.append(f"-{pick}")
+                if drop > 0:
+                    action.append(f"+{drop}")
+                step_strs.append(f"{node}({''.join(action)})")
+
+            total_pick = sum(int(model.getVarByName(f"a[{i},{k}]").X) for i in station_ids_no_depot)
+            total_drop = sum(int(model.getVarByName(f"b[{i},{k}]").X) for i in station_ids_no_depot)
+            routes_lines.append(
+                f"Truck {k}: " +
+                " -> ".join(step_strs) +
+                f" | total_pick={total_pick}, total_drop={total_drop}"
+            )
+
+        # Write enriched routes.txt
+        with open(f"{output_dir}/routes.txt", "w", encoding="utf-8") as f:
+            f.write(f"Status: {status_str}\n")
+            if obj_val is not None:
+                f.write(f"Objective (balanced stations): {int(obj_val)}\n")
+            if status_code == GRB.TIME_LIMIT and obj_val is not None:
+                f.write(f"MIPGap: {model.MIPGap:.4f}\n")
+            f.write("\n".join(routes_lines))
+
+        return True, obj_val, status_str
     else:
-        return False, None
+        return False, None, status_str
 
 import concurrent.futures
 
 def solve_wrapper(args):
     """包裝 process_instance 以便多進程呼叫"""
-    stations_path, distances_path, K, T, output_dir, scenario_dir, time_period, instance_num = args
+    (idx, stations_path, distances_path, K, T, output_dir,
+            scenario_dir, time_period, instance_num) = args    
     try:
-        success, obj_val = process_instance(stations_path, distances_path, K, T, output_dir)
-        return (scenario_dir, time_period, instance_num, success, obj_val, output_dir)
+        success, obj_val, status_str = process_instance(stations_path, distances_path, K, T, output_dir)
+        return (idx, scenario_dir, time_period, instance_num,
+                success, obj_val, status_str, output_dir, None)
     except Exception as e:
         # 若有例外，回傳失敗
-        return (scenario_dir, time_period, instance_num, False, None, output_dir, str(e))
+        return (idx, scenario_dir, time_period, instance_num, False, None, "EXCEPTION", output_dir, str(e))
 
 
 def main():
@@ -345,15 +381,19 @@ def main():
                 os.makedirs(output_dir, exist_ok=True)
                 # 包裝所有必要資訊
                 task_list.append((
+                    len(task_list),                 # idx
                     stations_path, distances_path, K, T, output_dir,
                     scenario_dir, time_period, instance_num
                 ))
 
     print(f"\n總共需要處理 {len(task_list)} 個實例，開始平行求解 ...")
 
+    total_tasks = len(task_list)
+    optimal_cnt = time_limit_cnt = error_cnt = 0 
+
     # 利用 ProcessPoolExecutor 平行處理所有任務
     futures = []
-    with concurrent.futures.ProcessPoolExecutor(max_workers=1) as executor:
+    with concurrent.futures.ProcessPoolExecutor(max_workers=11) as executor:
         # 提交所有任務
         for args in task_list:
             futures.append(executor.submit(solve_wrapper, args))
@@ -362,13 +402,18 @@ def main():
         for future in concurrent.futures.as_completed(futures):
             result = future.result()
             # unpack
-            if len(result) == 7:
-                scenario_dir, time_period, instance_num, success, obj_val, output_dir, err = result
-            else:
-                scenario_dir, time_period, instance_num, success, obj_val, output_dir = result
-                err = None
+            idx, scenario_dir, time_period, instance_num, success, obj_val, status_str, output_dir, err = result
+
             # 印出進度與結果
-            print(f"\n[{scenario_dir} | {time_period} | instance_{instance_num}] ", end="")
+            print(f"\n[{idx+1}/{total_tasks}] {scenario_dir} | {time_period} | instance_{instance_num} -> {status_str} ", end="")
+
+            if status_str == "OPTIMAL":
+                optimal_cnt += 1
+            elif status_str == "TIME_LIMIT":
+                time_limit_cnt += 1
+            else:
+                error_cnt += 1
+
             if success:
                 print(f"✓ 最佳化完成：總平衡站數 = {obj_val} (結果於 {output_dir})")
             else:
@@ -376,6 +421,13 @@ def main():
                     print(f"✗ 發生例外: {err}")
                 else:
                     print("✗ 模型未在時限內找到最適解")
+
+    # 印出總結
+    print("\n=== Summary ===")
+    print(f"Optimal      : {optimal_cnt}")
+    print(f"Time-limit   : {time_limit_cnt}")
+    print(f"Errors/Other : {error_cnt}")
+
 
 if __name__ == "__main__":
     main()
