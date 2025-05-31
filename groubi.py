@@ -25,10 +25,10 @@ def load_data(station_file: str, distance_file: str):
     stations = stations[['id', 'C', 'B', 'latitude', 'longitude']]
     
     # 篩選 stations 的經緯度
-    MIN_LNG = 121.58498      # 西邊界   原本是：121.58498
+    MIN_LNG = 121.591256      # 西邊界   原本是：121.58498
     MAX_LNG = 123            # 東邊界（臨時設個 123°E，比台北再東一些）
     MIN_LAT = 25.04615       # 南邊界
-    MAX_LAT = 25.08550       # 北邊界 隨便改的 原本是：25.08550
+    MAX_LAT = 25.062016       # 北邊界 隨便改的 原本是：25.08550
     
     # 篩選站點
     stations = stations[(stations.longitude > MIN_LNG) & (stations.longitude < MAX_LNG) &
