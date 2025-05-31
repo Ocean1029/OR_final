@@ -31,7 +31,8 @@ def read_interval_data():
             station_id = row['sno']
             if station_id not in all_stations_data:
                 all_stations_data[station_id] = {
-                    'available_rent_bikes': []
+                    'available_rent_bikes': [],
+                    'available_rent_bikes_std': []
                 }
                 # Store the basic information of the station
                 station_info[station_id] = {
@@ -39,17 +40,24 @@ def read_interval_data():
                     'sna': row['sna'],
                     'latitude': row['latitude'],
                     'longitude': row['longitude'],
-                    'total': row['total'],
-                    'available_rent_bikes': row['available_rent_bikes'],
-                    'available_rent_bikes_std': row['available_rent_bikes_std']
+                    'total': row['total']
                 }
             # Only append data if it's within the time window
             if 9 <= hour < 10:  # Morning 9am
                 all_stations_data[station_id]['available_rent_bikes'].append(row['available_rent_bikes'])
+                all_stations_data[station_id]['available_rent_bikes_std'].append(row['available_rent_bikes_std'])
+                station_info[station_id]['available_rent_bikes'] = np.mean(all_stations_data[station_id]['available_rent_bikes'])
+                station_info[station_id]['available_rent_bikes_std'] = np.mean(all_stations_data[station_id]['available_rent_bikes_std'])
             elif 17 <= hour < 18:  # Evening 5pm
                 all_stations_data[station_id]['available_rent_bikes'].append(row['available_rent_bikes'])
+                all_stations_data[station_id]['available_rent_bikes_std'].append(row['available_rent_bikes_std'])
+                station_info[station_id]['available_rent_bikes'] = np.mean(all_stations_data[station_id]['available_rent_bikes'])
+                station_info[station_id]['available_rent_bikes_std'] = np.mean(all_stations_data[station_id]['available_rent_bikes_std'])
             elif 22 <= hour < 23:  # Night 10pm
                 all_stations_data[station_id]['available_rent_bikes'].append(row['available_rent_bikes'])
+                all_stations_data[station_id]['available_rent_bikes_std'].append(row['available_rent_bikes_std'])
+                station_info[station_id]['available_rent_bikes'] = np.mean(all_stations_data[station_id]['available_rent_bikes'])
+                station_info[station_id]['available_rent_bikes_std'] = np.mean(all_stations_data[station_id]['available_rent_bikes_std'])
     
     # Calculate the statistics of each station
     station_stats = {}
