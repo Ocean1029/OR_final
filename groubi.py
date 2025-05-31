@@ -25,7 +25,7 @@ def load_data(station_file: str, distance_file: str):
     stations = stations[['id', 'C', 'B', 'latitude', 'longitude']]
     
     # 篩選 stations 的經緯度
-    MIN_LNG = 121.59859      # 西邊界   原本是：121.58498
+    MIN_LNG = 121.58498      # 西邊界   原本是：121.58498
     MAX_LNG = 123            # 東邊界（臨時設個 123°E，比台北再東一些）
     MIN_LAT = 25.04615       # 南邊界
     MAX_LAT = 25.057       # 北邊界 隨便改的 原本是：25.08550
@@ -112,7 +112,7 @@ def build_model(stations: pd.DataFrame,
                 T: int,
                 Q: int = 28,
                 L: float = 0.5,   # 實際裝卸時間/車 (分鐘)
-                S: int = 100     # 車子的時速
+                S: int = 40     # 車子的時速
                ) -> gp.Model:
 
     # 檢查 stations id 是 str
