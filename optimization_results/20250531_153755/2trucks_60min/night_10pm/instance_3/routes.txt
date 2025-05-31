@@ -1,0 +1,5 @@
+Status: 11
+Balanced before (baseline): 34
+Objective (balanced stations): 34
+Truck 0 (start_load=0): 0 -> 500111069() -> 500111020() -> 0 | total_pick=0, total_drop=0
+Truck 1 (start_load=0): 0 -> 500111030() -> 500111062() -> 0 | total_pick=0, total_drop=0

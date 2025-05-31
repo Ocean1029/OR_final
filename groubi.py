@@ -28,7 +28,7 @@ def load_data(station_file: str, distance_file: str):
     MIN_LNG = 121.58498      # 西邊界   原本是：121.58498
     MAX_LNG = 123            # 東邊界（臨時設個 123°E，比台北再東一些）
     MIN_LAT = 25.04615       # 南邊界
-    MAX_LAT = 25.057       # 北邊界 隨便改的 原本是：25.08550
+    MAX_LAT = 25.08550       # 北邊界 隨便改的 原本是：25.08550
     
     # 篩選站點
     stations = stations[(stations.longitude > MIN_LNG) & (stations.longitude < MAX_LNG) &
@@ -112,7 +112,7 @@ def build_model(stations: pd.DataFrame,
                 T: int,
                 Q: int = 28,
                 L: float = 0.5,   # 實際裝卸時間/車 (分鐘)
-                S: int = 40     # 車子的時速
+                S: int = 60     # 車子的時速
                ) -> gp.Model:
 
     # 檢查 stations id 是 str
@@ -269,7 +269,7 @@ def process_instance(stations_path: str, distances_path: str, K: int, T: int, ou
     
     # 建模並求解
     model = build_model(model_stations, dist_df, K=K, T=T)
-    model.setParam("TimeLimit", 60)   # 5 分鐘上限
+    model.setParam("TimeLimit", 300)   # 5 分鐘上限
     model.optimize()
 
     # --------- Record solver status & KPI --------- #
@@ -368,8 +368,12 @@ def solve_wrapper(args):
 
 
 def main():
+    # 加上時間戳記的資料夾
+    import os
+    import datetime
+    timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
     base_dir = "generated_instances"
-    results_dir = "optimization_results"
+    results_dir = "optimization_results/" + timestamp
     os.makedirs(results_dir, exist_ok=True)
 
     # 準備所有 instance 的任務列表
