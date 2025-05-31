@@ -12,7 +12,6 @@ def read_interval_data():
     csv_files = glob.glob('interval_outputs/interval_*.csv')
     
     # Store data for all stations
-    all_stations_data = {}
     station_info = {}  # Store the basic information of the station
     
     # Read each file
@@ -29,50 +28,30 @@ def read_interval_data():
         # Process each station
         for _, row in df.iterrows():
             station_id = row['sno']
-            if station_id not in all_stations_data:
-                all_stations_data[station_id] = {
-                    'available_rent_bikes': [],
-                    'available_rent_bikes_std': []
-                }
-                # Store the basic information of the station
+            if station_id not in station_info:
                 station_info[station_id] = {
                     'sarea': row['sarea'],
                     'sna': row['sna'],
                     'latitude': row['latitude'],
                     'longitude': row['longitude'],
-                    'total': row['total']
+                    'total': row['total'],
+                    'morning_9am': {'mean': 0, 'std': 0},
+                    'evening_5pm': {'mean': 0, 'std': 0},
+                    'night_10pm': {'mean': 0, 'std': 0}
                 }
-            # Only append data if it's within the time window
-            if 9 <= hour < 10:  # Morning 9am
-                all_stations_data[station_id]['available_rent_bikes'].append(row['available_rent_bikes'])
-                all_stations_data[station_id]['available_rent_bikes_std'].append(row['available_rent_bikes_std'])
-                station_info[station_id]['available_rent_bikes'] = np.mean(all_stations_data[station_id]['available_rent_bikes'])
-                station_info[station_id]['available_rent_bikes_std'] = np.mean(all_stations_data[station_id]['available_rent_bikes_std'])
-            elif 17 <= hour < 18:  # Evening 5pm
-                all_stations_data[station_id]['available_rent_bikes'].append(row['available_rent_bikes'])
-                all_stations_data[station_id]['available_rent_bikes_std'].append(row['available_rent_bikes_std'])
-                station_info[station_id]['available_rent_bikes'] = np.mean(all_stations_data[station_id]['available_rent_bikes'])
-                station_info[station_id]['available_rent_bikes_std'] = np.mean(all_stations_data[station_id]['available_rent_bikes_std'])
-            elif 22 <= hour < 23:  # Night 10pm
-                all_stations_data[station_id]['available_rent_bikes'].append(row['available_rent_bikes'])
-                all_stations_data[station_id]['available_rent_bikes_std'].append(row['available_rent_bikes_std'])
-                station_info[station_id]['available_rent_bikes'] = np.mean(all_stations_data[station_id]['available_rent_bikes'])
-                station_info[station_id]['available_rent_bikes_std'] = np.mean(all_stations_data[station_id]['available_rent_bikes_std'])
+            
+            # Store data for specific time periods
+            if hour == 9:  # Morning 9am
+                station_info[station_id]['morning_9am']['mean'] = row['available_rent_bikes']
+                station_info[station_id]['morning_9am']['std'] = row['available_rent_bikes_std']
+            elif hour == 17:  # Evening 5pm
+                station_info[station_id]['evening_5pm']['mean'] = row['available_rent_bikes']
+                station_info[station_id]['evening_5pm']['std'] = row['available_rent_bikes_std']
+            elif hour == 22:  # Night 10pm
+                station_info[station_id]['night_10pm']['mean'] = row['available_rent_bikes']
+                station_info[station_id]['night_10pm']['std'] = row['available_rent_bikes_std']
     
-    # Calculate the statistics of each station
-    station_stats = {}
-    for station_id, data in all_stations_data.items():
-        station_stats[station_id] = {
-            'sarea': station_info[station_id]['sarea'],
-            'sna': station_info[station_id]['sna'],
-            'latitude': station_info[station_id]['latitude'],
-            'longitude': station_info[station_id]['longitude'],
-            'total': station_info[station_id]['total'],
-            'rent_mean': station_info[station_id]['available_rent_bikes'],
-            'rent_std': station_info[station_id]['available_rent_bikes_std']
-        }
-    
-    return station_stats
+    return station_info
 
 def generate_instance(station_stats, time_period):
     """
@@ -85,12 +64,20 @@ def generate_instance(station_stats, time_period):
     # Create data list
     data = []
     
+    # Map time period to data key
+    time_period_map = {
+        9: 'morning_9am',
+        17: 'evening_5pm',
+        22: 'night_10pm'
+    }
+    period_key = time_period_map[time_period]
+    
     # Generate data for each station
     for station_id, stats in station_stats.items():
         # Use normal distribution to generate available_rent_bikes
         rent_bikes = np.random.normal(
-            loc=stats['rent_mean'],
-            scale=stats['rent_std'],
+            loc=stats[period_key]['mean'],
+            scale=stats[period_key]['std'],
             size=1
         )[0]
         
