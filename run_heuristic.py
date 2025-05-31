@@ -36,12 +36,15 @@ def simple_reset_heuristic(
       T:           單趟總時限 (分鐘)
     
     回傳：
-      routes: dict[int, list[str]]，每輛卡車的節點走訪順序（只記錄來回的節點 id）
+      routes_plain: dict[int, list[str]]，每輛卡車的節點走訪順序（只記錄來回的節點 id）
+      routes_fmt: dict[int, list[str]]，每輛卡車的節點走訪順序（每個節點含取/放車資訊）
+      start_loads: dict[int, int]，每輛卡車離開 depot 時的載重
+      final_bikes: dict[str, int]，每個站點/外圍的剩餘車輛數
     """
     # 1. 決定 mode
     if time_slot not in ["09:00", "17:00", "22:00"]:
         raise ValueError("time_slot 只能是 '09:00', '17:00', '22:00'")
-    mode = "outbound" if time_slot == "17:00" else "inbound"
+    mode = "inbound" if time_slot == "17:00" else "outbound"
     #    └------ 下午 5 點 才 outbound，其餘(in morning & night) 都 inbound。
 
     # 2. 方便查詢：把 id 設成 index
@@ -107,15 +110,19 @@ def simple_reset_heuristic(
     outskirts_bikes = {oid: outskirts.at[oid, "B"] for oid in outskirts.index}
 
     # 5. 初始化路徑與時間
-    routes = {k: [] for k in range(K)}
+    routes_plain = {k: [] for k in range(K)}
+    routes_fmt = {k: [] for k in range(K)}
     time_used = {k: 0.0 for k in range(K)}
+    start_loads = {}
 
     # 6. 每輛卡車分別模擬
     for k in range(K):
         # 從 depot 開始
         curr_loc = '0'  # depot
-        routes[k].append(curr_loc)
+        routes_plain[k].append(curr_loc)
+        routes_fmt[k].append(f"{curr_loc}()")
         load = 0  # 卡車目前載重
+        start_load_k = None
 
         if mode == "outbound":
             # Outbound：直接從車站送車到 outskirt
@@ -130,37 +137,40 @@ def simple_reset_heuristic(
                     ratio = (br / cap) if cap > 0 else 0.0
                     if ratio > 0.7:  # 只考慮超載的站點
                         ratio_list.append((sid, ratio))
-                
                 if not ratio_list:
                     break
-                    
                 ratio_list.sort(key=lambda x: x[1], reverse=True)
                 target_station = ratio_list[0][0]
-                
                 # 移動到目標站點
                 travel = t_time.get((curr_loc, target_station), float("inf"))
                 if time_used[k] + travel >= T:
                     print(f"卡車 {k+1} 時間超過限制，停止行動，當前時間 {time_used[k]} 分鐘")
                     break
-                    
                 time_used[k] += travel
                 curr_loc = target_station
-                routes[k].append(curr_loc)
-                
+                routes_plain[k].append(curr_loc)
                 # 裝車
                 cap = stations.at[curr_loc, "C"]
                 br = station_bikes[curr_loc]
                 threshold = math.floor(0.7 * cap)
                 extra = max(0, br - threshold)
                 can_load = min(extra, Q)
-                
+                pick = can_load if can_load > 0 else 0
+                drop = 0
                 if can_load <= 0:
+                    # 無可裝車，仍然記錄動作
+                    routes_fmt[k].append(f"{curr_loc}()")
                     break
-                    
                 time_used[k] += can_load * L
                 load += can_load
                 station_bikes[curr_loc] -= can_load
-                
+                # 記錄格式化動作
+                action_str = []
+                if pick > 0:
+                    action_str.append(f"-{pick}")
+                if drop > 0:
+                    action_str.append(f"+{drop}")
+                routes_fmt[k].append(f"{curr_loc}({''.join(action_str)})")
                 # 找最近的 outskirt 卸車
                 outskirts_ratios = []
                 for oid in outskirts.index:
@@ -170,38 +180,69 @@ def simple_reset_heuristic(
                     outskirts_ratios.append((oid, oratio))
                 outskirts_ratios.sort(key=lambda x: x[1])  # ratio 最小 → 空間最大
                 return_outskirt = outskirts_ratios[0][0]
-                
                 travel_back = t_time.get((curr_loc, return_outskirt), float("inf"))
                 if time_used[k] + travel_back >= T:
+                    routes_plain[k].append(return_outskirt)
+                    routes_fmt[k].append(f"{return_outskirt}()")
                     break
-                    
                 time_used[k] += travel_back
                 curr_loc = return_outskirt
-                routes[k].append(curr_loc)
-                
+                routes_plain[k].append(curr_loc)
                 # 卸車
+                pick2 = 0
+                drop2 = load if load > 0 else 0
                 if load > 0:
                     time_used[k] += load * L
                     outskirts_bikes[curr_loc] += load
                     load = 0
-                
+                # 記錄格式化動作
+                action_str2 = []
+                if pick2 > 0:
+                    action_str2.append(f"-{pick2}")
+                if drop2 > 0:
+                    action_str2.append(f"+{drop2}")
+                routes_fmt[k].append(f"{curr_loc}({''.join(action_str2)})")
                 # 回到 depot
                 travel_to_depot = t_time.get((curr_loc, '0'), float("inf"))
                 if time_used[k] + travel_to_depot >= T:
+                    routes_plain[k].append('0')
+                    routes_fmt[k].append(f"0()")
                     break
-                    
                 time_used[k] += travel_to_depot
                 curr_loc = '0'
-                routes[k].append(curr_loc)
-                
-        else:  # inbound
-            # Inbound：直接從 outskirt 拿車補給站點
+                routes_plain[k].append(curr_loc)
+                routes_fmt[k].append(f"{curr_loc}()")
+                # 記錄 start_load
+                if start_load_k is None and len(routes_plain[k]) > 1:
+                    # 第一次離開 depot 後的載重
+                    # 在 outbound, 取車後才有載重, 但我們定義 start_load 為第一次離開 depot 之後的載重
+                    # 這裡的 load 其實已經歸零, 所以需要記錄
+                    pass  # for outbound, start_load is after pick, but since we always start from 0, we can set after the first pick
+            # 記錄 start_load
+            if len(routes_plain[k]) > 1:
+                # start_load 是第一次離開 depot 後的載重, 這裡設為 Q 或第一次 pick 數
+                # 其實就是第一次 pick 的數量
+                # 找到第一個有 -X 的步驟
+                for s in routes_fmt[k]:
+                    if "(" in s and "-" in s:
+                        try:
+                            load_val = int(s.split("(-")[1].split(")")[0])
+                            start_load_k = load_val
+                        except Exception:
+                            start_load_k = Q
+                        break
+                if start_load_k is None:
+                    start_load_k = 0
+            else:
+                start_load_k = 0
+            start_loads[k] = start_load_k
+        else:
+            # inbound
             while time_used[k] < T:
                 # 找有多車的 outskirt
                 valid_outskirts = [(oid, outskirts_bikes[oid]) for oid in outskirts.index if outskirts_bikes[oid] > 0]
                 if not valid_outskirts:
                     break
-                    
                 # 找最近的 outskirt
                 nearest_outskirt = None
                 min_dist = float('inf')
@@ -210,24 +251,32 @@ def simple_reset_heuristic(
                     if dist < min_dist:
                         min_dist = dist
                         nearest_outskirt = oid
-                
                 if nearest_outskirt is None or min_dist >= T - time_used[k]:
                     break
-                    
                 # 移動到 outskirt
                 time_used[k] += min_dist
                 curr_loc = nearest_outskirt
-                routes[k].append(curr_loc)
-                
+                routes_plain[k].append(curr_loc)
                 # 裝車
                 can_load = min(outskirts_bikes[curr_loc], Q)
+                pick = can_load if can_load > 0 else 0
+                drop = 0
                 if can_load <= 0:
+                    routes_fmt[k].append(f"{curr_loc}()")
                     break
-                    
                 time_used[k] += can_load * L
                 load += can_load
                 outskirts_bikes[curr_loc] -= can_load
-                
+                # 記錄格式化動作
+                action_str = []
+                if pick > 0:
+                    action_str.append(f"-{pick}")
+                if drop > 0:
+                    action_str.append(f"+{drop}")
+                routes_fmt[k].append(f"{curr_loc}({''.join(action_str)})")
+                # 記錄 start_load
+                if start_load_k is None:
+                    start_load_k = load
                 # 找最缺車的站點
                 station_ratios = []
                 for sid in stations.index:
@@ -238,47 +287,56 @@ def simple_reset_heuristic(
                     ratio = (br / cap) if cap > 0 else 0.0
                     if ratio < 0.3:  # 只考慮缺車的站點
                         station_ratios.append((sid, ratio))
-                
                 if not station_ratios:
                     break
-                    
                 station_ratios.sort(key=lambda x: x[1])  # ratio 最小排前面
                 target_station = station_ratios[0][0]
-                
                 # 移動到目標站點
                 travel = t_time.get((curr_loc, target_station), float("inf"))
                 if time_used[k] + travel >= T:
                     print(f"卡車 {k+1} 時間超過限制，停止行動，當前時間 {time_used[k]} 分鐘")
+                    routes_plain[k].append(target_station)
+                    routes_fmt[k].append(f"{target_station}()")
                     break
-                    
                 time_used[k] += travel
                 curr_loc = target_station
-                routes[k].append(curr_loc)
-                
+                routes_plain[k].append(curr_loc)
                 # 卸車
                 cap = stations.at[curr_loc, "C"]
                 br = station_bikes[curr_loc]
                 space = cap - br
                 to_unload = min(load, space)
-                
+                pick2 = 0
+                drop2 = to_unload if to_unload > 0 else 0
                 if to_unload > 0:
                     time_used[k] += to_unload * L
                     station_bikes[curr_loc] += to_unload
                     load -= to_unload
-                
+                # 記錄格式化動作
+                action_str2 = []
+                if pick2 > 0:
+                    action_str2.append(f"-{pick2}")
+                if drop2 > 0:
+                    action_str2.append(f"+{drop2}")
+                routes_fmt[k].append(f"{curr_loc}({''.join(action_str2)})")
                 # 回到 depot
                 travel_to_depot = t_time.get((curr_loc, '0'), float("inf"))
                 if time_used[k] + travel_to_depot >= T:
+                    routes_plain[k].append('0')
+                    routes_fmt[k].append(f"0()")
                     break
-                    
                 time_used[k] += travel_to_depot
                 curr_loc = '0'
-                routes[k].append(curr_loc)
+                routes_plain[k].append(curr_loc)
+                routes_fmt[k].append(f"{curr_loc}()")
+            if start_load_k is None:
+                start_load_k = 0
+            start_loads[k] = start_load_k
 
     # merge station and outskirt bike counts so the caller sees everything
     final_bikes = {**station_bikes, **outskirts_bikes}
-    print(routes)
-    return routes, final_bikes
+    print(routes_plain)
+    return routes_plain, routes_fmt, start_loads, final_bikes
     
 
 def main():
@@ -353,8 +411,15 @@ def main():
                 stations_df = stations_df.rename(columns={'sno': 'id'})
                 outskirts_df = outskirts_df.rename(columns={'sno': 'id'})
                 print(stations_df)
+                # ---- baseline: initial balanced station count (no dispatch) ----
+                all_station_df = pd.concat([stations_df, outskirts_df], ignore_index=True)
+                initial_balanced = sum(
+                    1
+                    for _, row in all_station_df.iterrows()
+                    if 0.3 * row['total'] <= round(row['available_rent_bikes']) <= 0.7 * row['total']
+                )
                 # Call the heuristic function
-                routes, final_station_bikes = simple_reset_heuristic(
+                routes_plain, routes_fmt, start_loads, final_station_bikes = simple_reset_heuristic(
                     stations=stations_df,
                     outskirts=outskirts_df,
                     distances=distances,
@@ -366,10 +431,10 @@ def main():
                     T=T
                 )
 
-                # Calculate total distance and total time for this instance
+                # Calculate total distance and total time for this instance (using plain route)
                 total_distance = 0.0
                 total_time = 0.0
-                for k, route in routes.items():
+                for k, route in routes_plain.items():
                     # Sum pairwise distances and travel times + loading times
                     for i in range(len(route) - 1):
                         src = route[i]
@@ -406,6 +471,7 @@ def main():
                         "longitude": lng
                     })
                 pd.DataFrame(station_results).to_csv(os.path.join(out_dir, "station_results.csv"), index=False)
+                final_balanced = sum(r['balanced'] for r in station_results)
 
 
                 # Output file name: instance_<n>_result.txt
@@ -418,11 +484,14 @@ def main():
                     f.write(f"Time slot: {time_slot}\n")
                     f.write(f"Truck count: {K}\n")
                     f.write(f"Total distance: {total_distance:.2f} km\n")
-                    f.write(f"Total time: {total_time:.2f} minutes\n\n")
+                    f.write(f"Total time: {total_time:.2f} minutes\n")
+                    f.write(f"Balanced before (baseline): {initial_balanced}\n")
+                    f.write(f"Objective (balanced stations): {final_balanced}\n\n")
                     f.write("Truck routes:\n")
-                    for k, route in routes.items():
-                        # Convert list of IDs to arrow-separated string
-                        f.write(f"Truck {k+1}: {' -> '.join(route)}\n")
+                    for k in sorted(routes_fmt.keys()):
+                        start_load = start_loads.get(k, 0)
+                        f.write(f"Truck {k} (start_load={start_load}): " +
+                                " -> ".join(routes_fmt[k]) + "\n")
 
                 print(f"Processed {instance_file} for {scenario_dir}/{time_slot}, output to {output_file}")
 
