@@ -45,16 +45,6 @@ def simple_reset_heuristic(
     #    └------ 下午 5 點 才 outbound，其餘(in morning & night) 都 inbound。
 
     # 2. 方便查詢：把 id 設成 index
-    stations = stations.set_index("id", drop=False)
-    outskirts = outskirts.set_index("id", drop=False)
-
-    # 3. 預先計算行駛時間矩陣：t_time[(i,j)] = (公里 / S) * 60 → 分鐘
-    all_nodes = list(stations.index) + list(outskirts.index)
-    t_time: dict[tuple[str, str], float] = {}
-    for i in all_nodes:
-        for j in all_nodes:
-            if (i in distances.index) and (j in distances.columns):
-                t_time[(i, j)] = (distances.at[i, j] / S) * 60
 
     stations['B'] = stations['available_rent_bikes'].round().astype(int)
     stations['C'] = stations['total'].astype(int)
@@ -89,6 +79,28 @@ def simple_reset_heuristic(
         'longitude': [121.60656]
     })
     stations = pd.concat([depot, stations], ignore_index=True)
+
+    # 重新確保 id 為字串，並設為 index
+    stations['id'] = stations['id'].astype(str)
+    stations = stations.set_index('id', drop=False)
+
+    outskirts['id'] = outskirts['id'].astype(str)
+    outskirts = outskirts.set_index('id', drop=False)
+
+    # === 距離 → 時間矩陣 (分鐘) ===
+    # 確保距離矩陣的 index/columns 皆為字串
+    distances.index = distances.index.astype(str)
+    distances.columns = distances.columns.astype(str)
+
+    all_nodes = list(stations.index) + list(outskirts.index)
+    t_time: dict[tuple[str, str], float] = {}
+    for i in all_nodes:
+        for j in all_nodes:
+            if i == j:
+                t_time[(i, j)] = 0.0
+            elif (i in distances.index) and (j in distances.columns):
+                t_time[(i, j)] = (distances.at[i, j] / S) * 60
+    # print("t_time sample:", list(t_time.items()))
 
     # 4. 動態追蹤：station_bikes, outskirts_bikes
     station_bikes = {sid: stations.at[sid, "B"] for sid in stations.index}
@@ -128,6 +140,7 @@ def simple_reset_heuristic(
                 # 移動到目標站點
                 travel = t_time.get((curr_loc, target_station), float("inf"))
                 if time_used[k] + travel >= T:
+                    print(f"卡車 {k+1} 時間超過限制，停止行動，當前時間 {time_used[k]} 分鐘")
                     break
                     
                 time_used[k] += travel
@@ -235,6 +248,7 @@ def simple_reset_heuristic(
                 # 移動到目標站點
                 travel = t_time.get((curr_loc, target_station), float("inf"))
                 if time_used[k] + travel >= T:
+                    print(f"卡車 {k+1} 時間超過限制，停止行動，當前時間 {time_used[k]} 分鐘")
                     break
                     
                 time_used[k] += travel
