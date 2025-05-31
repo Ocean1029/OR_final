@@ -1,0 +1,6 @@
+Status: TIME_LIMIT
+Balanced before (baseline): 68
+Objective (balanced stations): 75
+MIPGap: 0.4267
+Truck 0 (start_load=0): 0 -> 500111035() -> 0 | total_pick=0, total_drop=0
+Truck 1 (start_load=0): 0 -> 500111069() -> 500111115() -> 500111032(-1) -> 500111089() -> 500111060() -> 500111041(-8) -> 500111066(-5) -> 500111088() -> 500111078(-4) -> 500111024() -> 500111067(+5) -> 500111096(+10) -> 500111026(+3) -> 500111027() -> 0 | total_pick=18, total_drop=18

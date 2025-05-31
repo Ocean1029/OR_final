@@ -1,0 +1,3712 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_51b3f79335db19e427161f75604455da {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_51b3f79335db19e427161f75604455da" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_51b3f79335db19e427161f75604455da = L.map(
+                "map_51b3f79335db19e427161f75604455da",
+                {
+                    center: [25.06376878980892, 121.60212261146498],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 14,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_e8786f7c12b62397c1454ebd37d4f45b = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_e8786f7c12b62397c1454ebd37d4f45b.addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+            var circle_marker_e3f6c99de267005ce977a6ec140f2bc1 = L.circleMarker(
+                [25.07177, 121.61491],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_ed8c9e9d25895936327b15b52f734c9b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_52bc2a9863ea0298c121206daea27567 = $(`<div id="html_52bc2a9863ea0298c121206daea27567" style="width: 100.0%; height: 100.0%;">站點 ID: 500108013<br>最終車輛數: 11 / 總柱: 17<br>平衡狀態: 是</div>`)[0];
+                popup_ed8c9e9d25895936327b15b52f734c9b.setContent(html_52bc2a9863ea0298c121206daea27567);
+            
+        
+
+        circle_marker_e3f6c99de267005ce977a6ec140f2bc1.bindPopup(popup_ed8c9e9d25895936327b15b52f734c9b)
+        ;
+
+        
+    
+    
+            var circle_marker_989fa0f45666d87a857a3142ed74a68c = L.circleMarker(
+                [25.08395, 121.60185],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_2ebff931aea074e1a80ba4cc220f8c8d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8405d45279220974f009d57a22c8c140 = $(`<div id="html_8405d45279220974f009d57a22c8c140" style="width: 100.0%; height: 100.0%;">站點 ID: 500108016<br>最終車輛數: 3 / 總柱: 46<br>平衡狀態: 否</div>`)[0];
+                popup_2ebff931aea074e1a80ba4cc220f8c8d.setContent(html_8405d45279220974f009d57a22c8c140);
+            
+        
+
+        circle_marker_989fa0f45666d87a857a3142ed74a68c.bindPopup(popup_2ebff931aea074e1a80ba4cc220f8c8d)
+        ;
+
+        
+    
+    
+            var circle_marker_82cce25f1355eab36847ab3339853567 = L.circleMarker(
+                [25.07958, 121.59336],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_19a0adea59c3110c9cc3591d238b3606 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a73722884464f3052c6139dbe922889c = $(`<div id="html_a73722884464f3052c6139dbe922889c" style="width: 100.0%; height: 100.0%;">站點 ID: 500108018<br>最終車輛數: 12 / 總柱: 19<br>平衡狀態: 是</div>`)[0];
+                popup_19a0adea59c3110c9cc3591d238b3606.setContent(html_a73722884464f3052c6139dbe922889c);
+            
+        
+
+        circle_marker_82cce25f1355eab36847ab3339853567.bindPopup(popup_19a0adea59c3110c9cc3591d238b3606)
+        ;
+
+        
+    
+    
+            var circle_marker_db6ca89d1f3b803bb3da0edc7ae0f61d = L.circleMarker(
+                [25.07864, 121.59177],
+                {"bubblingMouseEvents": true, "color": "#FF9999", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF9999", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_12ba8d2e400fcbbf7feaa36f8c38bb4b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a12e24c26e99cd065ad790eae0133e94 = $(`<div id="html_a12e24c26e99cd065ad790eae0133e94" style="width: 100.0%; height: 100.0%;">站點 ID: 500108019<br>最終車輛數: 16 / 總柱: 22<br>平衡狀態: 否</div>`)[0];
+                popup_12ba8d2e400fcbbf7feaa36f8c38bb4b.setContent(html_a12e24c26e99cd065ad790eae0133e94);
+            
+        
+
+        circle_marker_db6ca89d1f3b803bb3da0edc7ae0f61d.bindPopup(popup_12ba8d2e400fcbbf7feaa36f8c38bb4b)
+        ;
+
+        
+    
+    
+            var circle_marker_0eb1e305a315ac9d33fffae40be85aaf = L.circleMarker(
+                [25.08436, 121.59478],
+                {"bubblingMouseEvents": true, "color": "#FF9999", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF9999", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_b8b3151e5b2b76e5eb9f12680e1d6906 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c2c413b4648252f6fe9d6ae8fed2453f = $(`<div id="html_c2c413b4648252f6fe9d6ae8fed2453f" style="width: 100.0%; height: 100.0%;">站點 ID: 500108025<br>最終車輛數: 26 / 總柱: 29<br>平衡狀態: 否</div>`)[0];
+                popup_b8b3151e5b2b76e5eb9f12680e1d6906.setContent(html_c2c413b4648252f6fe9d6ae8fed2453f);
+            
+        
+
+        circle_marker_0eb1e305a315ac9d33fffae40be85aaf.bindPopup(popup_b8b3151e5b2b76e5eb9f12680e1d6906)
+        ;
+
+        
+    
+    
+            var circle_marker_53f25eb2cebaa08a5e6619563c5201b9 = L.circleMarker(
+                [25.07695, 121.58764],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_761d0a60f4dba882847f09c39b5f8167 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_306df9cd8c93148db6e3e5f252b3ab1c = $(`<div id="html_306df9cd8c93148db6e3e5f252b3ab1c" style="width: 100.0%; height: 100.0%;">站點 ID: 500108029<br>最終車輛數: 9 / 總柱: 16<br>平衡狀態: 是</div>`)[0];
+                popup_761d0a60f4dba882847f09c39b5f8167.setContent(html_306df9cd8c93148db6e3e5f252b3ab1c);
+            
+        
+
+        circle_marker_53f25eb2cebaa08a5e6619563c5201b9.bindPopup(popup_761d0a60f4dba882847f09c39b5f8167)
+        ;
+
+        
+    
+    
+            var circle_marker_f8b76b7d42bf68db19645535423fac5a = L.circleMarker(
+                [25.06915, 121.58898],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_6cfeeddc4f99ee31029a720bda5ed1c7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9741ae86088152055a944958439a1831 = $(`<div id="html_9741ae86088152055a944958439a1831" style="width: 100.0%; height: 100.0%;">站點 ID: 500108039<br>最終車輛數: 11 / 總柱: 25<br>平衡狀態: 是</div>`)[0];
+                popup_6cfeeddc4f99ee31029a720bda5ed1c7.setContent(html_9741ae86088152055a944958439a1831);
+            
+        
+
+        circle_marker_f8b76b7d42bf68db19645535423fac5a.bindPopup(popup_6cfeeddc4f99ee31029a720bda5ed1c7)
+        ;
+
+        
+    
+    
+            var circle_marker_b8c179643654295c4da08c9567d591c8 = L.circleMarker(
+                [25.07007, 121.62055],
+                {"bubblingMouseEvents": true, "color": "#FF8C00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF8C00", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_e15fcaf68859373f4bb05809443f0425 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8393d0f06952abe47a1eb385f8600f03 = $(`<div id="html_8393d0f06952abe47a1eb385f8600f03" style="width: 100.0%; height: 100.0%;">站點 ID: 500108040<br>最終車輛數: 0 / 總柱: 20<br>平衡狀態: 否</div>`)[0];
+                popup_e15fcaf68859373f4bb05809443f0425.setContent(html_8393d0f06952abe47a1eb385f8600f03);
+            
+        
+
+        circle_marker_b8c179643654295c4da08c9567d591c8.bindPopup(popup_e15fcaf68859373f4bb05809443f0425)
+        ;
+
+        
+    
+    
+            var circle_marker_d75d37054934e744581ed99b86fd546b = L.circleMarker(
+                [25.06181, 121.59447],
+                {"bubblingMouseEvents": true, "color": "#FF9999", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF9999", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_27a18f14e73efa78f15f4cd756765c70 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7d099078b876995736b063ac9cdd95b1 = $(`<div id="html_7d099078b876995736b063ac9cdd95b1" style="width: 100.0%; height: 100.0%;">站點 ID: 500108041<br>最終車輛數: 20 / 總柱: 21<br>平衡狀態: 否</div>`)[0];
+                popup_27a18f14e73efa78f15f4cd756765c70.setContent(html_7d099078b876995736b063ac9cdd95b1);
+            
+        
+
+        circle_marker_d75d37054934e744581ed99b86fd546b.bindPopup(popup_27a18f14e73efa78f15f4cd756765c70)
+        ;
+
+        
+    
+    
+            var circle_marker_575d97035d668115ef0c17acdddb28d4 = L.circleMarker(
+                [25.06256, 121.58607],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_d1b10252974b6dce6e9aff111aa5fd01 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c9c4cf138212fb3b5a0d8205e92b2e68 = $(`<div id="html_c9c4cf138212fb3b5a0d8205e92b2e68" style="width: 100.0%; height: 100.0%;">站點 ID: 500108043<br>最終車輛數: 20 / 總柱: 30<br>平衡狀態: 是</div>`)[0];
+                popup_d1b10252974b6dce6e9aff111aa5fd01.setContent(html_c9c4cf138212fb3b5a0d8205e92b2e68);
+            
+        
+
+        circle_marker_575d97035d668115ef0c17acdddb28d4.bindPopup(popup_d1b10252974b6dce6e9aff111aa5fd01)
+        ;
+
+        
+    
+    
+            var circle_marker_1f06af6f498cadf13135eb449760954c = L.circleMarker(
+                [25.05827, 121.58707],
+                {"bubblingMouseEvents": true, "color": "#FF9999", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF9999", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_cf2b88d7233a8dc909e9287bd1c8056d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8373f747b763e8ff3217f857ec1c148e = $(`<div id="html_8373f747b763e8ff3217f857ec1c148e" style="width: 100.0%; height: 100.0%;">站點 ID: 500108044<br>最終車輛數: 72 / 總柱: 73<br>平衡狀態: 否</div>`)[0];
+                popup_cf2b88d7233a8dc909e9287bd1c8056d.setContent(html_8373f747b763e8ff3217f857ec1c148e);
+            
+        
+
+        circle_marker_1f06af6f498cadf13135eb449760954c.bindPopup(popup_cf2b88d7233a8dc909e9287bd1c8056d)
+        ;
+
+        
+    
+    
+            var circle_marker_a559acf9100ab93b1a2c91c08b5e3b9e = L.circleMarker(
+                [25.06058, 121.5911],
+                {"bubblingMouseEvents": true, "color": "#FF8C00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF8C00", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_51bfdbea26f34e8c93c4331b53e97d53 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cbdd0ae2aab14d18a58b3200cb56c089 = $(`<div id="html_cbdd0ae2aab14d18a58b3200cb56c089" style="width: 100.0%; height: 100.0%;">站點 ID: 500108045<br>最終車輛數: 0 / 總柱: 30<br>平衡狀態: 否</div>`)[0];
+                popup_51bfdbea26f34e8c93c4331b53e97d53.setContent(html_cbdd0ae2aab14d18a58b3200cb56c089);
+            
+        
+
+        circle_marker_a559acf9100ab93b1a2c91c08b5e3b9e.bindPopup(popup_51bfdbea26f34e8c93c4331b53e97d53)
+        ;
+
+        
+    
+    
+            var circle_marker_5bb89d472a26446b5cbc681d3dbad294 = L.circleMarker(
+                [25.07151, 121.58991],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_e68a621bfa8a5471d2837c1d2b6ac800 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a4ff847b393ff37dc1f967a75ee25f63 = $(`<div id="html_a4ff847b393ff37dc1f967a75ee25f63" style="width: 100.0%; height: 100.0%;">站點 ID: 500108054<br>最終車輛數: 23 / 總柱: 50<br>平衡狀態: 是</div>`)[0];
+                popup_e68a621bfa8a5471d2837c1d2b6ac800.setContent(html_a4ff847b393ff37dc1f967a75ee25f63);
+            
+        
+
+        circle_marker_5bb89d472a26446b5cbc681d3dbad294.bindPopup(popup_e68a621bfa8a5471d2837c1d2b6ac800)
+        ;
+
+        
+    
+    
+            var circle_marker_cea5bbd11ff68eb792310f1f3c7e7e0a = L.circleMarker(
+                [25.06877, 121.59265],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_e3b6487da631326e1a8d78645db83175 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fa09f953d7f834750e95e56aac95c101 = $(`<div id="html_fa09f953d7f834750e95e56aac95c101" style="width: 100.0%; height: 100.0%;">站點 ID: 500108055<br>最終車輛數: 9 / 總柱: 25<br>平衡狀態: 是</div>`)[0];
+                popup_e3b6487da631326e1a8d78645db83175.setContent(html_fa09f953d7f834750e95e56aac95c101);
+            
+        
+
+        circle_marker_cea5bbd11ff68eb792310f1f3c7e7e0a.bindPopup(popup_e3b6487da631326e1a8d78645db83175)
+        ;
+
+        
+    
+    
+            var circle_marker_df7304cdbf5c0be1b60ed599dc0a3124 = L.circleMarker(
+                [25.0674, 121.59749],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_2f5b595bdbe9e050d7f19fe455ff3ec2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_72974a0c955869b1520dff09de2d04c5 = $(`<div id="html_72974a0c955869b1520dff09de2d04c5" style="width: 100.0%; height: 100.0%;">站點 ID: 500108056<br>最終車輛數: 19 / 總柱: 34<br>平衡狀態: 是</div>`)[0];
+                popup_2f5b595bdbe9e050d7f19fe455ff3ec2.setContent(html_72974a0c955869b1520dff09de2d04c5);
+            
+        
+
+        circle_marker_df7304cdbf5c0be1b60ed599dc0a3124.bindPopup(popup_2f5b595bdbe9e050d7f19fe455ff3ec2)
+        ;
+
+        
+    
+    
+            var circle_marker_84c524d650264c8854b0cbfba777934c = L.circleMarker(
+                [25.07249, 121.60796],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_b808ebe5b0ec2969f2b6f59970dc46e2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_464690e44decaf0ed75c36bb230d2f72 = $(`<div id="html_464690e44decaf0ed75c36bb230d2f72" style="width: 100.0%; height: 100.0%;">站點 ID: 500108057<br>最終車輛數: 16 / 總柱: 37<br>平衡狀態: 是</div>`)[0];
+                popup_b808ebe5b0ec2969f2b6f59970dc46e2.setContent(html_464690e44decaf0ed75c36bb230d2f72);
+            
+        
+
+        circle_marker_84c524d650264c8854b0cbfba777934c.bindPopup(popup_b808ebe5b0ec2969f2b6f59970dc46e2)
+        ;
+
+        
+    
+    
+            var circle_marker_ef76b9042760c9a032147c733cb91663 = L.circleMarker(
+                [25.07332, 121.60223],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_c7a76616d06329689869d53b5e2ade4d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_db2048c7b2a11d523968710bad944444 = $(`<div id="html_db2048c7b2a11d523968710bad944444" style="width: 100.0%; height: 100.0%;">站點 ID: 500108058<br>最終車輛數: 6 / 總柱: 27<br>平衡狀態: 否</div>`)[0];
+                popup_c7a76616d06329689869d53b5e2ade4d.setContent(html_db2048c7b2a11d523968710bad944444);
+            
+        
+
+        circle_marker_ef76b9042760c9a032147c733cb91663.bindPopup(popup_c7a76616d06329689869d53b5e2ade4d)
+        ;
+
+        
+    
+    
+            var circle_marker_e2763cfd4bc4f9d500230af3b944b25d = L.circleMarker(
+                [25.0733, 121.59834],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_80519e21e90ef8dd59af62181dfeef15 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c790fa76e25a860ad23983c8a9cae232 = $(`<div id="html_c790fa76e25a860ad23983c8a9cae232" style="width: 100.0%; height: 100.0%;">站點 ID: 500108059<br>最終車輛數: 6 / 總柱: 15<br>平衡狀態: 是</div>`)[0];
+                popup_80519e21e90ef8dd59af62181dfeef15.setContent(html_c790fa76e25a860ad23983c8a9cae232);
+            
+        
+
+        circle_marker_e2763cfd4bc4f9d500230af3b944b25d.bindPopup(popup_80519e21e90ef8dd59af62181dfeef15)
+        ;
+
+        
+    
+    
+            var circle_marker_a26f1f9da8b63d47c218d82eaf99ed80 = L.circleMarker(
+                [25.08357, 121.58534],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_7ca9e84c089d088219c2e5d348034505 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a9dfa7762cfc79613c3a7c81acb84b56 = $(`<div id="html_a9dfa7762cfc79613c3a7c81acb84b56" style="width: 100.0%; height: 100.0%;">站點 ID: 500108062<br>最終車輛數: 1 / 總柱: 17<br>平衡狀態: 否</div>`)[0];
+                popup_7ca9e84c089d088219c2e5d348034505.setContent(html_a9dfa7762cfc79613c3a7c81acb84b56);
+            
+        
+
+        circle_marker_a26f1f9da8b63d47c218d82eaf99ed80.bindPopup(popup_7ca9e84c089d088219c2e5d348034505)
+        ;
+
+        
+    
+    
+            var circle_marker_c6e5dcb788a0fde37c470b5c83d4ff0d = L.circleMarker(
+                [25.08165, 121.58891],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_d61e065439afb08f3b6672b1592c09ab = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_71cb8969570e4b9534ed89abf8265952 = $(`<div id="html_71cb8969570e4b9534ed89abf8265952" style="width: 100.0%; height: 100.0%;">站點 ID: 500108063<br>最終車輛數: 2 / 總柱: 12<br>平衡狀態: 否</div>`)[0];
+                popup_d61e065439afb08f3b6672b1592c09ab.setContent(html_71cb8969570e4b9534ed89abf8265952);
+            
+        
+
+        circle_marker_c6e5dcb788a0fde37c470b5c83d4ff0d.bindPopup(popup_d61e065439afb08f3b6672b1592c09ab)
+        ;
+
+        
+    
+    
+            var circle_marker_a7ec053edb9664dd16d0450eefe62856 = L.circleMarker(
+                [25.0835, 121.59454],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_eb504a2937e742f4b9c194792f0b49f2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_50a0f58db1272c2073667a9c2c4eb94e = $(`<div id="html_50a0f58db1272c2073667a9c2c4eb94e" style="width: 100.0%; height: 100.0%;">站點 ID: 500108064<br>最終車輛數: 2 / 總柱: 10<br>平衡狀態: 否</div>`)[0];
+                popup_eb504a2937e742f4b9c194792f0b49f2.setContent(html_50a0f58db1272c2073667a9c2c4eb94e);
+            
+        
+
+        circle_marker_a7ec053edb9664dd16d0450eefe62856.bindPopup(popup_eb504a2937e742f4b9c194792f0b49f2)
+        ;
+
+        
+    
+    
+            var circle_marker_2d4c5c8057026fa6511af4fac88eea1d = L.circleMarker(
+                [25.07896, 121.59921],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_47019469625e638e0c5cb925e2059cdf = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1936e2b7ea12409f1313dee11f1c9c5b = $(`<div id="html_1936e2b7ea12409f1313dee11f1c9c5b" style="width: 100.0%; height: 100.0%;">站點 ID: 500108065<br>最終車輛數: 4 / 總柱: 21<br>平衡狀態: 否</div>`)[0];
+                popup_47019469625e638e0c5cb925e2059cdf.setContent(html_1936e2b7ea12409f1313dee11f1c9c5b);
+            
+        
+
+        circle_marker_2d4c5c8057026fa6511af4fac88eea1d.bindPopup(popup_47019469625e638e0c5cb925e2059cdf)
+        ;
+
+        
+    
+    
+            var circle_marker_1491710952873c03f857ec858a02b237 = L.circleMarker(
+                [25.07792, 121.59354],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_4834d61e143add993534e16445261bf8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_df616d7d4b41f91a15dc4e7fd5827a31 = $(`<div id="html_df616d7d4b41f91a15dc4e7fd5827a31" style="width: 100.0%; height: 100.0%;">站點 ID: 500108066<br>最終車輛數: 13 / 總柱: 20<br>平衡狀態: 是</div>`)[0];
+                popup_4834d61e143add993534e16445261bf8.setContent(html_df616d7d4b41f91a15dc4e7fd5827a31);
+            
+        
+
+        circle_marker_1491710952873c03f857ec858a02b237.bindPopup(popup_4834d61e143add993534e16445261bf8)
+        ;
+
+        
+    
+    
+            var circle_marker_64fdae11d0517a8e528ddb563c41997d = L.circleMarker(
+                [25.06657, 121.6136],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_99ba92bdbdecd8eddbd33241ad843445 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_061713582774e2ccd6be408fe3638e3c = $(`<div id="html_061713582774e2ccd6be408fe3638e3c" style="width: 100.0%; height: 100.0%;">站點 ID: 500108067<br>最終車輛數: 6 / 總柱: 25<br>平衡狀態: 否</div>`)[0];
+                popup_99ba92bdbdecd8eddbd33241ad843445.setContent(html_061713582774e2ccd6be408fe3638e3c);
+            
+        
+
+        circle_marker_64fdae11d0517a8e528ddb563c41997d.bindPopup(popup_99ba92bdbdecd8eddbd33241ad843445)
+        ;
+
+        
+    
+    
+            var circle_marker_9e7c665a15e85eb08ed199a53ba728ac = L.circleMarker(
+                [25.07669, 121.61709],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_433d7eab3abc6e3c85c0dd2837a99fe2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_37ab46560ffb06ab60ce4500b099b42e = $(`<div id="html_37ab46560ffb06ab60ce4500b099b42e" style="width: 100.0%; height: 100.0%;">站點 ID: 500108068<br>最終車輛數: 8 / 總柱: 34<br>平衡狀態: 否</div>`)[0];
+                popup_433d7eab3abc6e3c85c0dd2837a99fe2.setContent(html_37ab46560ffb06ab60ce4500b099b42e);
+            
+        
+
+        circle_marker_9e7c665a15e85eb08ed199a53ba728ac.bindPopup(popup_433d7eab3abc6e3c85c0dd2837a99fe2)
+        ;
+
+        
+    
+    
+            var circle_marker_e5d1d34c6400b14ed48951bcbeac6316 = L.circleMarker(
+                [25.07334, 121.61962],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_a728cc3d3fc187bc160cd9c71b7deebd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5a987a09e01f30a50ca05eb1c62c0ec5 = $(`<div id="html_5a987a09e01f30a50ca05eb1c62c0ec5" style="width: 100.0%; height: 100.0%;">站點 ID: 500108071<br>最終車輛數: 25 / 總柱: 42<br>平衡狀態: 是</div>`)[0];
+                popup_a728cc3d3fc187bc160cd9c71b7deebd.setContent(html_5a987a09e01f30a50ca05eb1c62c0ec5);
+            
+        
+
+        circle_marker_e5d1d34c6400b14ed48951bcbeac6316.bindPopup(popup_a728cc3d3fc187bc160cd9c71b7deebd)
+        ;
+
+        
+    
+    
+            var circle_marker_7e9a4c9995008d3faee1793731e72085 = L.circleMarker(
+                [25.06261, 121.59334],
+                {"bubblingMouseEvents": true, "color": "#FF9999", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF9999", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_aa4f342085acceefdc202f99d4b50e40 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7c8e916ae6a2ddb09b546134875eff0a = $(`<div id="html_7c8e916ae6a2ddb09b546134875eff0a" style="width: 100.0%; height: 100.0%;">站點 ID: 500108072<br>最終車輛數: 16 / 總柱: 20<br>平衡狀態: 否</div>`)[0];
+                popup_aa4f342085acceefdc202f99d4b50e40.setContent(html_7c8e916ae6a2ddb09b546134875eff0a);
+            
+        
+
+        circle_marker_7e9a4c9995008d3faee1793731e72085.bindPopup(popup_aa4f342085acceefdc202f99d4b50e40)
+        ;
+
+        
+    
+    
+            var circle_marker_b761ee53fa2af9c075886d21edd4388e = L.circleMarker(
+                [25.06209, 121.60347],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_192715b62c41ea44ba350c370db2bfac = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7f64ffd1f1b1082376fb79d24bc9c7c6 = $(`<div id="html_7f64ffd1f1b1082376fb79d24bc9c7c6" style="width: 100.0%; height: 100.0%;">站點 ID: 500108073<br>最終車輛數: 8 / 總柱: 20<br>平衡狀態: 是</div>`)[0];
+                popup_192715b62c41ea44ba350c370db2bfac.setContent(html_7f64ffd1f1b1082376fb79d24bc9c7c6);
+            
+        
+
+        circle_marker_b761ee53fa2af9c075886d21edd4388e.bindPopup(popup_192715b62c41ea44ba350c370db2bfac)
+        ;
+
+        
+    
+    
+            var circle_marker_62a311bb27ac951e2b9b2975e598edc8 = L.circleMarker(
+                [25.06927, 121.61019],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_e92b3bab780655ca876b3f9df8811855 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_281ca5ab3f5904586b135f3a70f280af = $(`<div id="html_281ca5ab3f5904586b135f3a70f280af" style="width: 100.0%; height: 100.0%;">站點 ID: 500108074<br>最終車輛數: 6 / 總柱: 22<br>平衡狀態: 否</div>`)[0];
+                popup_e92b3bab780655ca876b3f9df8811855.setContent(html_281ca5ab3f5904586b135f3a70f280af);
+            
+        
+
+        circle_marker_62a311bb27ac951e2b9b2975e598edc8.bindPopup(popup_e92b3bab780655ca876b3f9df8811855)
+        ;
+
+        
+    
+    
+            var circle_marker_1cc901ce0763641b5abb52a1a69c5ad6 = L.circleMarker(
+                [25.0716, 121.60936],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_9f7123baaf008856ea18342fe0c5c193 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3aae6512b1d310a9250ef8b4a9b3fb04 = $(`<div id="html_3aae6512b1d310a9250ef8b4a9b3fb04" style="width: 100.0%; height: 100.0%;">站點 ID: 500108075<br>最終車輛數: 8 / 總柱: 15<br>平衡狀態: 是</div>`)[0];
+                popup_9f7123baaf008856ea18342fe0c5c193.setContent(html_3aae6512b1d310a9250ef8b4a9b3fb04);
+            
+        
+
+        circle_marker_1cc901ce0763641b5abb52a1a69c5ad6.bindPopup(popup_9f7123baaf008856ea18342fe0c5c193)
+        ;
+
+        
+    
+    
+            var circle_marker_57d544f584eb599b83848a4037c575e9 = L.circleMarker(
+                [25.06516, 121.59561],
+                {"bubblingMouseEvents": true, "color": "#FF9999", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF9999", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_4f395c2d76721cbc320e80e46ae94e1e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1b19018ced9ece72f4b05326b798009c = $(`<div id="html_1b19018ced9ece72f4b05326b798009c" style="width: 100.0%; height: 100.0%;">站點 ID: 500108078<br>最終車輛數: 23 / 總柱: 30<br>平衡狀態: 否</div>`)[0];
+                popup_4f395c2d76721cbc320e80e46ae94e1e.setContent(html_1b19018ced9ece72f4b05326b798009c);
+            
+        
+
+        circle_marker_57d544f584eb599b83848a4037c575e9.bindPopup(popup_4f395c2d76721cbc320e80e46ae94e1e)
+        ;
+
+        
+    
+    
+            var circle_marker_ffd18f497bb718a4f1bf3a1976c54eb0 = L.circleMarker(
+                [25.06708, 121.60059],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_f8df23958e6eca35babc580cac6ca29c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_edcbfd0491b8210a5cf21c082502c81e = $(`<div id="html_edcbfd0491b8210a5cf21c082502c81e" style="width: 100.0%; height: 100.0%;">站點 ID: 500108079<br>最終車輛數: 10 / 總柱: 17<br>平衡狀態: 是</div>`)[0];
+                popup_f8df23958e6eca35babc580cac6ca29c.setContent(html_edcbfd0491b8210a5cf21c082502c81e);
+            
+        
+
+        circle_marker_ffd18f497bb718a4f1bf3a1976c54eb0.bindPopup(popup_f8df23958e6eca35babc580cac6ca29c)
+        ;
+
+        
+    
+    
+            var circle_marker_85a1ac9b9d3f8349321707bbe0a3c806 = L.circleMarker(
+                [25.06854, 121.61532],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_446b7c1b878c53180e99138d3c17b587 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bd0107f6491744d03387a6e3a1c5c202 = $(`<div id="html_bd0107f6491744d03387a6e3a1c5c202" style="width: 100.0%; height: 100.0%;">站點 ID: 500108081<br>最終車輛數: 9 / 總柱: 29<br>平衡狀態: 是</div>`)[0];
+                popup_446b7c1b878c53180e99138d3c17b587.setContent(html_bd0107f6491744d03387a6e3a1c5c202);
+            
+        
+
+        circle_marker_85a1ac9b9d3f8349321707bbe0a3c806.bindPopup(popup_446b7c1b878c53180e99138d3c17b587)
+        ;
+
+        
+    
+    
+            var circle_marker_15c2b999058f80c7f86fd4c9fb0bd686 = L.circleMarker(
+                [25.08373, 121.59406],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_b2b29bee528faa7de5db1a3507fdfb1e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c5fcc8017a3b0b632974823c093c5418 = $(`<div id="html_c5fcc8017a3b0b632974823c093c5418" style="width: 100.0%; height: 100.0%;">站點 ID: 500108082<br>最終車輛數: 8 / 總柱: 28<br>平衡狀態: 否</div>`)[0];
+                popup_b2b29bee528faa7de5db1a3507fdfb1e.setContent(html_c5fcc8017a3b0b632974823c093c5418);
+            
+        
+
+        circle_marker_15c2b999058f80c7f86fd4c9fb0bd686.bindPopup(popup_b2b29bee528faa7de5db1a3507fdfb1e)
+        ;
+
+        
+    
+    
+            var circle_marker_2a6df424bdf6e3188fb4ebe01937b9d4 = L.circleMarker(
+                [25.07943, 121.59544],
+                {"bubblingMouseEvents": true, "color": "#FF9999", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF9999", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_5b0ca79701b12687de6ec9423aaf7188 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2d4263830361a6a69cef7111ce98ca27 = $(`<div id="html_2d4263830361a6a69cef7111ce98ca27" style="width: 100.0%; height: 100.0%;">站點 ID: 500108086<br>最終車輛數: 17 / 總柱: 21<br>平衡狀態: 否</div>`)[0];
+                popup_5b0ca79701b12687de6ec9423aaf7188.setContent(html_2d4263830361a6a69cef7111ce98ca27);
+            
+        
+
+        circle_marker_2a6df424bdf6e3188fb4ebe01937b9d4.bindPopup(popup_5b0ca79701b12687de6ec9423aaf7188)
+        ;
+
+        
+    
+    
+            var circle_marker_d809c515a91e6c45765dcc2fcfd1c859 = L.circleMarker(
+                [25.07567, 121.6118],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_116730b1faca59cc94039659447cf4f7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f3a68f18a7f7ed3b14c522c54a4d63a3 = $(`<div id="html_f3a68f18a7f7ed3b14c522c54a4d63a3" style="width: 100.0%; height: 100.0%;">站點 ID: 500108087<br>最終車輛數: 3 / 總柱: 19<br>平衡狀態: 否</div>`)[0];
+                popup_116730b1faca59cc94039659447cf4f7.setContent(html_f3a68f18a7f7ed3b14c522c54a4d63a3);
+            
+        
+
+        circle_marker_d809c515a91e6c45765dcc2fcfd1c859.bindPopup(popup_116730b1faca59cc94039659447cf4f7)
+        ;
+
+        
+    
+    
+            var circle_marker_0f5d38afe38c62d1d4ed6c43e43172c1 = L.circleMarker(
+                [25.07415, 121.61075],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_8155e8d999a1f7fbafbb28a75fe9c5cc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e5d5fa9fb732d9377a74cd88c0c2c2c4 = $(`<div id="html_e5d5fa9fb732d9377a74cd88c0c2c2c4" style="width: 100.0%; height: 100.0%;">站點 ID: 500108088<br>最終車輛數: 8 / 總柱: 25<br>平衡狀態: 是</div>`)[0];
+                popup_8155e8d999a1f7fbafbb28a75fe9c5cc.setContent(html_e5d5fa9fb732d9377a74cd88c0c2c2c4);
+            
+        
+
+        circle_marker_0f5d38afe38c62d1d4ed6c43e43172c1.bindPopup(popup_8155e8d999a1f7fbafbb28a75fe9c5cc)
+        ;
+
+        
+    
+    
+            var circle_marker_7fbdf224da520f854eaa50544076ae27 = L.circleMarker(
+                [25.07514, 121.60857],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_c597466b5c97ba23ca47c3af0bcdda8d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2d99c2ab5bc4ffed2c9773eecfd28fc6 = $(`<div id="html_2d99c2ab5bc4ffed2c9773eecfd28fc6" style="width: 100.0%; height: 100.0%;">站點 ID: 500108089<br>最終車輛數: 12 / 總柱: 25<br>平衡狀態: 是</div>`)[0];
+                popup_c597466b5c97ba23ca47c3af0bcdda8d.setContent(html_2d99c2ab5bc4ffed2c9773eecfd28fc6);
+            
+        
+
+        circle_marker_7fbdf224da520f854eaa50544076ae27.bindPopup(popup_c597466b5c97ba23ca47c3af0bcdda8d)
+        ;
+
+        
+    
+    
+            var circle_marker_6bd8a2fcf2ab93ed32f998f65d304bdb = L.circleMarker(
+                [25.06682, 121.5907],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_ca314903c083152e71e4d7c783f2a5fc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3eceada3f8e5e0442a7918f212e77731 = $(`<div id="html_3eceada3f8e5e0442a7918f212e77731" style="width: 100.0%; height: 100.0%;">站點 ID: 500108091<br>最終車輛數: 9 / 總柱: 16<br>平衡狀態: 是</div>`)[0];
+                popup_ca314903c083152e71e4d7c783f2a5fc.setContent(html_3eceada3f8e5e0442a7918f212e77731);
+            
+        
+
+        circle_marker_6bd8a2fcf2ab93ed32f998f65d304bdb.bindPopup(popup_ca314903c083152e71e4d7c783f2a5fc)
+        ;
+
+        
+    
+    
+            var circle_marker_3c3f9a458a2e3dbb8e68d8da293cc817 = L.circleMarker(
+                [25.08105, 121.59205],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_3293a573be81fb18b491d56882dbfdcc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_312c21f16d203416da55c150e7d09ac6 = $(`<div id="html_312c21f16d203416da55c150e7d09ac6" style="width: 100.0%; height: 100.0%;">站點 ID: 500108094<br>最終車輛數: 8 / 總柱: 15<br>平衡狀態: 是</div>`)[0];
+                popup_3293a573be81fb18b491d56882dbfdcc.setContent(html_312c21f16d203416da55c150e7d09ac6);
+            
+        
+
+        circle_marker_3c3f9a458a2e3dbb8e68d8da293cc817.bindPopup(popup_3293a573be81fb18b491d56882dbfdcc)
+        ;
+
+        
+    
+    
+            var circle_marker_3bb51e437bce703eee7c5b6a321d6792 = L.circleMarker(
+                [25.08151, 121.59764],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_0ea245ff63d5d193ac72a25b9e9a19ab = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e70c746de3f39e173818471ac873724d = $(`<div id="html_e70c746de3f39e173818471ac873724d" style="width: 100.0%; height: 100.0%;">站點 ID: 500108095<br>最終車輛數: 14 / 總柱: 30<br>平衡狀態: 是</div>`)[0];
+                popup_0ea245ff63d5d193ac72a25b9e9a19ab.setContent(html_e70c746de3f39e173818471ac873724d);
+            
+        
+
+        circle_marker_3bb51e437bce703eee7c5b6a321d6792.bindPopup(popup_0ea245ff63d5d193ac72a25b9e9a19ab)
+        ;
+
+        
+    
+    
+            var circle_marker_ddec2355cfce5402d015ad30b6ba0658 = L.circleMarker(
+                [25.06851, 121.59559],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_3add749f8574e6a7034f433d3f4873c4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1dc06b0d2887b65b68724723965c7874 = $(`<div id="html_1dc06b0d2887b65b68724723965c7874" style="width: 100.0%; height: 100.0%;">站點 ID: 500108096<br>最終車輛數: 13 / 總柱: 25<br>平衡狀態: 是</div>`)[0];
+                popup_3add749f8574e6a7034f433d3f4873c4.setContent(html_1dc06b0d2887b65b68724723965c7874);
+            
+        
+
+        circle_marker_ddec2355cfce5402d015ad30b6ba0658.bindPopup(popup_3add749f8574e6a7034f433d3f4873c4)
+        ;
+
+        
+    
+    
+            var circle_marker_06171b88f94e26e34138170133383c09 = L.circleMarker(
+                [25.06434, 121.59399],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_cb576c0e23dcb057f5422b7fb1af059d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_346b77fa431defb0f5bda570ee0c0f6f = $(`<div id="html_346b77fa431defb0f5bda570ee0c0f6f" style="width: 100.0%; height: 100.0%;">站點 ID: 500108097<br>最終車輛數: 8 / 總柱: 25<br>平衡狀態: 是</div>`)[0];
+                popup_cb576c0e23dcb057f5422b7fb1af059d.setContent(html_346b77fa431defb0f5bda570ee0c0f6f);
+            
+        
+
+        circle_marker_06171b88f94e26e34138170133383c09.bindPopup(popup_cb576c0e23dcb057f5422b7fb1af059d)
+        ;
+
+        
+    
+    
+            var circle_marker_b8c8b3c898808f3918fce4e80f77fefc = L.circleMarker(
+                [25.06007, 121.60138],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_6552ad6eafe6bc50bc9d98334cdca5d1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_abf5d1cc9d0829a4dc989e14c2754b1d = $(`<div id="html_abf5d1cc9d0829a4dc989e14c2754b1d" style="width: 100.0%; height: 100.0%;">站點 ID: 500108104<br>最終車輛數: 12 / 總柱: 25<br>平衡狀態: 是</div>`)[0];
+                popup_6552ad6eafe6bc50bc9d98334cdca5d1.setContent(html_abf5d1cc9d0829a4dc989e14c2754b1d);
+            
+        
+
+        circle_marker_b8c8b3c898808f3918fce4e80f77fefc.bindPopup(popup_6552ad6eafe6bc50bc9d98334cdca5d1)
+        ;
+
+        
+    
+    
+            var circle_marker_7f36b665ce8ccdabf9af190a96f3df06 = L.circleMarker(
+                [25.07433, 121.58584],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_479026df0797e9b914379958a5d81f3c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fdc2cfa515e7b26053fa4bb89fa6fdd8 = $(`<div id="html_fdc2cfa515e7b26053fa4bb89fa6fdd8" style="width: 100.0%; height: 100.0%;">站點 ID: 500108105<br>最終車輛數: 6 / 總柱: 16<br>平衡狀態: 是</div>`)[0];
+                popup_479026df0797e9b914379958a5d81f3c.setContent(html_fdc2cfa515e7b26053fa4bb89fa6fdd8);
+            
+        
+
+        circle_marker_7f36b665ce8ccdabf9af190a96f3df06.bindPopup(popup_479026df0797e9b914379958a5d81f3c)
+        ;
+
+        
+    
+    
+            var circle_marker_72d917a7907b86f6b95c7334209a1738 = L.circleMarker(
+                [25.05928, 121.58617],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_65c9da8a38f401380860de0e1bf29a00 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_055630e923b13e6ba71c0cee49c7dd3d = $(`<div id="html_055630e923b13e6ba71c0cee49c7dd3d" style="width: 100.0%; height: 100.0%;">站點 ID: 500108106<br>最終車輛數: 15 / 總柱: 25<br>平衡狀態: 是</div>`)[0];
+                popup_65c9da8a38f401380860de0e1bf29a00.setContent(html_055630e923b13e6ba71c0cee49c7dd3d);
+            
+        
+
+        circle_marker_72d917a7907b86f6b95c7334209a1738.bindPopup(popup_65c9da8a38f401380860de0e1bf29a00)
+        ;
+
+        
+    
+    
+            var circle_marker_34d3d290f94fe9a80a554c99627fd414 = L.circleMarker(
+                [25.06935, 121.58692],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_8f2f700bcb2e0d9aec0b6afc87cb60ae = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_04ebe7bbdcb8ab80ee32cae561a804b1 = $(`<div id="html_04ebe7bbdcb8ab80ee32cae561a804b1" style="width: 100.0%; height: 100.0%;">站點 ID: 500108108<br>最終車輛數: 5 / 總柱: 13<br>平衡狀態: 是</div>`)[0];
+                popup_8f2f700bcb2e0d9aec0b6afc87cb60ae.setContent(html_04ebe7bbdcb8ab80ee32cae561a804b1);
+            
+        
+
+        circle_marker_34d3d290f94fe9a80a554c99627fd414.bindPopup(popup_8f2f700bcb2e0d9aec0b6afc87cb60ae)
+        ;
+
+        
+    
+    
+            var circle_marker_4a1be510ee56af6750a4918e595719cb = L.circleMarker(
+                [25.06664, 121.61351],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_a3daf3a5166904d0d650d57aa696094e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1adacabf7824b15c8c1d662ef8de96b0 = $(`<div id="html_1adacabf7824b15c8c1d662ef8de96b0" style="width: 100.0%; height: 100.0%;">站點 ID: 500108110<br>最終車輛數: 21 / 總柱: 35<br>平衡狀態: 是</div>`)[0];
+                popup_a3daf3a5166904d0d650d57aa696094e.setContent(html_1adacabf7824b15c8c1d662ef8de96b0);
+            
+        
+
+        circle_marker_4a1be510ee56af6750a4918e595719cb.bindPopup(popup_a3daf3a5166904d0d650d57aa696094e)
+        ;
+
+        
+    
+    
+            var circle_marker_ec432dd2dbfa93b05b8efe3df810ade2 = L.circleMarker(
+                [25.06874, 121.58923],
+                {"bubblingMouseEvents": true, "color": "#FF8C00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF8C00", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_e3e6f138632fd9503314aa0c7c676e5a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_706156172ff2b505b1b328a9e9fe8b05 = $(`<div id="html_706156172ff2b505b1b328a9e9fe8b05" style="width: 100.0%; height: 100.0%;">站點 ID: 500108111<br>最終車輛數: 0 / 總柱: 23<br>平衡狀態: 否</div>`)[0];
+                popup_e3e6f138632fd9503314aa0c7c676e5a.setContent(html_706156172ff2b505b1b328a9e9fe8b05);
+            
+        
+
+        circle_marker_ec432dd2dbfa93b05b8efe3df810ade2.bindPopup(popup_e3e6f138632fd9503314aa0c7c676e5a)
+        ;
+
+        
+    
+    
+            var circle_marker_b32a758115bf76dcbca2d15008a291a2 = L.circleMarker(
+                [25.07038, 121.60352],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_5f282c11c9741faaba29eab50600afda = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_928a334960e60c0e4bc73c9744702a00 = $(`<div id="html_928a334960e60c0e4bc73c9744702a00" style="width: 100.0%; height: 100.0%;">站點 ID: 500108115<br>最終車輛數: 1 / 總柱: 25<br>平衡狀態: 否</div>`)[0];
+                popup_5f282c11c9741faaba29eab50600afda.setContent(html_928a334960e60c0e4bc73c9744702a00);
+            
+        
+
+        circle_marker_b32a758115bf76dcbca2d15008a291a2.bindPopup(popup_5f282c11c9741faaba29eab50600afda)
+        ;
+
+        
+    
+    
+            var circle_marker_ca0f077d63518076fdb896b99b5e979c = L.circleMarker(
+                [25.07192, 121.61955],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_1a8cd0c8345511c1570204c7ec04ae34 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5c12180657112a3cafa2d0df58776c0d = $(`<div id="html_5c12180657112a3cafa2d0df58776c0d" style="width: 100.0%; height: 100.0%;">站點 ID: 500108118<br>最終車輛數: 14 / 總柱: 24<br>平衡狀態: 是</div>`)[0];
+                popup_1a8cd0c8345511c1570204c7ec04ae34.setContent(html_5c12180657112a3cafa2d0df58776c0d);
+            
+        
+
+        circle_marker_ca0f077d63518076fdb896b99b5e979c.bindPopup(popup_1a8cd0c8345511c1570204c7ec04ae34)
+        ;
+
+        
+    
+    
+            var circle_marker_af89f5f228a6732ca063676a6cdea21f = L.circleMarker(
+                [25.07823, 121.5898],
+                {"bubblingMouseEvents": true, "color": "#FF8C00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF8C00", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_e86f4142f759b85f6c17c6cd2a0dc160 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f548ee19874822dc72437c1dd1c67d4c = $(`<div id="html_f548ee19874822dc72437c1dd1c67d4c" style="width: 100.0%; height: 100.0%;">站點 ID: 500108120<br>最終車輛數: 0 / 總柱: 17<br>平衡狀態: 否</div>`)[0];
+                popup_e86f4142f759b85f6c17c6cd2a0dc160.setContent(html_f548ee19874822dc72437c1dd1c67d4c);
+            
+        
+
+        circle_marker_af89f5f228a6732ca063676a6cdea21f.bindPopup(popup_e86f4142f759b85f6c17c6cd2a0dc160)
+        ;
+
+        
+    
+    
+            var circle_marker_f45dc6b11a90be02a8e580d1d55e39ac = L.circleMarker(
+                [25.07392, 121.61545],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_31f5f773bb727e75e4dacdebfd056fe8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6a7f3dc97e8081ab84121f5bdb6b4ef2 = $(`<div id="html_6a7f3dc97e8081ab84121f5bdb6b4ef2" style="width: 100.0%; height: 100.0%;">站點 ID: 500108123<br>最終車輛數: 5 / 總柱: 15<br>平衡狀態: 是</div>`)[0];
+                popup_31f5f773bb727e75e4dacdebfd056fe8.setContent(html_6a7f3dc97e8081ab84121f5bdb6b4ef2);
+            
+        
+
+        circle_marker_f45dc6b11a90be02a8e580d1d55e39ac.bindPopup(popup_31f5f773bb727e75e4dacdebfd056fe8)
+        ;
+
+        
+    
+    
+            var circle_marker_5ed1f5dfa7a4e58ab1cf5f4842afd53a = L.circleMarker(
+                [25.06671, 121.58913],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_08f56beae380784c72839ef69774d508 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_33253c0ef0f636045a951d5561ebbb0d = $(`<div id="html_33253c0ef0f636045a951d5561ebbb0d" style="width: 100.0%; height: 100.0%;">站點 ID: 500108124<br>最終車輛數: 4 / 總柱: 16<br>平衡狀態: 否</div>`)[0];
+                popup_08f56beae380784c72839ef69774d508.setContent(html_33253c0ef0f636045a951d5561ebbb0d);
+            
+        
+
+        circle_marker_5ed1f5dfa7a4e58ab1cf5f4842afd53a.bindPopup(popup_08f56beae380784c72839ef69774d508)
+        ;
+
+        
+    
+    
+            var circle_marker_1e23d8780b069bd25e8f721e23b4e522 = L.circleMarker(
+                [25.07849, 121.61666],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_b22a304913d3cd413015f75096dd6d49 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d0bfa3676b49b4384eb4ece822d09802 = $(`<div id="html_d0bfa3676b49b4384eb4ece822d09802" style="width: 100.0%; height: 100.0%;">站點 ID: 500108126<br>最終車輛數: 12 / 總柱: 21<br>平衡狀態: 是</div>`)[0];
+                popup_b22a304913d3cd413015f75096dd6d49.setContent(html_d0bfa3676b49b4384eb4ece822d09802);
+            
+        
+
+        circle_marker_1e23d8780b069bd25e8f721e23b4e522.bindPopup(popup_b22a304913d3cd413015f75096dd6d49)
+        ;
+
+        
+    
+    
+            var circle_marker_2b9495518bce9b66906f435d7c9dd76a = L.circleMarker(
+                [25.07539, 121.6203],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_05392ea2f297b802fb6f08179ecd7503 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4654698b87ea09d53a8602c39972130d = $(`<div id="html_4654698b87ea09d53a8602c39972130d" style="width: 100.0%; height: 100.0%;">站點 ID: 500108127<br>最終車輛數: 11 / 總柱: 20<br>平衡狀態: 是</div>`)[0];
+                popup_05392ea2f297b802fb6f08179ecd7503.setContent(html_4654698b87ea09d53a8602c39972130d);
+            
+        
+
+        circle_marker_2b9495518bce9b66906f435d7c9dd76a.bindPopup(popup_05392ea2f297b802fb6f08179ecd7503)
+        ;
+
+        
+    
+    
+            var circle_marker_e40379400c5e790f24a1e0a97e1b05ae = L.circleMarker(
+                [25.06058, 121.5866],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_97177a0115f95f4f0b65a2cf419a5882 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_243e063c35ed7070eb2d3dcf27ca2b79 = $(`<div id="html_243e063c35ed7070eb2d3dcf27ca2b79" style="width: 100.0%; height: 100.0%;">站點 ID: 500108129<br>最終車輛數: 9 / 總柱: 16<br>平衡狀態: 是</div>`)[0];
+                popup_97177a0115f95f4f0b65a2cf419a5882.setContent(html_243e063c35ed7070eb2d3dcf27ca2b79);
+            
+        
+
+        circle_marker_e40379400c5e790f24a1e0a97e1b05ae.bindPopup(popup_97177a0115f95f4f0b65a2cf419a5882)
+        ;
+
+        
+    
+    
+            var circle_marker_beec95e48003c63e1af6502614276c8f = L.circleMarker(
+                [25.08416, 121.59665],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_5e7c591133fe131fa93cfc13b6748454 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0bbb9871331e0b95f8bef697fc3a73f3 = $(`<div id="html_0bbb9871331e0b95f8bef697fc3a73f3" style="width: 100.0%; height: 100.0%;">站點 ID: 500108134<br>最終車輛數: 1 / 總柱: 11<br>平衡狀態: 否</div>`)[0];
+                popup_5e7c591133fe131fa93cfc13b6748454.setContent(html_0bbb9871331e0b95f8bef697fc3a73f3);
+            
+        
+
+        circle_marker_beec95e48003c63e1af6502614276c8f.bindPopup(popup_5e7c591133fe131fa93cfc13b6748454)
+        ;
+
+        
+    
+    
+            var circle_marker_185315267fd35b2dcb0985dc468004c0 = L.circleMarker(
+                [25.0735, 121.61258],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_dc880d95d679df1e6c51590ea3bc25ee = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e09b3f73fb730809857ad1efa786a1ec = $(`<div id="html_e09b3f73fb730809857ad1efa786a1ec" style="width: 100.0%; height: 100.0%;">站點 ID: 500108135<br>最終車輛數: 5 / 總柱: 14<br>平衡狀態: 是</div>`)[0];
+                popup_dc880d95d679df1e6c51590ea3bc25ee.setContent(html_e09b3f73fb730809857ad1efa786a1ec);
+            
+        
+
+        circle_marker_185315267fd35b2dcb0985dc468004c0.bindPopup(popup_dc880d95d679df1e6c51590ea3bc25ee)
+        ;
+
+        
+    
+    
+            var circle_marker_5db897e0c198596ea4eff265f9d6514a = L.circleMarker(
+                [25.08227, 121.5909],
+                {"bubblingMouseEvents": true, "color": "#FF8C00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF8C00", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_eb416be62003ba9eefc7a5ce6a3ac70a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_93a44fcd1f14997bd7242a04674f540d = $(`<div id="html_93a44fcd1f14997bd7242a04674f540d" style="width: 100.0%; height: 100.0%;">站點 ID: 500108136<br>最終車輛數: 0 / 總柱: 16<br>平衡狀態: 否</div>`)[0];
+                popup_eb416be62003ba9eefc7a5ce6a3ac70a.setContent(html_93a44fcd1f14997bd7242a04674f540d);
+            
+        
+
+        circle_marker_5db897e0c198596ea4eff265f9d6514a.bindPopup(popup_eb416be62003ba9eefc7a5ce6a3ac70a)
+        ;
+
+        
+    
+    
+            var circle_marker_6a6fb360514d6010ac1c7a7e9648ac93 = L.circleMarker(
+                [25.06643, 121.61732],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_6687f99154615cfe4efe55bd5018e8a8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5fd6d3a624ec4044c218481ceb5e3a67 = $(`<div id="html_5fd6d3a624ec4044c218481ceb5e3a67" style="width: 100.0%; height: 100.0%;">站點 ID: 500108137<br>最終車輛數: 9 / 總柱: 25<br>平衡狀態: 是</div>`)[0];
+                popup_6687f99154615cfe4efe55bd5018e8a8.setContent(html_5fd6d3a624ec4044c218481ceb5e3a67);
+            
+        
+
+        circle_marker_6a6fb360514d6010ac1c7a7e9648ac93.bindPopup(popup_6687f99154615cfe4efe55bd5018e8a8)
+        ;
+
+        
+    
+    
+            var circle_marker_83274c597733b094be9e86148bde0ab3 = L.circleMarker(
+                [25.0721, 121.60991],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_20e60c6c95cb0db9e33f83d9a5424a10 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c82e9d2eac824414029033c2bce1ced2 = $(`<div id="html_c82e9d2eac824414029033c2bce1ced2" style="width: 100.0%; height: 100.0%;">站點 ID: 500108142<br>最終車輛數: 9 / 總柱: 15<br>平衡狀態: 是</div>`)[0];
+                popup_20e60c6c95cb0db9e33f83d9a5424a10.setContent(html_c82e9d2eac824414029033c2bce1ced2);
+            
+        
+
+        circle_marker_83274c597733b094be9e86148bde0ab3.bindPopup(popup_20e60c6c95cb0db9e33f83d9a5424a10)
+        ;
+
+        
+    
+    
+            var circle_marker_7088c3381b378ad72b8474f10f5bb033 = L.circleMarker(
+                [25.07074, 121.61803],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_e42001260e5cf0dc1de3cc02ca6cc171 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e0898b1bea7cc436a2e7a2a98532006e = $(`<div id="html_e0898b1bea7cc436a2e7a2a98532006e" style="width: 100.0%; height: 100.0%;">站點 ID: 500108165<br>最終車輛數: 5 / 總柱: 28<br>平衡狀態: 否</div>`)[0];
+                popup_e42001260e5cf0dc1de3cc02ca6cc171.setContent(html_e0898b1bea7cc436a2e7a2a98532006e);
+            
+        
+
+        circle_marker_7088c3381b378ad72b8474f10f5bb033.bindPopup(popup_e42001260e5cf0dc1de3cc02ca6cc171)
+        ;
+
+        
+    
+    
+            var circle_marker_7f152f4144bcfc8add723e5f2c703321 = L.circleMarker(
+                [25.07983, 121.59625],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_12de964a73620084d810d5142de70eed = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_61be4bfac5329ccdd8b411df769ffcad = $(`<div id="html_61be4bfac5329ccdd8b411df769ffcad" style="width: 100.0%; height: 100.0%;">站點 ID: 500108167<br>最終車輛數: 8 / 總柱: 14<br>平衡狀態: 是</div>`)[0];
+                popup_12de964a73620084d810d5142de70eed.setContent(html_61be4bfac5329ccdd8b411df769ffcad);
+            
+        
+
+        circle_marker_7f152f4144bcfc8add723e5f2c703321.bindPopup(popup_12de964a73620084d810d5142de70eed)
+        ;
+
+        
+    
+    
+            var circle_marker_f4ac98499bff0215874cb84d4d0ebe5d = L.circleMarker(
+                [25.06153, 121.60033],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_12057f96bf877aed9e020c02e8f1341e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7522ea28e5d2b2965128a0a20b0dd389 = $(`<div id="html_7522ea28e5d2b2965128a0a20b0dd389" style="width: 100.0%; height: 100.0%;">站點 ID: 500108169<br>最終車輛數: 8 / 總柱: 25<br>平衡狀態: 是</div>`)[0];
+                popup_12057f96bf877aed9e020c02e8f1341e.setContent(html_7522ea28e5d2b2965128a0a20b0dd389);
+            
+        
+
+        circle_marker_f4ac98499bff0215874cb84d4d0ebe5d.bindPopup(popup_12057f96bf877aed9e020c02e8f1341e)
+        ;
+
+        
+    
+    
+            var circle_marker_020f1458366e07d9a6bbcab853cef025 = L.circleMarker(
+                [25.07862, 121.58796],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_10b524befa7ae7329957600d88ef3968 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2bdfad5858da5be4919e0231e9a2c7ea = $(`<div id="html_2bdfad5858da5be4919e0231e9a2c7ea" style="width: 100.0%; height: 100.0%;">站點 ID: 500108172<br>最終車輛數: 4 / 總柱: 15<br>平衡狀態: 否</div>`)[0];
+                popup_10b524befa7ae7329957600d88ef3968.setContent(html_2bdfad5858da5be4919e0231e9a2c7ea);
+            
+        
+
+        circle_marker_020f1458366e07d9a6bbcab853cef025.bindPopup(popup_10b524befa7ae7329957600d88ef3968)
+        ;
+
+        
+    
+    
+            var circle_marker_0e71bca1d01ae62e2e39b908689d621e = L.circleMarker(
+                [25.06099, 121.59662],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_03ec637e57bcba6a77928afb6a37e4f9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6bce0163b00884da9ebe96fd9304a536 = $(`<div id="html_6bce0163b00884da9ebe96fd9304a536" style="width: 100.0%; height: 100.0%;">站點 ID: 500108173<br>最終車輛數: 8 / 總柱: 15<br>平衡狀態: 是</div>`)[0];
+                popup_03ec637e57bcba6a77928afb6a37e4f9.setContent(html_6bce0163b00884da9ebe96fd9304a536);
+            
+        
+
+        circle_marker_0e71bca1d01ae62e2e39b908689d621e.bindPopup(popup_03ec637e57bcba6a77928afb6a37e4f9)
+        ;
+
+        
+    
+    
+            var circle_marker_4cb3ce520f2121bd0a8c6fad51e7bbe1 = L.circleMarker(
+                [25.07264, 121.60692],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_e731e0442702696aebea983abcfa48e5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3a14e6b681d03aaa61ae9dcc466faad7 = $(`<div id="html_3a14e6b681d03aaa61ae9dcc466faad7" style="width: 100.0%; height: 100.0%;">站點 ID: 500108174<br>最終車輛數: 20 / 總柱: 20<br>平衡狀態: 否</div>`)[0];
+                popup_e731e0442702696aebea983abcfa48e5.setContent(html_3a14e6b681d03aaa61ae9dcc466faad7);
+            
+        
+
+        circle_marker_4cb3ce520f2121bd0a8c6fad51e7bbe1.bindPopup(popup_e731e0442702696aebea983abcfa48e5)
+        ;
+
+        
+    
+    
+            var circle_marker_3d5185b165cdc4fa8571905b6da10c88 = L.circleMarker(
+                [25.07595, 121.62257],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_c3eb0f963459955ec0bfe851cb58cc3c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cf36ac47f05fb8384fa89988c7efefee = $(`<div id="html_cf36ac47f05fb8384fa89988c7efefee" style="width: 100.0%; height: 100.0%;">站點 ID: 500108175<br>最終車輛數: 8 / 總柱: 16<br>平衡狀態: 是</div>`)[0];
+                popup_c3eb0f963459955ec0bfe851cb58cc3c.setContent(html_cf36ac47f05fb8384fa89988c7efefee);
+            
+        
+
+        circle_marker_3d5185b165cdc4fa8571905b6da10c88.bindPopup(popup_c3eb0f963459955ec0bfe851cb58cc3c)
+        ;
+
+        
+    
+    
+            var circle_marker_a845be9ae99aa8a5dbb72e39812c19df = L.circleMarker(
+                [25.06092, 121.58898],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_4709c7e4134a04258220cf1e452e2e12 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_36d84c1afe8741f30946bdf4ce36f65d = $(`<div id="html_36d84c1afe8741f30946bdf4ce36f65d" style="width: 100.0%; height: 100.0%;">站點 ID: 500108177<br>最終車輛數: 11 / 總柱: 29<br>平衡狀態: 是</div>`)[0];
+                popup_4709c7e4134a04258220cf1e452e2e12.setContent(html_36d84c1afe8741f30946bdf4ce36f65d);
+            
+        
+
+        circle_marker_a845be9ae99aa8a5dbb72e39812c19df.bindPopup(popup_4709c7e4134a04258220cf1e452e2e12)
+        ;
+
+        
+    
+    
+            var circle_marker_560403957054c689386668d6d7f40407 = L.circleMarker(
+                [25.06468, 121.58654],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_c56933958e54f917ad44f613143a4296 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b53b501ffb60d866a6ea41eb141de60f = $(`<div id="html_b53b501ffb60d866a6ea41eb141de60f" style="width: 100.0%; height: 100.0%;">站點 ID: 500108182<br>最終車輛數: 26 / 總柱: 26<br>平衡狀態: 否</div>`)[0];
+                popup_c56933958e54f917ad44f613143a4296.setContent(html_b53b501ffb60d866a6ea41eb141de60f);
+            
+        
+
+        circle_marker_560403957054c689386668d6d7f40407.bindPopup(popup_c56933958e54f917ad44f613143a4296)
+        ;
+
+        
+    
+    
+            var circle_marker_95696960e39f40cf273ccae24c0fbee0 = L.circleMarker(
+                [25.07165, 121.61177],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_e38b1f1e67e11f7fae7cb19a7d5ac0cc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ae23c91698be659fe5a4a87b02373fc8 = $(`<div id="html_ae23c91698be659fe5a4a87b02373fc8" style="width: 100.0%; height: 100.0%;">站點 ID: 500108183<br>最終車輛數: 8 / 總柱: 26<br>平衡狀態: 是</div>`)[0];
+                popup_e38b1f1e67e11f7fae7cb19a7d5ac0cc.setContent(html_ae23c91698be659fe5a4a87b02373fc8);
+            
+        
+
+        circle_marker_95696960e39f40cf273ccae24c0fbee0.bindPopup(popup_e38b1f1e67e11f7fae7cb19a7d5ac0cc)
+        ;
+
+        
+    
+    
+            var circle_marker_18eb0f1758736d6080ffda5c7a6e28b7 = L.circleMarker(
+                [25.06658, 121.60803],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_ab7ce14462e5effe71d0f10fa957b211 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a262b1b3079af456a78f6b20a01b6952 = $(`<div id="html_a262b1b3079af456a78f6b20a01b6952" style="width: 100.0%; height: 100.0%;">站點 ID: 500108184<br>最終車輛數: 9 / 總柱: 20<br>平衡狀態: 是</div>`)[0];
+                popup_ab7ce14462e5effe71d0f10fa957b211.setContent(html_a262b1b3079af456a78f6b20a01b6952);
+            
+        
+
+        circle_marker_18eb0f1758736d6080ffda5c7a6e28b7.bindPopup(popup_ab7ce14462e5effe71d0f10fa957b211)
+        ;
+
+        
+    
+    
+            var circle_marker_d1c00e93a062ebac7a3e538e44089185 = L.circleMarker(
+                [25.0692, 121.6122],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_79317fb4c38020d83c42418747155714 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4b00a261f404024b106cc62544df96aa = $(`<div id="html_4b00a261f404024b106cc62544df96aa" style="width: 100.0%; height: 100.0%;">站點 ID: 500108185<br>最終車輛數: 7 / 總柱: 15<br>平衡狀態: 是</div>`)[0];
+                popup_79317fb4c38020d83c42418747155714.setContent(html_4b00a261f404024b106cc62544df96aa);
+            
+        
+
+        circle_marker_d1c00e93a062ebac7a3e538e44089185.bindPopup(popup_79317fb4c38020d83c42418747155714)
+        ;
+
+        
+    
+    
+            var circle_marker_763f55526e9766e66c3e30081b65f6df = L.circleMarker(
+                [25.06082, 121.58757],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_4e01df72c6112415f17e31b2f07853e2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8fdb48a11ccdd686c0bc9ba7b08d32cc = $(`<div id="html_8fdb48a11ccdd686c0bc9ba7b08d32cc" style="width: 100.0%; height: 100.0%;">站點 ID: 500108186<br>最終車輛數: 11 / 總柱: 30<br>平衡狀態: 是</div>`)[0];
+                popup_4e01df72c6112415f17e31b2f07853e2.setContent(html_8fdb48a11ccdd686c0bc9ba7b08d32cc);
+            
+        
+
+        circle_marker_763f55526e9766e66c3e30081b65f6df.bindPopup(popup_4e01df72c6112415f17e31b2f07853e2)
+        ;
+
+        
+    
+    
+            var circle_marker_cd99481320b124a475fa17cde0ee025c = L.circleMarker(
+                [25.06701, 121.61194],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_ccad4252e0cfd98e5553367305a47214 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d3ae0694bb55af8c9e70032a179ee4e5 = $(`<div id="html_d3ae0694bb55af8c9e70032a179ee4e5" style="width: 100.0%; height: 100.0%;">站點 ID: 500108188<br>最終車輛數: 14 / 總柱: 30<br>平衡狀態: 是</div>`)[0];
+                popup_ccad4252e0cfd98e5553367305a47214.setContent(html_d3ae0694bb55af8c9e70032a179ee4e5);
+            
+        
+
+        circle_marker_cd99481320b124a475fa17cde0ee025c.bindPopup(popup_ccad4252e0cfd98e5553367305a47214)
+        ;
+
+        
+    
+    
+            var circle_marker_2f5e5c7adba68f54f6fada61d6e4cb09 = L.circleMarker(
+                [25.08383, 121.60253],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_54767e517c81ccd062dd234d67d0fb37 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e3724849e685cbdfd04df374738686db = $(`<div id="html_e3724849e685cbdfd04df374738686db" style="width: 100.0%; height: 100.0%;">站點 ID: 500108189<br>最終車輛數: 9 / 總柱: 24<br>平衡狀態: 是</div>`)[0];
+                popup_54767e517c81ccd062dd234d67d0fb37.setContent(html_e3724849e685cbdfd04df374738686db);
+            
+        
+
+        circle_marker_2f5e5c7adba68f54f6fada61d6e4cb09.bindPopup(popup_54767e517c81ccd062dd234d67d0fb37)
+        ;
+
+        
+    
+    
+            var circle_marker_b397deaa551f3648ad426824b1bb5f99 = L.circleMarker(
+                [25.06572, 121.59778],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_3b0192eab9ad164e6f2afe26faa958e2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5fc45e5b5ca0f543dba20445fa07f502 = $(`<div id="html_5fc45e5b5ca0f543dba20445fa07f502" style="width: 100.0%; height: 100.0%;">站點 ID: 500108192<br>最終車輛數: 13 / 總柱: 25<br>平衡狀態: 是</div>`)[0];
+                popup_3b0192eab9ad164e6f2afe26faa958e2.setContent(html_5fc45e5b5ca0f543dba20445fa07f502);
+            
+        
+
+        circle_marker_b397deaa551f3648ad426824b1bb5f99.bindPopup(popup_3b0192eab9ad164e6f2afe26faa958e2)
+        ;
+
+        
+    
+    
+            var circle_marker_48e429e452c4d2e0dc42936d37a6a863 = L.circleMarker(
+                [25.06703, 121.59048],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_e0ed179495e328bb36bb3c110f1a3bad = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b6ed647476fe0ce3dd4cacc0cd9fda18 = $(`<div id="html_b6ed647476fe0ce3dd4cacc0cd9fda18" style="width: 100.0%; height: 100.0%;">站點 ID: 500108193<br>最終車輛數: 3 / 總柱: 21<br>平衡狀態: 否</div>`)[0];
+                popup_e0ed179495e328bb36bb3c110f1a3bad.setContent(html_b6ed647476fe0ce3dd4cacc0cd9fda18);
+            
+        
+
+        circle_marker_48e429e452c4d2e0dc42936d37a6a863.bindPopup(popup_e0ed179495e328bb36bb3c110f1a3bad)
+        ;
+
+        
+    
+    
+            var circle_marker_18b0ee3e0aa135c283de549f9a0bfb27 = L.circleMarker(
+                [25.07837, 121.59652],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_eb1245342ff08d157cf5f75f085d9d23 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_960b98bff39d9754a0907b45a58858c5 = $(`<div id="html_960b98bff39d9754a0907b45a58858c5" style="width: 100.0%; height: 100.0%;">站點 ID: 500108195<br>最終車輛數: 9 / 總柱: 18<br>平衡狀態: 是</div>`)[0];
+                popup_eb1245342ff08d157cf5f75f085d9d23.setContent(html_960b98bff39d9754a0907b45a58858c5);
+            
+        
+
+        circle_marker_18b0ee3e0aa135c283de549f9a0bfb27.bindPopup(popup_eb1245342ff08d157cf5f75f085d9d23)
+        ;
+
+        
+    
+    
+            var circle_marker_a28f7cbd64535bf29e16a638cac05b7f = L.circleMarker(
+                [25.07966, 121.59793],
+                {"bubblingMouseEvents": true, "color": "#FF8C00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF8C00", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_12bacf4bd6834d22fbdc34f0014e1b43 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cd09c7438cf098c73394ac0037a92583 = $(`<div id="html_cd09c7438cf098c73394ac0037a92583" style="width: 100.0%; height: 100.0%;">站點 ID: 500108196<br>最終車輛數: 0 / 總柱: 16<br>平衡狀態: 否</div>`)[0];
+                popup_12bacf4bd6834d22fbdc34f0014e1b43.setContent(html_cd09c7438cf098c73394ac0037a92583);
+            
+        
+
+        circle_marker_a28f7cbd64535bf29e16a638cac05b7f.bindPopup(popup_12bacf4bd6834d22fbdc34f0014e1b43)
+        ;
+
+        
+    
+    
+            var circle_marker_9bd6f92eb86b0b403e8ba25f0980f85c = L.circleMarker(
+                [25.07077, 121.59],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_3b544aada069740d233c706f9653f3a7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_330da36284f780ad0b3fe7d053c89b7d = $(`<div id="html_330da36284f780ad0b3fe7d053c89b7d" style="width: 100.0%; height: 100.0%;">站點 ID: 500108197<br>最終車輛數: 1 / 總柱: 20<br>平衡狀態: 否</div>`)[0];
+                popup_3b544aada069740d233c706f9653f3a7.setContent(html_330da36284f780ad0b3fe7d053c89b7d);
+            
+        
+
+        circle_marker_9bd6f92eb86b0b403e8ba25f0980f85c.bindPopup(popup_3b544aada069740d233c706f9653f3a7)
+        ;
+
+        
+    
+    
+            var circle_marker_6a17a6b265b362cbaf39f57039001df5 = L.circleMarker(
+                [25.06769, 121.61163],
+                {"bubblingMouseEvents": true, "color": "#FF9999", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF9999", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_71488f889df4c70cf9c7220a95d2d9a5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8a07ece489bf3d66c97669c696d8d537 = $(`<div id="html_8a07ece489bf3d66c97669c696d8d537" style="width: 100.0%; height: 100.0%;">站點 ID: 500108199<br>最終車輛數: 14 / 總柱: 20<br>平衡狀態: 是</div>`)[0];
+                popup_71488f889df4c70cf9c7220a95d2d9a5.setContent(html_8a07ece489bf3d66c97669c696d8d537);
+            
+        
+
+        circle_marker_6a17a6b265b362cbaf39f57039001df5.bindPopup(popup_71488f889df4c70cf9c7220a95d2d9a5)
+        ;
+
+        
+    
+    
+            var circle_marker_3d54b2a2a18e472c0540d89fc3f4803c = L.circleMarker(
+                [25.06865, 121.60884],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_8d369c4c883f1e738e6860253917e745 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9e4de74ac2c70f4754a9ade9ba2c23e8 = $(`<div id="html_9e4de74ac2c70f4754a9ade9ba2c23e8" style="width: 100.0%; height: 100.0%;">站點 ID: 500108200<br>最終車輛數: 7 / 總柱: 21<br>平衡狀態: 是</div>`)[0];
+                popup_8d369c4c883f1e738e6860253917e745.setContent(html_9e4de74ac2c70f4754a9ade9ba2c23e8);
+            
+        
+
+        circle_marker_3d54b2a2a18e472c0540d89fc3f4803c.bindPopup(popup_8d369c4c883f1e738e6860253917e745)
+        ;
+
+        
+    
+    
+            var circle_marker_c7a31e3d1081a5bdd476e8ea801a31f3 = L.circleMarker(
+                [25.07457, 121.5901],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_c001c10d31bb00dc6d41374b5928c04c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9e0f05d7e72138c92d28b5e57110a2ed = $(`<div id="html_9e0f05d7e72138c92d28b5e57110a2ed" style="width: 100.0%; height: 100.0%;">站點 ID: 500108201<br>最終車輛數: 12 / 總柱: 23<br>平衡狀態: 是</div>`)[0];
+                popup_c001c10d31bb00dc6d41374b5928c04c.setContent(html_9e0f05d7e72138c92d28b5e57110a2ed);
+            
+        
+
+        circle_marker_c7a31e3d1081a5bdd476e8ea801a31f3.bindPopup(popup_c001c10d31bb00dc6d41374b5928c04c)
+        ;
+
+        
+    
+    
+            var circle_marker_c836217738429cd5582df03f5859766e = L.circleMarker(
+                [25.08107, 121.58609],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_eb67e27779333389cd419cad9d5200a6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a1122b8562d6a8da10fcd41f99d37b8d = $(`<div id="html_a1122b8562d6a8da10fcd41f99d37b8d" style="width: 100.0%; height: 100.0%;">站點 ID: 500108204<br>最終車輛數: 7 / 總柱: 28<br>平衡狀態: 否</div>`)[0];
+                popup_eb67e27779333389cd419cad9d5200a6.setContent(html_a1122b8562d6a8da10fcd41f99d37b8d);
+            
+        
+
+        circle_marker_c836217738429cd5582df03f5859766e.bindPopup(popup_eb67e27779333389cd419cad9d5200a6)
+        ;
+
+        
+    
+    
+            var circle_marker_e67f7baadf50910fedf39f52544f0778 = L.circleMarker(
+                [25.05014, 121.59238],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_ba7df768cd88609932b0506fc4e13d20 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d45b8b37e3535aa2ebb43d9632e91dd0 = $(`<div id="html_d45b8b37e3535aa2ebb43d9632e91dd0" style="width: 100.0%; height: 100.0%;">站點 ID: 500111003<br>最終車輛數: 2 / 總柱: 65<br>平衡狀態: 否</div>`)[0];
+                popup_ba7df768cd88609932b0506fc4e13d20.setContent(html_d45b8b37e3535aa2ebb43d9632e91dd0);
+            
+        
+
+        circle_marker_e67f7baadf50910fedf39f52544f0778.bindPopup(popup_ba7df768cd88609932b0506fc4e13d20)
+        ;
+
+        
+    
+    
+            var circle_marker_7440f385b6c21e6d375774036bc4be7e = L.circleMarker(
+                [25.04919, 121.58832],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_86522303b204d151d798327f1ec6f0d8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7a4fa49bf99da17d5cbcb5665d7f6763 = $(`<div id="html_7a4fa49bf99da17d5cbcb5665d7f6763" style="width: 100.0%; height: 100.0%;">站點 ID: 500111004<br>最終車輛數: 12 / 總柱: 35<br>平衡狀態: 是</div>`)[0];
+                popup_86522303b204d151d798327f1ec6f0d8.setContent(html_7a4fa49bf99da17d5cbcb5665d7f6763);
+            
+        
+
+        circle_marker_7440f385b6c21e6d375774036bc4be7e.bindPopup(popup_86522303b204d151d798327f1ec6f0d8)
+        ;
+
+        
+    
+    
+            var circle_marker_082ba3220fe203350769d3943ac2ebee = L.circleMarker(
+                [25.04763, 121.61145],
+                {"bubblingMouseEvents": true, "color": "#FF9999", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF9999", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_dce2efa673d43a0a23e2374ff74f6ceb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_782af6e702ffbec2e8a34cba0f82e14b = $(`<div id="html_782af6e702ffbec2e8a34cba0f82e14b" style="width: 100.0%; height: 100.0%;">站點 ID: 500111012<br>最終車輛數: 31 / 總柱: 38<br>平衡狀態: 否</div>`)[0];
+                popup_dce2efa673d43a0a23e2374ff74f6ceb.setContent(html_782af6e702ffbec2e8a34cba0f82e14b);
+            
+        
+
+        circle_marker_082ba3220fe203350769d3943ac2ebee.bindPopup(popup_dce2efa673d43a0a23e2374ff74f6ceb)
+        ;
+
+        
+    
+    
+            var circle_marker_de8c3a4b4cc1defc659b81075a2f6a91 = L.circleMarker(
+                [25.05469, 121.61669],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_8cb2d8d9c98c18c6863dfbe2c7f2f121 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f39b871a76c6818c7e739cf011a670f5 = $(`<div id="html_f39b871a76c6818c7e739cf011a670f5" style="width: 100.0%; height: 100.0%;">站點 ID: 500111013<br>最終車輛數: 3 / 總柱: 73<br>平衡狀態: 否</div>`)[0];
+                popup_8cb2d8d9c98c18c6863dfbe2c7f2f121.setContent(html_f39b871a76c6818c7e739cf011a670f5);
+            
+        
+
+        circle_marker_de8c3a4b4cc1defc659b81075a2f6a91.bindPopup(popup_8cb2d8d9c98c18c6863dfbe2c7f2f121)
+        ;
+
+        
+    
+    
+            var circle_marker_e500c53a20d0f13ad5049fb50d6d8787 = L.circleMarker(
+                [25.04697, 121.61375],
+                {"bubblingMouseEvents": true, "color": "#FF8C00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF8C00", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_ab7fc5efe1624b1550bb9b0728d9b832 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_53b15686afeba26f94bfa035461d0b37 = $(`<div id="html_53b15686afeba26f94bfa035461d0b37" style="width: 100.0%; height: 100.0%;">站點 ID: 500111014<br>最終車輛數: 0 / 總柱: 40<br>平衡狀態: 否</div>`)[0];
+                popup_ab7fc5efe1624b1550bb9b0728d9b832.setContent(html_53b15686afeba26f94bfa035461d0b37);
+            
+        
+
+        circle_marker_e500c53a20d0f13ad5049fb50d6d8787.bindPopup(popup_ab7fc5efe1624b1550bb9b0728d9b832)
+        ;
+
+        
+    
+    
+            var circle_marker_c9b350cbd37ab3dea63f7d2b823f0876 = L.circleMarker(
+                [25.054, 121.61334],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_ffe8c770d1c2b42cda56fa38f326cd34 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_05a83213934e045b78b44ec52b6d39cb = $(`<div id="html_05a83213934e045b78b44ec52b6d39cb" style="width: 100.0%; height: 100.0%;">站點 ID: 500111018<br>最終車輛數: 2 / 總柱: 15<br>平衡狀態: 否</div>`)[0];
+                popup_ffe8c770d1c2b42cda56fa38f326cd34.setContent(html_05a83213934e045b78b44ec52b6d39cb);
+            
+        
+
+        circle_marker_c9b350cbd37ab3dea63f7d2b823f0876.bindPopup(popup_ffe8c770d1c2b42cda56fa38f326cd34)
+        ;
+
+        
+    
+    
+            var circle_marker_6e1e9c9a994d44e3e9f1dd650cd1719d = L.circleMarker(
+                [25.05933, 121.61677],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_06ac7bf481074be9d34b7ebb5cb7365e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_87b6f5442566a7f272fde12347a13dce = $(`<div id="html_87b6f5442566a7f272fde12347a13dce" style="width: 100.0%; height: 100.0%;">站點 ID: 500111019<br>最終車輛數: 14 / 總柱: 70<br>平衡狀態: 否</div>`)[0];
+                popup_06ac7bf481074be9d34b7ebb5cb7365e.setContent(html_87b6f5442566a7f272fde12347a13dce);
+            
+        
+
+        circle_marker_6e1e9c9a994d44e3e9f1dd650cd1719d.bindPopup(popup_06ac7bf481074be9d34b7ebb5cb7365e)
+        ;
+
+        
+    
+    
+            var circle_marker_db1b623cac404f9704d1ef258fef0691 = L.circleMarker(
+                [25.05668, 121.61137],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_c4a42bd9b94813559d63af70e041cda1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_eecad978fca2aa745e621c98ee601d07 = $(`<div id="html_eecad978fca2aa745e621c98ee601d07" style="width: 100.0%; height: 100.0%;">站點 ID: 500111020<br>最終車輛數: 14 / 總柱: 41<br>平衡狀態: 是</div>`)[0];
+                popup_c4a42bd9b94813559d63af70e041cda1.setContent(html_eecad978fca2aa745e621c98ee601d07);
+            
+        
+
+        circle_marker_db1b623cac404f9704d1ef258fef0691.bindPopup(popup_c4a42bd9b94813559d63af70e041cda1)
+        ;
+
+        
+    
+    
+            var circle_marker_45fbc423ff5fdc24c1424cc305b9ca47 = L.circleMarker(
+                [25.05629, 121.607],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_0b5a25ff28c31ecdfb683c110488fbb8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f1334fbef28e6cecd9e3ad874ba40a86 = $(`<div id="html_f1334fbef28e6cecd9e3ad874ba40a86" style="width: 100.0%; height: 100.0%;">站點 ID: 500111021<br>最終車輛數: 10 / 總柱: 26<br>平衡狀態: 是</div>`)[0];
+                popup_0b5a25ff28c31ecdfb683c110488fbb8.setContent(html_f1334fbef28e6cecd9e3ad874ba40a86);
+            
+        
+
+        circle_marker_45fbc423ff5fdc24c1424cc305b9ca47.bindPopup(popup_0b5a25ff28c31ecdfb683c110488fbb8)
+        ;
+
+        
+    
+    
+            var circle_marker_666f435982e7defa108366a746304506 = L.circleMarker(
+                [25.05485, 121.60866],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_2271e7f76810d4269d3be14c87f8a379 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_af87b81620e3507679ff1120873d364f = $(`<div id="html_af87b81620e3507679ff1120873d364f" style="width: 100.0%; height: 100.0%;">站點 ID: 500111022<br>最終車輛數: 12 / 總柱: 40<br>平衡狀態: 是</div>`)[0];
+                popup_2271e7f76810d4269d3be14c87f8a379.setContent(html_af87b81620e3507679ff1120873d364f);
+            
+        
+
+        circle_marker_666f435982e7defa108366a746304506.bindPopup(popup_2271e7f76810d4269d3be14c87f8a379)
+        ;
+
+        
+    
+    
+            var circle_marker_0c14a922ea1593e2165dcf5a62d61302 = L.circleMarker(
+                [25.05716, 121.59792],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_ae2fb800fb294bb6a6effdacd2c3f1bb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7d1585730b1ac2d12fa9731f03156dd9 = $(`<div id="html_7d1585730b1ac2d12fa9731f03156dd9" style="width: 100.0%; height: 100.0%;">站點 ID: 500111023<br>最終車輛數: 10 / 總柱: 48<br>平衡狀態: 否</div>`)[0];
+                popup_ae2fb800fb294bb6a6effdacd2c3f1bb.setContent(html_7d1585730b1ac2d12fa9731f03156dd9);
+            
+        
+
+        circle_marker_0c14a922ea1593e2165dcf5a62d61302.bindPopup(popup_ae2fb800fb294bb6a6effdacd2c3f1bb)
+        ;
+
+        
+    
+    
+            var circle_marker_07ceaa2bccd2e57024fe2352a472f066 = L.circleMarker(
+                [25.05437, 121.59423],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_109a1ada462bb513733178e858014db8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6e53576d158205ad0b1372b108d25f5c = $(`<div id="html_6e53576d158205ad0b1372b108d25f5c" style="width: 100.0%; height: 100.0%;">站點 ID: 500111024<br>最終車輛數: 27 / 總柱: 44<br>平衡狀態: 是</div>`)[0];
+                popup_109a1ada462bb513733178e858014db8.setContent(html_6e53576d158205ad0b1372b108d25f5c);
+            
+        
+
+        circle_marker_07ceaa2bccd2e57024fe2352a472f066.bindPopup(popup_109a1ada462bb513733178e858014db8)
+        ;
+
+        
+    
+    
+            var circle_marker_9df86e422675727dd07c325868e0b800 = L.circleMarker(
+                [25.05252, 121.60922],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_628d86e31ff834343da26541d9c4679e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5c0dafdc73cf941bcd4b876ec6d78484 = $(`<div id="html_5c0dafdc73cf941bcd4b876ec6d78484" style="width: 100.0%; height: 100.0%;">站點 ID: 500111025<br>最終車輛數: 4 / 總柱: 11<br>平衡狀態: 是</div>`)[0];
+                popup_628d86e31ff834343da26541d9c4679e.setContent(html_5c0dafdc73cf941bcd4b876ec6d78484);
+            
+        
+
+        circle_marker_9df86e422675727dd07c325868e0b800.bindPopup(popup_628d86e31ff834343da26541d9c4679e)
+        ;
+
+        
+    
+    
+            var circle_marker_cef23793667ab618fee9e35f15bd945d = L.circleMarker(
+                [25.05201, 121.60741],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_5de013ee13ba7cf1625699ddaab02278 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_67e45e0f81d4e020ffe3a9b46ccd9f31 = $(`<div id="html_67e45e0f81d4e020ffe3a9b46ccd9f31" style="width: 100.0%; height: 100.0%;">站點 ID: 500111026<br>最終車輛數: 2 / 總柱: 23<br>平衡狀態: 否</div>`)[0];
+                popup_5de013ee13ba7cf1625699ddaab02278.setContent(html_67e45e0f81d4e020ffe3a9b46ccd9f31);
+            
+        
+
+        circle_marker_cef23793667ab618fee9e35f15bd945d.bindPopup(popup_5de013ee13ba7cf1625699ddaab02278)
+        ;
+
+        
+    
+    
+            var circle_marker_fbb7c23c02bcb63eaa2bba4dcb918375 = L.circleMarker(
+                [25.05192, 121.60642],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_5355f6e57538bd84066f1849d76ad940 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6942a93a4969a1ea078ccc25154d1b07 = $(`<div id="html_6942a93a4969a1ea078ccc25154d1b07" style="width: 100.0%; height: 100.0%;">站點 ID: 500111027<br>最終車輛數: 4 / 總柱: 20<br>平衡狀態: 否</div>`)[0];
+                popup_5355f6e57538bd84066f1849d76ad940.setContent(html_6942a93a4969a1ea078ccc25154d1b07);
+            
+        
+
+        circle_marker_fbb7c23c02bcb63eaa2bba4dcb918375.bindPopup(popup_5355f6e57538bd84066f1849d76ad940)
+        ;
+
+        
+    
+    
+            var circle_marker_3b81511f9f11a5a8c72defedc8b31c01 = L.circleMarker(
+                [25.05507, 121.6028],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_7a71bc637a160c64658a931a89513683 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_45f0d1bcd58f3319cf90b9b07df256d0 = $(`<div id="html_45f0d1bcd58f3319cf90b9b07df256d0" style="width: 100.0%; height: 100.0%;">站點 ID: 500111028<br>最終車輛數: 7 / 總柱: 22<br>平衡狀態: 是</div>`)[0];
+                popup_7a71bc637a160c64658a931a89513683.setContent(html_45f0d1bcd58f3319cf90b9b07df256d0);
+            
+        
+
+        circle_marker_3b81511f9f11a5a8c72defedc8b31c01.bindPopup(popup_7a71bc637a160c64658a931a89513683)
+        ;
+
+        
+    
+    
+            var circle_marker_e671ef03e39233c09351fd6324961d36 = L.circleMarker(
+                [25.04681, 121.61703],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_b596b53cb801999416e2b1f177c16bb4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_60029b268b5939e35931388b310a7658 = $(`<div id="html_60029b268b5939e35931388b310a7658" style="width: 100.0%; height: 100.0%;">站點 ID: 500111030<br>最終車輛數: 1 / 總柱: 19<br>平衡狀態: 否</div>`)[0];
+                popup_b596b53cb801999416e2b1f177c16bb4.setContent(html_60029b268b5939e35931388b310a7658);
+            
+        
+
+        circle_marker_e671ef03e39233c09351fd6324961d36.bindPopup(popup_b596b53cb801999416e2b1f177c16bb4)
+        ;
+
+        
+    
+    
+            var circle_marker_9f88dfdeb5262993dbb142a5b28ed7c1 = L.circleMarker(
+                [25.04805, 121.61594],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_9110d6304d0e15021bbe3458edd326bd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a12d933913ed7b5db7364f5c62d3da32 = $(`<div id="html_a12d933913ed7b5db7364f5c62d3da32" style="width: 100.0%; height: 100.0%;">站點 ID: 500111031<br>最終車輛數: 1 / 總柱: 24<br>平衡狀態: 否</div>`)[0];
+                popup_9110d6304d0e15021bbe3458edd326bd.setContent(html_a12d933913ed7b5db7364f5c62d3da32);
+            
+        
+
+        circle_marker_9f88dfdeb5262993dbb142a5b28ed7c1.bindPopup(popup_9110d6304d0e15021bbe3458edd326bd)
+        ;
+
+        
+    
+    
+            var circle_marker_d4f085efe02f8e816b496e418c0bd288 = L.circleMarker(
+                [25.05343, 121.59945],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_93003fba016437d5435b4b1b2bf39284 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8aee9a696cd0e1e62570ca5ab6d6c65e = $(`<div id="html_8aee9a696cd0e1e62570ca5ab6d6c65e" style="width: 100.0%; height: 100.0%;">站點 ID: 500111032<br>最終車輛數: 9 / 總柱: 21<br>平衡狀態: 是</div>`)[0];
+                popup_93003fba016437d5435b4b1b2bf39284.setContent(html_8aee9a696cd0e1e62570ca5ab6d6c65e);
+            
+        
+
+        circle_marker_d4f085efe02f8e816b496e418c0bd288.bindPopup(popup_93003fba016437d5435b4b1b2bf39284)
+        ;
+
+        
+    
+    
+            var circle_marker_7e110c39442de3397aa5951f4712d845 = L.circleMarker(
+                [25.05766, 121.60396],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_e1b6b6168748335927ac3f7a17a48866 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_83ef2b13cbb992127594d81444dc0861 = $(`<div id="html_83ef2b13cbb992127594d81444dc0861" style="width: 100.0%; height: 100.0%;">站點 ID: 500111033<br>最終車輛數: 2 / 總柱: 26<br>平衡狀態: 否</div>`)[0];
+                popup_e1b6b6168748335927ac3f7a17a48866.setContent(html_83ef2b13cbb992127594d81444dc0861);
+            
+        
+
+        circle_marker_7e110c39442de3397aa5951f4712d845.bindPopup(popup_e1b6b6168748335927ac3f7a17a48866)
+        ;
+
+        
+    
+    
+            var circle_marker_2ea933bb4090a7a56b45dc3e74e20e84 = L.circleMarker(
+                [25.05211, 121.59839],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_a147da069ad9fe2060ae641412528e79 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_babad900d2bee44d38d8b5b3c87728cc = $(`<div id="html_babad900d2bee44d38d8b5b3c87728cc" style="width: 100.0%; height: 100.0%;">站點 ID: 500111034<br>最終車輛數: 16 / 總柱: 32<br>平衡狀態: 是</div>`)[0];
+                popup_a147da069ad9fe2060ae641412528e79.setContent(html_babad900d2bee44d38d8b5b3c87728cc);
+            
+        
+
+        circle_marker_2ea933bb4090a7a56b45dc3e74e20e84.bindPopup(popup_a147da069ad9fe2060ae641412528e79)
+        ;
+
+        
+    
+    
+            var circle_marker_017be98b86186107751ca43cc24bbfe1 = L.circleMarker(
+                [25.05326, 121.60656],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_5bf1f9e6d6a2fc818cf4f170f48f537c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e2995bc3fe4153bb8e59f1d4f4804e63 = $(`<div id="html_e2995bc3fe4153bb8e59f1d4f4804e63" style="width: 100.0%; height: 100.0%;">站點 ID: 500111035<br>最終車輛數: 9 / 總柱: 30<br>平衡狀態: 是</div>`)[0];
+                popup_5bf1f9e6d6a2fc818cf4f170f48f537c.setContent(html_e2995bc3fe4153bb8e59f1d4f4804e63);
+            
+        
+
+        circle_marker_017be98b86186107751ca43cc24bbfe1.bindPopup(popup_5bf1f9e6d6a2fc818cf4f170f48f537c)
+        ;
+
+        
+    
+    
+            var circle_marker_6d35ef8f44c1b6f3836d680258dfd046 = L.circleMarker(
+                [25.05266, 121.61275],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_d2a0a8a2e249c5fcad1825b0562dab67 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_24d5f9cf3ada2ed501b48ea2aece5faf = $(`<div id="html_24d5f9cf3ada2ed501b48ea2aece5faf" style="width: 100.0%; height: 100.0%;">站點 ID: 500111036<br>最終車輛數: 8 / 總柱: 26<br>平衡狀態: 是</div>`)[0];
+                popup_d2a0a8a2e249c5fcad1825b0562dab67.setContent(html_24d5f9cf3ada2ed501b48ea2aece5faf);
+            
+        
+
+        circle_marker_6d35ef8f44c1b6f3836d680258dfd046.bindPopup(popup_d2a0a8a2e249c5fcad1825b0562dab67)
+        ;
+
+        
+    
+    
+            var circle_marker_23b5d8b81288b2e347a2fc1469a6a958 = L.circleMarker(
+                [25.05627, 121.61369],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_105da69307b2e8c360f09c5f928b3b7e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4bc54a25a58c290b0424523e9358dfb2 = $(`<div id="html_4bc54a25a58c290b0424523e9358dfb2" style="width: 100.0%; height: 100.0%;">站點 ID: 500111037<br>最終車輛數: 8 / 總柱: 25<br>平衡狀態: 是</div>`)[0];
+                popup_105da69307b2e8c360f09c5f928b3b7e.setContent(html_4bc54a25a58c290b0424523e9358dfb2);
+            
+        
+
+        circle_marker_23b5d8b81288b2e347a2fc1469a6a958.bindPopup(popup_105da69307b2e8c360f09c5f928b3b7e)
+        ;
+
+        
+    
+    
+            var circle_marker_5fe4de24dde44aa8ea596f468b888420 = L.circleMarker(
+                [25.05831, 121.61422],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_eaf44bd4c917cd433450a50b295c6fdc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b847695894d2782a40662dee9a1eeead = $(`<div id="html_b847695894d2782a40662dee9a1eeead" style="width: 100.0%; height: 100.0%;">站點 ID: 500111038<br>最終車輛數: 19 / 總柱: 35<br>平衡狀態: 是</div>`)[0];
+                popup_eaf44bd4c917cd433450a50b295c6fdc.setContent(html_b847695894d2782a40662dee9a1eeead);
+            
+        
+
+        circle_marker_5fe4de24dde44aa8ea596f468b888420.bindPopup(popup_eaf44bd4c917cd433450a50b295c6fdc)
+        ;
+
+        
+    
+    
+            var circle_marker_47919241f6a041c2fcb96e1d2736507d = L.circleMarker(
+                [25.0521, 121.59053],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_84a74b875aa46eb272218662bb477d8f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_293c70e08399de050fff103ceb158a6b = $(`<div id="html_293c70e08399de050fff103ceb158a6b" style="width: 100.0%; height: 100.0%;">站點 ID: 500111040<br>最終車輛數: 8 / 總柱: 20<br>平衡狀態: 是</div>`)[0];
+                popup_84a74b875aa46eb272218662bb477d8f.setContent(html_293c70e08399de050fff103ceb158a6b);
+            
+        
+
+        circle_marker_47919241f6a041c2fcb96e1d2736507d.bindPopup(popup_84a74b875aa46eb272218662bb477d8f)
+        ;
+
+        
+    
+    
+            var circle_marker_86d97d8bff22cddafc325865180d2979 = L.circleMarker(
+                [25.05285, 121.59279],
+                {"bubblingMouseEvents": true, "color": "#FF9999", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF9999", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_c1d1315ac951f7a589f3c13de756af20 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_968252c37c687a9f663846aec4ece106 = $(`<div id="html_968252c37c687a9f663846aec4ece106" style="width: 100.0%; height: 100.0%;">站點 ID: 500111041<br>最終車輛數: 19 / 總柱: 26<br>平衡狀態: 否</div>`)[0];
+                popup_c1d1315ac951f7a589f3c13de756af20.setContent(html_968252c37c687a9f663846aec4ece106);
+            
+        
+
+        circle_marker_86d97d8bff22cddafc325865180d2979.bindPopup(popup_c1d1315ac951f7a589f3c13de756af20)
+        ;
+
+        
+    
+    
+            var circle_marker_066477f26342a5d8e3f467cf0d86a70c = L.circleMarker(
+                [25.05289, 121.58599],
+                {"bubblingMouseEvents": true, "color": "#FF8C00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF8C00", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_801ae6b0071b9cb8f3f904795033e0e1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1563097cb7b5365937f858cdd166ae8f = $(`<div id="html_1563097cb7b5365937f858cdd166ae8f" style="width: 100.0%; height: 100.0%;">站點 ID: 500111043<br>最終車輛數: 0 / 總柱: 25<br>平衡狀態: 否</div>`)[0];
+                popup_801ae6b0071b9cb8f3f904795033e0e1.setContent(html_1563097cb7b5365937f858cdd166ae8f);
+            
+        
+
+        circle_marker_066477f26342a5d8e3f467cf0d86a70c.bindPopup(popup_801ae6b0071b9cb8f3f904795033e0e1)
+        ;
+
+        
+    
+    
+            var circle_marker_18c26b64b631022c705f0f1f91785e87 = L.circleMarker(
+                [25.06148, 121.61384],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_476e37e3f08d0563182fffe6b43a8e3f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c3492592d503ae78c0a598112bdfd8b8 = $(`<div id="html_c3492592d503ae78c0a598112bdfd8b8" style="width: 100.0%; height: 100.0%;">站點 ID: 500111049<br>最終車輛數: 7 / 總柱: 20<br>平衡狀態: 是</div>`)[0];
+                popup_476e37e3f08d0563182fffe6b43a8e3f.setContent(html_c3492592d503ae78c0a598112bdfd8b8);
+            
+        
+
+        circle_marker_18c26b64b631022c705f0f1f91785e87.bindPopup(popup_476e37e3f08d0563182fffe6b43a8e3f)
+        ;
+
+        
+    
+    
+            var circle_marker_5d93c8abe1f4c312291056517ee1c455 = L.circleMarker(
+                [25.05937, 121.61072],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_d65bc792906c3911f23f9c50bfe5d4b1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e95b59a4d1764e14132842b308b0a2a4 = $(`<div id="html_e95b59a4d1764e14132842b308b0a2a4" style="width: 100.0%; height: 100.0%;">站點 ID: 500111050<br>最終車輛數: 13 / 總柱: 21<br>平衡狀態: 是</div>`)[0];
+                popup_d65bc792906c3911f23f9c50bfe5d4b1.setContent(html_e95b59a4d1764e14132842b308b0a2a4);
+            
+        
+
+        circle_marker_5d93c8abe1f4c312291056517ee1c455.bindPopup(popup_d65bc792906c3911f23f9c50bfe5d4b1)
+        ;
+
+        
+    
+    
+            var circle_marker_cbf2c087d2e761ba64c5740a351ced3f = L.circleMarker(
+                [25.05293, 121.60549],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_9cac70cfb626266178b78b3f47973dfd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ff30648cb4fbd40976055ebf851adfa1 = $(`<div id="html_ff30648cb4fbd40976055ebf851adfa1" style="width: 100.0%; height: 100.0%;">站點 ID: 500111051<br>最終車輛數: 8 / 總柱: 24<br>平衡狀態: 是</div>`)[0];
+                popup_9cac70cfb626266178b78b3f47973dfd.setContent(html_ff30648cb4fbd40976055ebf851adfa1);
+            
+        
+
+        circle_marker_cbf2c087d2e761ba64c5740a351ced3f.bindPopup(popup_9cac70cfb626266178b78b3f47973dfd)
+        ;
+
+        
+    
+    
+            var circle_marker_868e917d91d3291b100fdf62b21c1682 = L.circleMarker(
+                [25.06164, 121.61267],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_521532f0bee3183c8aabd2e7908b37fb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8a55c88a27532b28c742a37aa1f34971 = $(`<div id="html_8a55c88a27532b28c742a37aa1f34971" style="width: 100.0%; height: 100.0%;">站點 ID: 500111053<br>最終車輛數: 7 / 總柱: 19<br>平衡狀態: 是</div>`)[0];
+                popup_521532f0bee3183c8aabd2e7908b37fb.setContent(html_8a55c88a27532b28c742a37aa1f34971);
+            
+        
+
+        circle_marker_868e917d91d3291b100fdf62b21c1682.bindPopup(popup_521532f0bee3183c8aabd2e7908b37fb)
+        ;
+
+        
+    
+    
+            var circle_marker_b6a85455c3b9048b4b7f78c570a51e50 = L.circleMarker(
+                [25.06271, 121.61597],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_14f71d2b142ffc01e893a9f63886a22d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_506a83c6b0da99e3cc56e22d2ca53d92 = $(`<div id="html_506a83c6b0da99e3cc56e22d2ca53d92" style="width: 100.0%; height: 100.0%;">站點 ID: 500111054<br>最終車輛數: 5 / 總柱: 20<br>平衡狀態: 否</div>`)[0];
+                popup_14f71d2b142ffc01e893a9f63886a22d.setContent(html_506a83c6b0da99e3cc56e22d2ca53d92);
+            
+        
+
+        circle_marker_b6a85455c3b9048b4b7f78c570a51e50.bindPopup(popup_14f71d2b142ffc01e893a9f63886a22d)
+        ;
+
+        
+    
+    
+            var circle_marker_514703d924e8e8534cd44a327ae2b353 = L.circleMarker(
+                [25.05853, 121.60983],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_ed5a09190b9d4008cbff124f01b66f2a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_514df531cadea0548ea296e6168684e1 = $(`<div id="html_514df531cadea0548ea296e6168684e1" style="width: 100.0%; height: 100.0%;">站點 ID: 500111055<br>最終車輛數: 16 / 總柱: 33<br>平衡狀態: 是</div>`)[0];
+                popup_ed5a09190b9d4008cbff124f01b66f2a.setContent(html_514df531cadea0548ea296e6168684e1);
+            
+        
+
+        circle_marker_514703d924e8e8534cd44a327ae2b353.bindPopup(popup_ed5a09190b9d4008cbff124f01b66f2a)
+        ;
+
+        
+    
+    
+            var circle_marker_e0a9d998bc1c5006ddb9bd9a1d212818 = L.circleMarker(
+                [25.05436, 121.6181],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_973f5a125a410c179a4b5827c89d8820 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6b7e6c1456410c3059ab1a8ee01f6a62 = $(`<div id="html_6b7e6c1456410c3059ab1a8ee01f6a62" style="width: 100.0%; height: 100.0%;">站點 ID: 500111056<br>最終車輛數: 13 / 總柱: 42<br>平衡狀態: 是</div>`)[0];
+                popup_973f5a125a410c179a4b5827c89d8820.setContent(html_6b7e6c1456410c3059ab1a8ee01f6a62);
+            
+        
+
+        circle_marker_e0a9d998bc1c5006ddb9bd9a1d212818.bindPopup(popup_973f5a125a410c179a4b5827c89d8820)
+        ;
+
+        
+    
+    
+            var circle_marker_03092442876064471205db24aa4821fb = L.circleMarker(
+                [25.05172, 121.61686],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_2ca83258c3580b81d76082ce389e5e90 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0110c133909b388780ee126f600af03e = $(`<div id="html_0110c133909b388780ee126f600af03e" style="width: 100.0%; height: 100.0%;">站點 ID: 500111057<br>最終車輛數: 1 / 總柱: 18<br>平衡狀態: 否</div>`)[0];
+                popup_2ca83258c3580b81d76082ce389e5e90.setContent(html_0110c133909b388780ee126f600af03e);
+            
+        
+
+        circle_marker_03092442876064471205db24aa4821fb.bindPopup(popup_2ca83258c3580b81d76082ce389e5e90)
+        ;
+
+        
+    
+    
+            var circle_marker_680f54c4a877e568ccb23ee56c576168 = L.circleMarker(
+                [25.05705, 121.59265],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_cb34455931f7deac1430b1fd286edc0a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_84e2bdadd05bf63fb466fc21febff775 = $(`<div id="html_84e2bdadd05bf63fb466fc21febff775" style="width: 100.0%; height: 100.0%;">站點 ID: 500111059<br>最終車輛數: 9 / 總柱: 24<br>平衡狀態: 是</div>`)[0];
+                popup_cb34455931f7deac1430b1fd286edc0a.setContent(html_84e2bdadd05bf63fb466fc21febff775);
+            
+        
+
+        circle_marker_680f54c4a877e568ccb23ee56c576168.bindPopup(popup_cb34455931f7deac1430b1fd286edc0a)
+        ;
+
+        
+    
+    
+            var circle_marker_23464dca47ea5951126c0e16f18acf85 = L.circleMarker(
+                [25.0582, 121.59368],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_dd34c659b4fc16fa165fff1645e4c06d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b75384c975c04105a6de103182a4fe21 = $(`<div id="html_b75384c975c04105a6de103182a4fe21" style="width: 100.0%; height: 100.0%;">站點 ID: 500111060<br>最終車輛數: 12 / 總柱: 51<br>平衡狀態: 否</div>`)[0];
+                popup_dd34c659b4fc16fa165fff1645e4c06d.setContent(html_b75384c975c04105a6de103182a4fe21);
+            
+        
+
+        circle_marker_23464dca47ea5951126c0e16f18acf85.bindPopup(popup_dd34c659b4fc16fa165fff1645e4c06d)
+        ;
+
+        
+    
+    
+            var circle_marker_bc14d72888be62e5d218a3c5ac95d09b = L.circleMarker(
+                [25.05465, 121.6185],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_368c35c984c9eefbb7583c6a9116a6a5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3a1536047bc9f7c05d805bf4cf2ff6ca = $(`<div id="html_3a1536047bc9f7c05d805bf4cf2ff6ca" style="width: 100.0%; height: 100.0%;">站點 ID: 500111061<br>最終車輛數: 8 / 總柱: 25<br>平衡狀態: 是</div>`)[0];
+                popup_368c35c984c9eefbb7583c6a9116a6a5.setContent(html_3a1536047bc9f7c05d805bf4cf2ff6ca);
+            
+        
+
+        circle_marker_bc14d72888be62e5d218a3c5ac95d09b.bindPopup(popup_368c35c984c9eefbb7583c6a9116a6a5)
+        ;
+
+        
+    
+    
+            var circle_marker_712068c8283635dcbc0d027f2363a707 = L.circleMarker(
+                [25.05535, 121.61838],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_29b8ba89d3a0a81489e316195e98db49 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_731217825e50cb794f57ea5761d7851b = $(`<div id="html_731217825e50cb794f57ea5761d7851b" style="width: 100.0%; height: 100.0%;">站點 ID: 500111062<br>最終車輛數: 1 / 總柱: 39<br>平衡狀態: 否</div>`)[0];
+                popup_29b8ba89d3a0a81489e316195e98db49.setContent(html_731217825e50cb794f57ea5761d7851b);
+            
+        
+
+        circle_marker_712068c8283635dcbc0d027f2363a707.bindPopup(popup_29b8ba89d3a0a81489e316195e98db49)
+        ;
+
+        
+    
+    
+            var circle_marker_d78ec42e500bab340d6a6c73763f9583 = L.circleMarker(
+                [25.04675, 121.58731],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_3edd7dbf1abf89d276bcdef9517a0032 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9018a5ae5ed2ec879e922c301dd617dc = $(`<div id="html_9018a5ae5ed2ec879e922c301dd617dc" style="width: 100.0%; height: 100.0%;">站點 ID: 500111063<br>最終車輛數: 4 / 總柱: 17<br>平衡狀態: 否</div>`)[0];
+                popup_3edd7dbf1abf89d276bcdef9517a0032.setContent(html_9018a5ae5ed2ec879e922c301dd617dc);
+            
+        
+
+        circle_marker_d78ec42e500bab340d6a6c73763f9583.bindPopup(popup_3edd7dbf1abf89d276bcdef9517a0032)
+        ;
+
+        
+    
+    
+            var circle_marker_c38673046f18425a9bee42f215c4b0ec = L.circleMarker(
+                [25.0483, 121.59425],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_f030ba90353664e58145d59389d22483 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fc0808bb4d54f420cebc9bdf67f2ccc2 = $(`<div id="html_fc0808bb4d54f420cebc9bdf67f2ccc2" style="width: 100.0%; height: 100.0%;">站點 ID: 500111066<br>最終車輛數: 14 / 總柱: 14<br>平衡狀態: 否</div>`)[0];
+                popup_f030ba90353664e58145d59389d22483.setContent(html_fc0808bb4d54f420cebc9bdf67f2ccc2);
+            
+        
+
+        circle_marker_c38673046f18425a9bee42f215c4b0ec.bindPopup(popup_f030ba90353664e58145d59389d22483)
+        ;
+
+        
+    
+    
+            var circle_marker_0c837e767f168789e6340f7abefb8bcf = L.circleMarker(
+                [25.05368, 121.59969],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_f5b7bbf1f385e3442edb35fdfc154cf3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_488422ea72c69731d3a7332105df6f54 = $(`<div id="html_488422ea72c69731d3a7332105df6f54" style="width: 100.0%; height: 100.0%;">站點 ID: 500111067<br>最終車輛數: 3 / 總柱: 18<br>平衡狀態: 否</div>`)[0];
+                popup_f5b7bbf1f385e3442edb35fdfc154cf3.setContent(html_488422ea72c69731d3a7332105df6f54);
+            
+        
+
+        circle_marker_0c837e767f168789e6340f7abefb8bcf.bindPopup(popup_f5b7bbf1f385e3442edb35fdfc154cf3)
+        ;
+
+        
+    
+    
+            var circle_marker_1f28e64270bf617ec75f835ffcd4f8f7 = L.circleMarker(
+                [25.05225, 121.60766],
+                {"bubblingMouseEvents": true, "color": "#FF8C00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF8C00", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_a36ac40dd1c2a274c11057da41120910 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_23b1598442f0709a4afd078d0a771a86 = $(`<div id="html_23b1598442f0709a4afd078d0a771a86" style="width: 100.0%; height: 100.0%;">站點 ID: 500111068<br>最終車輛數: 0 / 總柱: 24<br>平衡狀態: 否</div>`)[0];
+                popup_a36ac40dd1c2a274c11057da41120910.setContent(html_23b1598442f0709a4afd078d0a771a86);
+            
+        
+
+        circle_marker_1f28e64270bf617ec75f835ffcd4f8f7.bindPopup(popup_a36ac40dd1c2a274c11057da41120910)
+        ;
+
+        
+    
+    
+            var circle_marker_b93432609c87d9aafe24159f50e2376e = L.circleMarker(
+                [25.05343, 121.60633],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_1ec49e0bbccd96a0f6f0ee37d780c8e3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a677bc317ae4f821457a68de59bd10e3 = $(`<div id="html_a677bc317ae4f821457a68de59bd10e3" style="width: 100.0%; height: 100.0%;">站點 ID: 500111069<br>最終車輛數: 1 / 總柱: 48<br>平衡狀態: 否</div>`)[0];
+                popup_1ec49e0bbccd96a0f6f0ee37d780c8e3.setContent(html_a677bc317ae4f821457a68de59bd10e3);
+            
+        
+
+        circle_marker_b93432609c87d9aafe24159f50e2376e.bindPopup(popup_1ec49e0bbccd96a0f6f0ee37d780c8e3)
+        ;
+
+        
+    
+    
+            var circle_marker_fa5e972c84ae4ef094487825ee06f02b = L.circleMarker(
+                [25.05543, 121.5892],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_df35cb80bb51f4a6139e48a6d0848eaf = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1a6a6fdaaf26956644d7edfb9b88958d = $(`<div id="html_1a6a6fdaaf26956644d7edfb9b88958d" style="width: 100.0%; height: 100.0%;">站點 ID: 500111074<br>最終車輛數: 10 / 總柱: 24<br>平衡狀態: 是</div>`)[0];
+                popup_df35cb80bb51f4a6139e48a6d0848eaf.setContent(html_1a6a6fdaaf26956644d7edfb9b88958d);
+            
+        
+
+        circle_marker_fa5e972c84ae4ef094487825ee06f02b.bindPopup(popup_df35cb80bb51f4a6139e48a6d0848eaf)
+        ;
+
+        
+    
+    
+            var circle_marker_f7c8b849abf3ac08d4de2adbfc44dbe0 = L.circleMarker(
+                [25.05545, 121.61646],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_216b88a3fb278853a0eeda148ec8fa12 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f0b1e8d0b5ba3bde67e977ca0096d00b = $(`<div id="html_f0b1e8d0b5ba3bde67e977ca0096d00b" style="width: 100.0%; height: 100.0%;">站點 ID: 500111076<br>最終車輛數: 4 / 總柱: 18<br>平衡狀態: 否</div>`)[0];
+                popup_216b88a3fb278853a0eeda148ec8fa12.setContent(html_f0b1e8d0b5ba3bde67e977ca0096d00b);
+            
+        
+
+        circle_marker_f7c8b849abf3ac08d4de2adbfc44dbe0.bindPopup(popup_216b88a3fb278853a0eeda148ec8fa12)
+        ;
+
+        
+    
+    
+            var circle_marker_8fb51a206649c8c6139cd0cf516741ea = L.circleMarker(
+                [25.05394, 121.59124],
+                {"bubblingMouseEvents": true, "color": "#FF9999", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF9999", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_73882cb4aa19ea0de14f66fa68ef7d00 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5a1d239f92e3867fed29fe9bb8ec958c = $(`<div id="html_5a1d239f92e3867fed29fe9bb8ec958c" style="width: 100.0%; height: 100.0%;">站點 ID: 500111078<br>最終車輛數: 13 / 總柱: 15<br>平衡狀態: 否</div>`)[0];
+                popup_73882cb4aa19ea0de14f66fa68ef7d00.setContent(html_5a1d239f92e3867fed29fe9bb8ec958c);
+            
+        
+
+        circle_marker_8fb51a206649c8c6139cd0cf516741ea.bindPopup(popup_73882cb4aa19ea0de14f66fa68ef7d00)
+        ;
+
+        
+    
+    
+            var circle_marker_ef6ea5ad9b5cfb77e83093ab56008a47 = L.circleMarker(
+                [25.05066, 121.59431],
+                {"bubblingMouseEvents": true, "color": "#FF8C00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF8C00", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_022a672e3a82c6f4a3531792c4dc875f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f6c485cff32280a97467c4ab540cb492 = $(`<div id="html_f6c485cff32280a97467c4ab540cb492" style="width: 100.0%; height: 100.0%;">站點 ID: 500111079<br>最終車輛數: 0 / 總柱: 28<br>平衡狀態: 否</div>`)[0];
+                popup_022a672e3a82c6f4a3531792c4dc875f.setContent(html_f6c485cff32280a97467c4ab540cb492);
+            
+        
+
+        circle_marker_ef6ea5ad9b5cfb77e83093ab56008a47.bindPopup(popup_022a672e3a82c6f4a3531792c4dc875f)
+        ;
+
+        
+    
+    
+            var circle_marker_6cc75bf05d3445ba1962d84b843e3c95 = L.circleMarker(
+                [25.04916, 121.58906],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_d131021ae3e5a182e3c30969af3e30a9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4e3da43ac81a17b1d8aa3b9f4568c674 = $(`<div id="html_4e3da43ac81a17b1d8aa3b9f4568c674" style="width: 100.0%; height: 100.0%;">站點 ID: 500111080<br>最終車輛數: 2 / 總柱: 12<br>平衡狀態: 否</div>`)[0];
+                popup_d131021ae3e5a182e3c30969af3e30a9.setContent(html_4e3da43ac81a17b1d8aa3b9f4568c674);
+            
+        
+
+        circle_marker_6cc75bf05d3445ba1962d84b843e3c95.bindPopup(popup_d131021ae3e5a182e3c30969af3e30a9)
+        ;
+
+        
+    
+    
+            var circle_marker_994e4b99745968a1efab31f30722b011 = L.circleMarker(
+                [25.05457, 121.58781],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_e31c9f76915a36933d0825da34f51f48 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a2d91c67ef647ddea62306e68eac9394 = $(`<div id="html_a2d91c67ef647ddea62306e68eac9394" style="width: 100.0%; height: 100.0%;">站點 ID: 500111082<br>最終車輛數: 6 / 總柱: 12<br>平衡狀態: 是</div>`)[0];
+                popup_e31c9f76915a36933d0825da34f51f48.setContent(html_a2d91c67ef647ddea62306e68eac9394);
+            
+        
+
+        circle_marker_994e4b99745968a1efab31f30722b011.bindPopup(popup_e31c9f76915a36933d0825da34f51f48)
+        ;
+
+        
+    
+    
+            var circle_marker_b27ac507979326164520610c611cafd7 = L.circleMarker(
+                [25.05381, 121.58638],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_69aa5324df141e5df565e40f7c85f8b4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5023dbfbd1952599bcc67e3d4634d57c = $(`<div id="html_5023dbfbd1952599bcc67e3d4634d57c" style="width: 100.0%; height: 100.0%;">站點 ID: 500111083<br>最終車輛數: 9 / 總柱: 16<br>平衡狀態: 是</div>`)[0];
+                popup_69aa5324df141e5df565e40f7c85f8b4.setContent(html_5023dbfbd1952599bcc67e3d4634d57c);
+            
+        
+
+        circle_marker_b27ac507979326164520610c611cafd7.bindPopup(popup_69aa5324df141e5df565e40f7c85f8b4)
+        ;
+
+        
+    
+    
+            var circle_marker_8d672cd0acdc328ff3317329f6eb540f = L.circleMarker(
+                [25.0488, 121.58742],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_062f1c1bf14c8fb72862a892c87f4954 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6a4b19b6676d206d815f01ca7eb93f2d = $(`<div id="html_6a4b19b6676d206d815f01ca7eb93f2d" style="width: 100.0%; height: 100.0%;">站點 ID: 500111084<br>最終車輛數: 4 / 總柱: 15<br>平衡狀態: 否</div>`)[0];
+                popup_062f1c1bf14c8fb72862a892c87f4954.setContent(html_6a4b19b6676d206d815f01ca7eb93f2d);
+            
+        
+
+        circle_marker_8d672cd0acdc328ff3317329f6eb540f.bindPopup(popup_062f1c1bf14c8fb72862a892c87f4954)
+        ;
+
+        
+    
+    
+            var circle_marker_1cd54395b164e6706e735203e8aa3435 = L.circleMarker(
+                [25.05296, 121.61713],
+                {"bubblingMouseEvents": true, "color": "#FFD580", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD580", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_001d90cc289538158fe95757e07cf958 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ba10faba10b950831bc4433dc077f533 = $(`<div id="html_ba10faba10b950831bc4433dc077f533" style="width: 100.0%; height: 100.0%;">站點 ID: 500111085<br>最終車輛數: 1 / 總柱: 12<br>平衡狀態: 否</div>`)[0];
+                popup_001d90cc289538158fe95757e07cf958.setContent(html_ba10faba10b950831bc4433dc077f533);
+            
+        
+
+        circle_marker_1cd54395b164e6706e735203e8aa3435.bindPopup(popup_001d90cc289538158fe95757e07cf958)
+        ;
+
+        
+    
+    
+            var circle_marker_fc1d774671696090749bd72a82bfd2d6 = L.circleMarker(
+                [25.04728, 121.58605],
+                {"bubblingMouseEvents": true, "color": "#FF8C00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF8C00", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_b963e837ac07cff03adbfdc8dad46b92 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d9f87140433e678b58c5eb2df92aeb21 = $(`<div id="html_d9f87140433e678b58c5eb2df92aeb21" style="width: 100.0%; height: 100.0%;">站點 ID: 500111086<br>最終車輛數: 0 / 總柱: 15<br>平衡狀態: 否</div>`)[0];
+                popup_b963e837ac07cff03adbfdc8dad46b92.setContent(html_d9f87140433e678b58c5eb2df92aeb21);
+            
+        
+
+        circle_marker_fc1d774671696090749bd72a82bfd2d6.bindPopup(popup_b963e837ac07cff03adbfdc8dad46b92)
+        ;
+
+        
+    
+    
+            var circle_marker_fc7f576833e9cb945007b2a71a15c853 = L.circleMarker(
+                [25.05163, 121.59535],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_835f990581761edf0286fc94e31f2d48 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_891a26375ea2e0cc546346d22ea54fdb = $(`<div id="html_891a26375ea2e0cc546346d22ea54fdb" style="width: 100.0%; height: 100.0%;">站點 ID: 500111088<br>最終車輛數: 14 / 總柱: 29<br>平衡狀態: 是</div>`)[0];
+                popup_835f990581761edf0286fc94e31f2d48.setContent(html_891a26375ea2e0cc546346d22ea54fdb);
+            
+        
+
+        circle_marker_fc7f576833e9cb945007b2a71a15c853.bindPopup(popup_835f990581761edf0286fc94e31f2d48)
+        ;
+
+        
+    
+    
+            var circle_marker_379d27cf99aaf59e67f60a0afff93817 = L.circleMarker(
+                [25.05486, 121.5944],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_f401cf96419c4c8343d33450c6d7df38 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_91ba936a3b2f46d7d5f389fd32916432 = $(`<div id="html_91ba936a3b2f46d7d5f389fd32916432" style="width: 100.0%; height: 100.0%;">站點 ID: 500111089<br>最終車輛數: 10 / 總柱: 26<br>平衡狀態: 是</div>`)[0];
+                popup_f401cf96419c4c8343d33450c6d7df38.setContent(html_91ba936a3b2f46d7d5f389fd32916432);
+            
+        
+
+        circle_marker_379d27cf99aaf59e67f60a0afff93817.bindPopup(popup_f401cf96419c4c8343d33450c6d7df38)
+        ;
+
+        
+    
+    
+            var circle_marker_8c9e82f7d57edb61151a90383b18d0c6 = L.circleMarker(
+                [25.04997, 121.6162],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_f36d33332ff8decb295f4fd9e67e314a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4cb837146c6598e6511e3b0bc8846ae1 = $(`<div id="html_4cb837146c6598e6511e3b0bc8846ae1" style="width: 100.0%; height: 100.0%;">站點 ID: 500111090<br>最終車輛數: 8 / 總柱: 14<br>平衡狀態: 是</div>`)[0];
+                popup_f36d33332ff8decb295f4fd9e67e314a.setContent(html_4cb837146c6598e6511e3b0bc8846ae1);
+            
+        
+
+        circle_marker_8c9e82f7d57edb61151a90383b18d0c6.bindPopup(popup_f36d33332ff8decb295f4fd9e67e314a)
+        ;
+
+        
+    
+    
+            var circle_marker_853d9febba264e2d744a9a52f93393fe = L.circleMarker(
+                [25.05801, 121.60674],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_7282fa7b66304e7e808d73348989ebfc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_84d8e515769f54294bf0d986ac63d848 = $(`<div id="html_84d8e515769f54294bf0d986ac63d848" style="width: 100.0%; height: 100.0%;">站點 ID: 500111091<br>最終車輛數: 8 / 總柱: 24<br>平衡狀態: 是</div>`)[0];
+                popup_7282fa7b66304e7e808d73348989ebfc.setContent(html_84d8e515769f54294bf0d986ac63d848);
+            
+        
+
+        circle_marker_853d9febba264e2d744a9a52f93393fe.bindPopup(popup_7282fa7b66304e7e808d73348989ebfc)
+        ;
+
+        
+    
+    
+            var circle_marker_5dd8f674e4a7c3e076e3796a9b2de4ff = L.circleMarker(
+                [25.05469, 121.60381],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_84165d3698c7b34c5b16cd1d4c0040fa = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0c3496c28459bc128f588b7cf1fe1a16 = $(`<div id="html_0c3496c28459bc128f588b7cf1fe1a16" style="width: 100.0%; height: 100.0%;">站點 ID: 500111096<br>最終車輛數: 6 / 總柱: 20<br>平衡狀態: 是</div>`)[0];
+                popup_84165d3698c7b34c5b16cd1d4c0040fa.setContent(html_0c3496c28459bc128f588b7cf1fe1a16);
+            
+        
+
+        circle_marker_5dd8f674e4a7c3e076e3796a9b2de4ff.bindPopup(popup_84165d3698c7b34c5b16cd1d4c0040fa)
+        ;
+
+        
+    
+    
+            var circle_marker_9b84852500b70443688cc65c309598e1 = L.circleMarker(
+                [25.06043, 121.61498],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_7cc34e439c77c8404987c15d36e7c95c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_be9c0418add1d7c4a6983b377a03cbef = $(`<div id="html_be9c0418add1d7c4a6983b377a03cbef" style="width: 100.0%; height: 100.0%;">站點 ID: 500111097<br>最終車輛數: 21 / 總柱: 36<br>平衡狀態: 是</div>`)[0];
+                popup_7cc34e439c77c8404987c15d36e7c95c.setContent(html_be9c0418add1d7c4a6983b377a03cbef);
+            
+        
+
+        circle_marker_9b84852500b70443688cc65c309598e1.bindPopup(popup_7cc34e439c77c8404987c15d36e7c95c)
+        ;
+
+        
+    
+    
+            var circle_marker_11b010cffe537845ac0253650a1eae27 = L.circleMarker(
+                [25.058, 121.62189],
+                {"bubblingMouseEvents": true, "color": "#FF8C00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF8C00", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_05a347ad8537f4500b719c976d16274f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e38bc0350f99515033cd1ca578bc78f4 = $(`<div id="html_e38bc0350f99515033cd1ca578bc78f4" style="width: 100.0%; height: 100.0%;">站點 ID: 500111113<br>最終車輛數: 0 / 總柱: 20<br>平衡狀態: 否</div>`)[0];
+                popup_05a347ad8537f4500b719c976d16274f.setContent(html_e38bc0350f99515033cd1ca578bc78f4);
+            
+        
+
+        circle_marker_11b010cffe537845ac0253650a1eae27.bindPopup(popup_05a347ad8537f4500b719c976d16274f)
+        ;
+
+        
+    
+    
+            var circle_marker_adc8fe567b6b73a1e1ebe8d624dafdb6 = L.circleMarker(
+                [25.05124, 121.59361],
+                {"bubblingMouseEvents": true, "color": "#FF8C00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF8C00", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_494df1ff8a0c82bf2cf281eb155de046 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_39fed0b5de08dbf03bab4a045dfb6d17 = $(`<div id="html_39fed0b5de08dbf03bab4a045dfb6d17" style="width: 100.0%; height: 100.0%;">站點 ID: 500111114<br>最終車輛數: 0 / 總柱: 30<br>平衡狀態: 否</div>`)[0];
+                popup_494df1ff8a0c82bf2cf281eb155de046.setContent(html_39fed0b5de08dbf03bab4a045dfb6d17);
+            
+        
+
+        circle_marker_adc8fe567b6b73a1e1ebe8d624dafdb6.bindPopup(popup_494df1ff8a0c82bf2cf281eb155de046)
+        ;
+
+        
+    
+    
+            var circle_marker_fa39c4dc010e40347d1a42b41a39e6dd = L.circleMarker(
+                [25.05156, 121.6014],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_b291c5c85d6228c0cc97171f86356804 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bc03770f8cb57e020633ab7d5454868b = $(`<div id="html_bc03770f8cb57e020633ab7d5454868b" style="width: 100.0%; height: 100.0%;">站點 ID: 500111115<br>最終車輛數: 7 / 總柱: 20<br>平衡狀態: 是</div>`)[0];
+                popup_b291c5c85d6228c0cc97171f86356804.setContent(html_bc03770f8cb57e020633ab7d5454868b);
+            
+        
+
+        circle_marker_fa39c4dc010e40347d1a42b41a39e6dd.bindPopup(popup_b291c5c85d6228c0cc97171f86356804)
+        ;
+
+        
+    
+    
+            var circle_marker_42468d29ba9623e187f184ffca79815f = L.circleMarker(
+                [25.05216, 121.60338],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_e38b2d2f8e42958ed57f76a6dae92a27 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5bab9da6836160e8273658a61337c885 = $(`<div id="html_5bab9da6836160e8273658a61337c885" style="width: 100.0%; height: 100.0%;">站點 ID: 500111116<br>最終車輛數: 12 / 總柱: 40<br>平衡狀態: 是</div>`)[0];
+                popup_e38b2d2f8e42958ed57f76a6dae92a27.setContent(html_5bab9da6836160e8273658a61337c885);
+            
+        
+
+        circle_marker_42468d29ba9623e187f184ffca79815f.bindPopup(popup_e38b2d2f8e42958ed57f76a6dae92a27)
+        ;
+
+        
+    
+    
+            var circle_marker_7b057143cbb8e65403a3d3ebcaa5919d = L.circleMarker(
+                [25.04857, 121.59401],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_1f91b48605c38d8852bbc372070e3b58 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_865fe879fe6fb32bed36069329ae9a62 = $(`<div id="html_865fe879fe6fb32bed36069329ae9a62" style="width: 100.0%; height: 100.0%;">站點 ID: 500111117<br>最終車輛數: 8 / 總柱: 24<br>平衡狀態: 是</div>`)[0];
+                popup_1f91b48605c38d8852bbc372070e3b58.setContent(html_865fe879fe6fb32bed36069329ae9a62);
+            
+        
+
+        circle_marker_7b057143cbb8e65403a3d3ebcaa5919d.bindPopup(popup_1f91b48605c38d8852bbc372070e3b58)
+        ;
+
+        
+    
+    
+            var circle_marker_eda1f2d3762d93fca96cd3c066082e4a = L.circleMarker(
+                [25.0614, 121.61795],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_70303b76dbab1af88e391b4e914878bb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5ce4306748734420bee5d143c741eb2f = $(`<div id="html_5ce4306748734420bee5d143c741eb2f" style="width: 100.0%; height: 100.0%;">站點 ID: 500111118<br>最終車輛數: 9 / 總柱: 20<br>平衡狀態: 是</div>`)[0];
+                popup_70303b76dbab1af88e391b4e914878bb.setContent(html_5ce4306748734420bee5d143c741eb2f);
+            
+        
+
+        circle_marker_eda1f2d3762d93fca96cd3c066082e4a.bindPopup(popup_70303b76dbab1af88e391b4e914878bb)
+        ;
+
+        
+    
+    
+            var circle_marker_cc4e90a9a3e171442eec1bfe341a5d2a = L.circleMarker(
+                [25.05791, 121.61704],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_306c28ae7f3d4d9ff711ce1d03985527 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9e87d7cddd7274fab19672e83869ec6f = $(`<div id="html_9e87d7cddd7274fab19672e83869ec6f" style="width: 100.0%; height: 100.0%;">站點 ID: 500111119<br>最終車輛數: 14 / 總柱: 37<br>平衡狀態: 是</div>`)[0];
+                popup_306c28ae7f3d4d9ff711ce1d03985527.setContent(html_9e87d7cddd7274fab19672e83869ec6f);
+            
+        
+
+        circle_marker_cc4e90a9a3e171442eec1bfe341a5d2a.bindPopup(popup_306c28ae7f3d4d9ff711ce1d03985527)
+        ;
+
+        
+    
+    
+            var circle_marker_d4f916271a21b97f32d492ae2121bc78 = L.circleMarker(
+                [25.0586, 121.61973],
+                {"bubblingMouseEvents": true, "color": "#FF9999", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF9999", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_e40124ba6f8f328a894000498ca9a0b1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2bebadcedeed2d628533b2f24de832ee = $(`<div id="html_2bebadcedeed2d628533b2f24de832ee" style="width: 100.0%; height: 100.0%;">站點 ID: 500111120<br>最終車輛數: 14 / 總柱: 20<br>平衡狀態: 是</div>`)[0];
+                popup_e40124ba6f8f328a894000498ca9a0b1.setContent(html_2bebadcedeed2d628533b2f24de832ee);
+            
+        
+
+        circle_marker_d4f916271a21b97f32d492ae2121bc78.bindPopup(popup_e40124ba6f8f328a894000498ca9a0b1)
+        ;
+
+        
+    
+    
+            var circle_marker_6cc9a1d845cf8e5c3d97329318d5e527 = L.circleMarker(
+                [25.06148, 121.61698],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_2219a1ce7f7737402beb3eee944726cf = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6c80ef4863e3aa3573ae705774ec714a = $(`<div id="html_6c80ef4863e3aa3573ae705774ec714a" style="width: 100.0%; height: 100.0%;">站點 ID: 500111121<br>最終車輛數: 7 / 總柱: 21<br>平衡狀態: 是</div>`)[0];
+                popup_2219a1ce7f7737402beb3eee944726cf.setContent(html_6c80ef4863e3aa3573ae705774ec714a);
+            
+        
+
+        circle_marker_6cc9a1d845cf8e5c3d97329318d5e527.bindPopup(popup_2219a1ce7f7737402beb3eee944726cf)
+        ;
+
+        
+    
+    
+            var circle_marker_45e541511dcf90626428a6a385ed9fe5 = L.circleMarker(
+                [25.05312, 121.58928],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_51b3f79335db19e427161f75604455da);
+        
+    
+        var popup_640812b8e8209d85a9c2e9c0d4d4a6cc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b627955dec0a0bf6c775741210dc7ab3 = $(`<div id="html_b627955dec0a0bf6c775741210dc7ab3" style="width: 100.0%; height: 100.0%;">站點 ID: 500111123<br>最終車輛數: 12 / 總柱: 23<br>平衡狀態: 是</div>`)[0];
+                popup_640812b8e8209d85a9c2e9c0d4d4a6cc.setContent(html_b627955dec0a0bf6c775741210dc7ab3);
+            
+        
+
+        circle_marker_45e541511dcf90626428a6a385ed9fe5.bindPopup(popup_640812b8e8209d85a9c2e9c0d4d4a6cc)
+        ;
+
+        
+    
+</script>
+</html>
